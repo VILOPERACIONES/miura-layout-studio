@@ -15,4 +15,9 @@ export type Experience = {
   // opcional: para el “logo grande” del panel izquierdo (si lo quieres dinámico)
   heroLogo?: string;
   heroLogoAlt?: string;
+  links?: {
+    instagram?: string;
+    whatsapp?: string;
+    reserve?: string;
+  };
 };
