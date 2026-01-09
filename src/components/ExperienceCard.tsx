@@ -6,6 +6,7 @@ type Props = {
   text?: string;
   onClick?: () => void;
   isActive?: boolean;
+  size?: "default" | "small";
 };
 
 export const ExperienceCard: React.FC<Props> = ({
@@ -14,13 +15,35 @@ export const ExperienceCard: React.FC<Props> = ({
   text,
   onClick,
   isActive,
+  size = "default",
 }) => {
+  const sizeClasses = {
+    default: "w-[220px] h-[330px] rounded-[40px]",
+    small: "w-[140px] h-[210px] rounded-[28px]",
+  };
+
+  const logoSizeClasses = {
+    default: "max-w-[70%] max-h-[45%]",
+    small: "max-w-[65%] max-h-[40%]",
+  };
+
+  const textSizeClasses = {
+    default: "text-xl px-6",
+    small: "text-sm px-4",
+  };
+
+  const activeRingClasses = {
+    default: "after:rounded-[40px] after:border-2",
+    small: "after:rounded-[28px] after:border-[1.5px]",
+  };
+
   return (
     <button
       type="button"
       onClick={onClick}
       className={[
-        "relative isolate w-[220px] h-[330px] rounded-[40px]",
+        "relative isolate",
+        sizeClasses[size],
         "flex flex-col items-center justify-center gap-4 overflow-hidden",
         "bg-white/70 backdrop-blur-sm border border-white/40",
         "transition-transform transition-colors duration-200",
@@ -30,7 +53,7 @@ export const ExperienceCard: React.FC<Props> = ({
           ? "shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
           : "shadow-[0_12px_40px_rgba(0,0,0,0.18)]",
         isActive
-          ? "after:content-[''] after:absolute after:inset-0 after:rounded-[40px] after:border-2 after:border-white after:pointer-events-none"
+          ? `after:content-[''] after:absolute after:inset-0 ${activeRingClasses[size]} after:border-white after:pointer-events-none`
           : "",
       ].join(" ")}
     >
@@ -38,13 +61,13 @@ export const ExperienceCard: React.FC<Props> = ({
         <img
           src={logo}
           alt={logoAlt ?? ""}
-          className="max-w-[70%] max-h-[45%] object-contain"
+          className={`${logoSizeClasses[size]} object-contain`}
           onError={() => console.log("Logo no carga:", logo)}
         />
       ) : null}
 
       {text ? (
-        <div className="text-slate-900 text-xl font-semibold tracking-wide text-center px-6">
+        <div className={`text-slate-900 font-semibold tracking-wide text-center ${textSizeClasses[size]}`}>
           {text}
         </div>
       ) : null}
