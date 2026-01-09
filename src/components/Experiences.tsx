@@ -130,13 +130,13 @@ export const Experiences: React.FC = () => {
         </div>
 
         {/* Carousel Mobile */}
-        <div className="w-full mt-4">
-          <Carousel setApi={setApi} opts={{ align: "center", loop: true }}>
-            <CarouselContent className="gap-x-4 px-4">
+        <div className="w-full mt-4 touch-pan-y">
+          <Carousel setApi={setApi} opts={{ align: "center", loop: true, dragFree: true }}>
+            <CarouselContent className="-ml-3">
               {EXPERIENCES.map((experience) => (
                 <CarouselItem
                   key={experience.id}
-                  className="basis-[160px] flex-shrink-0"
+                  className="basis-[160px] pl-3 flex-shrink-0"
                 >
                   <ExperienceCard
                     logo={experience.logo}
@@ -248,13 +248,13 @@ export const Experiences: React.FC = () => {
         </div>
 
         {/* Carousel Tablet */}
-        <div className="w-full mt-4">
-          <Carousel setApi={setApi} opts={{ align: "center", loop: true }}>
-            <CarouselContent className="gap-x-6 px-6">
+        <div className="w-full mt-4 touch-pan-y">
+          <Carousel setApi={setApi} opts={{ align: "center", loop: true, dragFree: true }}>
+            <CarouselContent className="-ml-4">
               {EXPERIENCES.map((experience) => (
                 <CarouselItem
                   key={experience.id}
-                  className="basis-[200px] flex-shrink-0"
+                  className="basis-[200px] pl-4 flex-shrink-0"
                 >
                   <ExperienceCard
                     logo={experience.logo}
