@@ -4,11 +4,31 @@ type Props = {
   logo?: string;
   logoAlt?: string;
   text?: string;
+
+  // nuevo
+  onClick?: () => void;
+  isActive?: boolean;
 };
 
-export const ExperienceCard: React.FC<Props> = ({ logo, logoAlt, text }) => {
+export const ExperienceCard: React.FC<Props> = ({
+  logo,
+  logoAlt,
+  text,
+  onClick,
+  isActive,
+}) => {
   return (
-    <div className="relative w-[220px] h-[330px] rounded-[40px] bg-white/70 backdrop-blur-sm border border-white/40 flex flex-col items-center justify-center gap-4 overflow-hidden">
+    <button
+      type="button"
+      onClick={onClick}
+      className={[
+        "relative w-[220px] h-[330px] rounded-[40px] bg-white/70 backdrop-blur-sm border border-white/40",
+        "flex flex-col items-center justify-center gap-4 overflow-hidden",
+        "transition-all duration-200 hover:bg-white/80 hover:-translate-y-1",
+        "focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+        isActive ? "ring-2 ring-white shadow-xl" : "shadow-md",
+      ].join(" ")}
+    >
       {logo ? (
         <img
           src={logo}
@@ -23,6 +43,6 @@ export const ExperienceCard: React.FC<Props> = ({ logo, logoAlt, text }) => {
           {text}
         </div>
       ) : null}
-    </div>
+    </button>
   );
 };
