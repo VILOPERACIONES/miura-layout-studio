@@ -8,19 +8,56 @@ export const Billing: React.FC = () => {
         alt="Billing background"
         className="w-full h-[539px] absolute object-cover left-0 -top-5"
       />
-      
+
       <div className="flex w-[715px] flex-col items-center gap-[38px] absolute -translate-x-2/4 h-[328px] left-2/4 top-[91px] max-md:w-[600px] max-md:top-[70px] max-sm:w-80 max-sm:top-[50px]">
-        <h2 className="h-[26px] self-stretch text-[#12181D] text-center text-4xl font-bold max-md:text-[32px] max-sm:text-2xl">
+          <h2
+          className="
+            h-[26px]
+            self-stretch
+            font-syncopate
+            font-bold
+            text-[#12181D]
+            text-center
+            text-[36px]
+            max-md:text-[32px]
+            max-sm:text-2xl
+          "
+        >
           FACTURACIÓN
         </h2>
-        
+
         <button className="w-[456px] h-[92px] flex items-center justify-center bg-[#12181D] rounded-[41px] hover:bg-[#2a3035] transition-colors max-md:w-[380px] max-md:h-20 max-sm:w-[280px] max-sm:h-[60px]">
-          <span className="text-white text-center text-[26px] font-normal leading-7 max-md:text-[22px] max-sm:text-base">
+          <span
+            className="
+              font-anek
+              font-normal
+              text-white
+              text-center
+              text-[26px]
+              leading-7
+              max-md:text-[22px]
+              max-sm:text-base
+            "
+          >
             Ir al portal de facturación
           </span>
         </button>
-        
-        <p className="h-[134px] self-stretch text-[#12181D] text-center text-[26px] font-normal leading-7 max-md:text-[22px] max-sm:text-base max-sm:leading-5">
+
+        <p
+          className="
+            h-[134px]
+            self-stretch
+            font-anek
+            font-normal
+            text-[#12181D]
+            text-center
+            text-[26px]
+            leading-7
+            max-md:text-[22px]
+            max-sm:text-base
+            max-sm:leading-5
+          "
+        >
           Accede a nuestro portal de facturación electrónica para generar tu
           comprobante fiscal de manera rápida y segura.
           <br />

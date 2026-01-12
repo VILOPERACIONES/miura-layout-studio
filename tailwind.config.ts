@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        syncopate: ['"Syncopate"', 'sans-serif'],
+        anek: ['"Anek Telugu"', 'sans-serif'],
+        source: ['"Source Sans Pro"', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

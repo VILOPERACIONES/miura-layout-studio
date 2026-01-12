@@ -1,4 +1,5 @@
 import React from 'react';
+import { VectorLine } from './ui/vectorLine';
 
 export const About: React.FC = () => {
   return (
@@ -21,26 +22,52 @@ export const About: React.FC = () => {
         className="w-[340px] h-[480px] absolute object-cover left-[476px] top-[59px] max-md:w-[250px] max-md:h-[350px] max-md:left-80 max-md:top-[30px] max-sm:w-[150px] max-sm:h-[200px] max-sm:left-[190px] max-sm:top-[50px]"
       />
 
-      <div>
-        <svg
-          width="209"
-          viewBox="0 0 209 1"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute left-[1132px] top-[189px]"
-        >
-          <path d="M0 0.5H209" stroke="#12181D" strokeWidth="2" strokeMiterlimit="10" />
-        </svg>
-      </div>
+      <VectorLine
+        width={209}
+        left="1132px"
+        top="189px"
+      />
+
 
       <div className="flex w-[469px] flex-col items-start gap-[26px] absolute h-[212px] left-[872px] top-[164px] max-md:w-[350px] max-md:left-[600px] max-md:top-[100px] max-sm:w-80 max-sm:left-5 max-sm:top-[280px]">
-        <h2 className="h-[66px] self-stretch text-[#12181D] text-[32px] font-bold max-md:text-[28px] max-sm:text-2xl max-sm:text-center"> {/* syncopate Bold size-32 */}
+        {/* <h2 className="h-[66px] self-stretch text-[#12181D] text-[32px] font-bold max-md:text-[28px] max-sm:text-2xl max-sm:text-center"> syncopate Bold size-32 */}
+        <h2
+          className="
+            h-[66px]
+            self-stretch
+            font-syncopate
+            font-bold
+            text-[#12181D]
+            text-[32px]
+            leading-tight
+            max-md:text-[28px]
+            max-sm:text-2xl
+            max-sm:text-center
+          "
+        >
           ¿QUIENES
           <br />
           SOMOS?
         </h2>
 
-        <p className="h-[120px] self-stretch text-black text-justify text-base font-normal leading-[18px] max-md:text-sm max-md:leading-4 max-sm:text-xs max-sm:leading-[14px] max-sm:text-center">  anek telugu regular size-16
+        {/* <p className="h-[120px] self-stretch text-black text-justify text-base font-normal leading-[18px] max-md:text-sm max-md:leading-4 max-sm:text-xs max-sm:leading-[14px] max-sm:text-center">  anek telugu regular size-16 */}
+          <p
+            className="
+              h-[120px]
+              self-stretch
+              font-anek
+              font-normal
+              text-black
+              text-[16px]
+              leading-[18px]
+              text-justify
+              max-md:text-[14px]
+              max-md:leading-4
+              max-sm:text-[12px]
+              max-sm:leading-[14px]
+              max-sm:text-center
+            "
+          >
           Somos un grupo restaurantero con sede en Yucatán, México, enfocado
           en crear experiencias gastronómicas que transcienden lo cotidiano.
           <br />

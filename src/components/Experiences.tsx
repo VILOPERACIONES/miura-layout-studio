@@ -304,21 +304,24 @@ export const Experiences: React.FC = () => {
       {/* ===== DESKTOP LAYOUT (≥1024px): Layout absoluto original ===== */}
 
       {/* Título Desktop */}
-      <h2 className="hidden lg:block absolute top-[80px] left-1/2 -translate-x-1/2 text-white text-4xl font-normal text-center xl:text-4xl">
-        EXPERIENCIAS<span className="font-bold"> MIURA</span>
+      <h2 className="hidden lg:block absolute top-[80px] left-1/2 -translate-x-1/2 text-white text-[36px] font-syncopate font-normal text-center">
+        EXPERIENCIAS
+        <span className="font-bold"> MIURA</span>
       </h2>
 
-      {/* Panel izquierdo Desktop */}
-      <div className="hidden lg:flex absolute left-[125px] top-[240px] w-[385px] flex-col gap-8 xl:left-[125px] xl:top-[240px] xl:w-[385px]">
+      {/*  Panel izquierdo Desktop */}
+      <div className="hidden lg:flex absolute left-[125px] top-[200px] w-[385px] flex-col gap-5 xl:left-[125px] xl:top-[200px] xl:w-[385px]">
         {/* Logo */}
-        <img
-          src={activeExperience.heroLogo ?? activeExperience.logo}
-          alt={activeExperience.heroLogoAlt ?? activeExperience.alt}
-          className="w-[264px] h-[57px] object-contain"
-        />
+        <div className="w-[264px] h-[130px] flex items-end justify-start">
+          <img
+            src={activeExperience.heroLogo ?? activeExperience.logo}
+            alt={activeExperience.heroLogoAlt ?? activeExperience.alt}
+            className="max-h-full w-auto object-contain"
+          />
+        </div>
 
         {/* Zona */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 font-anek font-medium text-[20px]">
           <svg width="16" height="25" viewBox="0 0 16 25" fill="none">
             <path
               d="M15.8707 7.86135C15.8707 3.63132 12.3467 0.202026 8 0.202026C3.65325 0.202026 0.129333 3.63132 0.129333 7.86135C0.129333 11.6167 2.90679 14.7409 6.57193 15.3944V24.7976H9.42845V15.3944C13.0932 14.7405 15.871 11.6167 15.871 7.86135Z"
@@ -326,15 +329,19 @@ export const Experiences: React.FC = () => {
             />
           </svg>
 
-          <span className="text-white text-xl tracking-[6.8px]">
+          <span className="text-white tracking-[6.8px]">
             {activeExperience.zone ?? "NORTE"}
           </span>
         </div>
 
-        {/* Descripción */}
-        <p className="text-white text-[26px] font-extralight leading-7 xl:text-[26px]">
-          {activeExperience.description}
-        </p>
+
+        {/* Descripción TIPOGRAFIA Anek Telugu - ExtraLight - FontSize-26*/}
+        <div className="h-[225px] overflow-hidden">
+          <p className="font-anek font-extralight text-white text-[26px] leading-7">
+            {activeExperience.description}
+          </p>
+        </div>
+
 
         {/* Acciones */}
         <div className="flex items-center gap-6">
@@ -363,10 +370,10 @@ export const Experiences: React.FC = () => {
 
           {activeExperience.links?.reserve && (
             <a
-              href={activeExperience.links.reserve}
+              href={activeExperience.links?.reserve}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 h-10 flex items-center justify-center rounded-full border border-white/70 text-white text-xs tracking-[3.5px] hover:bg-white hover:text-black transition"
+              className="px-6 h-10 flex items-center justify-center rounded-full border border-white/70 text-white font-syncopate font-normal text-[12px] tracking-[3.5px] hover:bg-white hover:text-black transition"
             >
               RESERVAR
             </a>

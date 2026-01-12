@@ -10,7 +10,7 @@ export const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
     { label: "NOSOTROS", href: "#about" },
     { label: "EXPERIENCIAS", href: "#experiences" },
     { label: "FACTURACIÓN", href: "#billing" },
-    { label: "CONTACTOS", href: "#contact" }
+    { label: "CONTACTOS", href: "#contact" },
   ];
 
   return (
@@ -19,7 +19,20 @@ export const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
         <a
           key={item.label}
           href={item.href}
-          className="text-white text-center text-base font-bold leading-7 tracking-[1.76px] cursor-pointer hover:opacity-80 transition-opacity max-md:text-sm max-md:tracking-[1.2px]"
+          className="
+            font-source
+            font-bold
+            text-[16px]
+            leading-7
+            tracking-[1.76px]
+            text-white
+            text-center
+            cursor-pointer
+            hover:opacity-80
+            transition-opacity
+            max-md:text-[14px]
+            max-md:tracking-[1.2px]
+          "
         >
           {item.label}
         </a>
@@ -27,3 +40,4 @@ export const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
     </nav>
   );
 };
+

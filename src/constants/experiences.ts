@@ -11,7 +11,7 @@ export const EXPERIENCES: Experience[] = [
     zone: "CENTRO",
     description:
       "Un espacio donde cada noche se vive una experiencia única, acompañada de excelente música en vivo, cócteles cuidadosamente preparados y un ambiente cálido y sofisticado que invita a quedarse y disfrutar.",
-    heroLogo: "/src/assets/images/experiences/Large-47-Logo.png",
+    heroLogo: "/src/assets/images/experiences/Large-47-Logo3.png",
     heroLogoAlt: "47th Street Logo",
     links: {
       instagram: "https://instagram.com/terceracto",

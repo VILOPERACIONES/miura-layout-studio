@@ -10,26 +10,52 @@ export const Contact: React.FC = () => {
         className="w-full h-[608px] aspect-[45/19] blur-[3.75px] absolute object-cover left-0 top-0 max-md:h-[500px] max-sm:h-[600px]"
       />
       <div className="w-full h-[608px] absolute bg-[rgba(18,24,29,0.55)] left-0 top-0 max-md:h-[500px] max-sm:h-[600px]" />
-      
-      <h2 className="w-[494px] h-[26px] text-white text-center text-4xl font-bold absolute -translate-x-2/4 left-2/4 top-[75px] max-md:text-[32px] max-md:top-[50px] max-sm:text-2xl max-sm:w-[300px] max-sm:top-[30px]">
+      <h2
+        className="
+          w-[494px]
+          h-[26px]
+          font-syncopate
+          font-bold
+          text-white
+          text-center
+          text-[36px]
+          absolute
+          -translate-x-2/4
+          left-2/4
+          top-[75px]
+          max-md:text-[32px]
+          max-md:top-[50px]
+          max-sm:text-2xl
+          max-sm:w-[300px]
+          max-sm:top-[30px]
+        "
+      >
         CONTACTO
       </h2>
-      
       <ContactForm />
-      
       <div className="absolute flex items-center gap-[30px] left-[483px] top-[491px] max-md:left-[350px] max-md:top-[420px] max-sm:flex-col max-sm:gap-[15px] max-sm:items-start max-sm:left-5 max-sm:top-[450px]">
-        <a 
+        <a
           href="mailto:contacto@miura.mx"
-          className="text-white text-[26px] font-normal leading-7 hover:underline max-md:text-[22px] max-sm:text-base"
+          className="
+            font-anek
+            font-normal
+            text-white
+            text-[26px]
+            leading-7
+            hover:underline
+            max-md:text-[22px]
+            max-sm:text-base
+          "
         >
           contacto@miura.mx
         </a>
-        
-        <svg 
-          width="93" 
-          height="47" 
-          viewBox="0 0 93 47" 
-          fill="none" 
+
+
+        <svg
+          width="93"
+          height="47"
+          viewBox="0 0 93 47"
+          fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="overflow-hidden w-[93px] h-[47px]"
         >

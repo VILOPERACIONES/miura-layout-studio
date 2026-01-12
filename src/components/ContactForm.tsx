@@ -21,7 +21,7 @@ export const ContactForm: React.FC = () => {
       ...prev,
       [name]: value
     }));
-    
+
     if (errors[name as keyof FormData]) {
       setErrors(prev => ({
         ...prev,
@@ -53,7 +53,7 @@ export const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (validateForm()) {
       console.log('Form submitted:', formData);
       setFormData({ name: '', email: '', message: '' });
@@ -74,12 +74,23 @@ export const ContactForm: React.FC = () => {
             aria-label="Nombre"
           />
           {errors.name && (
-            <span className="absolute -bottom-6 left-0 text-red-400 text-sm">
+            <span
+              className="
+                absolute
+                -bottom-6
+                left-0
+                font-anek
+                font-normal
+                text-[26px]
+                leading-7
+                text-red-400
+              "
+            >
               {errors.name}
             </span>
           )}
         </div>
-        
+
         <div className="w-[463px] h-[71px] relative rounded-xl border-2 border-solid border-[rgba(217,217,217,0.74)] max-md:w-[385px] max-md:h-[60px] max-sm:w-80 max-sm:h-[50px]">
           <input
             type="email"
@@ -91,13 +102,24 @@ export const ContactForm: React.FC = () => {
             aria-label="Correo electrónico"
           />
           {errors.email && (
-            <span className="absolute -bottom-6 left-0 text-red-400 text-sm">
+            <span
+              className="
+                absolute
+                -bottom-6
+                left-0
+                font-anek
+                font-normal
+                text-[26px]
+                leading-7
+                text-red-400
+              "
+            >
               {errors.email}
             </span>
           )}
         </div>
       </div>
-      
+
       <div className="w-[956px] h-[173px] relative rounded-xl border-2 border-solid border-[rgba(217,217,217,0.74)] max-md:w-[800px] max-md:h-[140px] max-sm:w-80 max-sm:h-[100px] mb-8">
         <textarea
           name="message"
@@ -108,18 +130,42 @@ export const ContactForm: React.FC = () => {
           aria-label="Mensaje"
         />
         {errors.message && (
-          <span className="absolute -bottom-6 left-0 text-red-400 text-sm">
+          <span
+            className="
+              absolute
+              -bottom-6
+              left-0
+              font-anek
+              font-normal
+              text-[26px]
+              leading-7
+              text-red-400
+            "
+          >
             {errors.message}
           </span>
         )}
       </div>
-      
+
       <button
         type="submit"
-        className="bg-white text-[#12181D] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+        className="
+          bg-white
+          text-[#12181D]
+          px-8
+          py-3
+          rounded-lg
+          font-anek
+          font-normal
+          text-[26px]
+          leading-7
+          hover:bg-gray-100
+          transition-colors
+        "
       >
         Enviar Mensaje
       </button>
+
     </form>
   );
 };
