@@ -8,7 +8,8 @@ import { Footer } from '@/components/Footer';
 
 const Index = () => {
   return (
-    <main className="flex w-full flex-col justify-end items-start gap-[26px]">
+    // <main className="flex w-full flex-col justify-end items-start gap-[26px]">
+    <main className="flex w-full flex-col">
       <Hero />
       <About />
       <Experiences />

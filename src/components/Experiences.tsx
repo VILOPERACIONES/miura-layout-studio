@@ -131,12 +131,12 @@ export const Experiences: React.FC = () => {
 
         {/* Carousel Mobile */}
         <div className="w-full mt-4">
-          <Carousel 
-            setApi={setApi} 
+          <Carousel
+            setApi={setApi}
             opts={{ align: "center", loop: true, dragFree: true }}
             className="cursor-grab active:cursor-grabbing"
           >
-            <CarouselContent className="-ml-2 touch-none">
+            <CarouselContent className="-ml-2 touch-pan-x">
               {EXPERIENCES.map((experience) => (
                 <CarouselItem
                   key={experience.id}
@@ -253,12 +253,12 @@ export const Experiences: React.FC = () => {
 
         {/* Carousel Tablet */}
         <div className="w-full mt-4">
-          <Carousel 
-            setApi={setApi} 
+          <Carousel
+            setApi={setApi}
             opts={{ align: "center", loop: true, dragFree: true }}
             className="cursor-grab active:cursor-grabbing"
           >
-            <CarouselContent className="-ml-3 touch-none">
+            <CarouselContent className="-ml-3 touch-pan-x">
               {EXPERIENCES.map((experience) => (
                 <CarouselItem
                   key={experience.id}
@@ -302,7 +302,7 @@ export const Experiences: React.FC = () => {
       </div>
 
       {/* ===== DESKTOP LAYOUT (≥1024px): Layout absoluto original ===== */}
-      
+
       {/* Título Desktop */}
       <h2 className="hidden lg:block absolute top-[80px] left-1/2 -translate-x-1/2 text-white text-4xl font-normal text-center xl:text-4xl">
         EXPERIENCIAS<span className="font-bold"> MIURA</span>

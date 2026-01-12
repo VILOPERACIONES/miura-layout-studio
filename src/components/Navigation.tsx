@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react';  //TODO: CAMBIAR A LA TIPOGRAFIA PROPORCIONADA EN EL FIGMA
+//Sarouce Sans Pro  Bold size-16px
 
 interface NavigationProps {
   className?: string;
