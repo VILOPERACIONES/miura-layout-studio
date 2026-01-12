@@ -321,18 +321,20 @@ export const Experiences: React.FC = () => {
         </div>
 
         {/* Zona */}
-        <div className="flex items-center gap-4 font-anek font-medium text-[20px]">
-          <svg width="16" height="25" viewBox="0 0 16 25" fill="none">
-            <path
-              d="M15.8707 7.86135C15.8707 3.63132 12.3467 0.202026 8 0.202026C3.65325 0.202026 0.129333 3.63132 0.129333 7.86135C0.129333 11.6167 2.90679 14.7409 6.57193 15.3944V24.7976H9.42845V15.3944C13.0932 14.7405 15.871 11.6167 15.871 7.86135Z"
-              fill="white"
-            />
-          </svg>
+        <a href={activeExperience.ubicacion}>
+          <div className="flex items-center gap-4 font-anek font-medium text-[20px]">
+            <svg width="16" height="25" viewBox="0 0 16 25" fill="none">
+              <path
+                d="M15.8707 7.86135C15.8707 3.63132 12.3467 0.202026 8 0.202026C3.65325 0.202026 0.129333 3.63132 0.129333 7.86135C0.129333 11.6167 2.90679 14.7409 6.57193 15.3944V24.7976H9.42845V15.3944C13.0932 14.7405 15.871 11.6167 15.871 7.86135Z"
+                fill="white"
+              />
+            </svg>
 
-          <span className="text-white tracking-[6.8px]">
-            {activeExperience.zone ?? "NORTE"}
-          </span>
-        </div>
+            <span className="text-white tracking-[6.8px]">
+              {activeExperience.zone ?? "NORTE"}
+            </span>
+          </div>
+        </a>
 
 
         {/* Descripción TIPOGRAFIA Anek Telugu - ExtraLight - FontSize-26*/}
@@ -346,25 +348,18 @@ export const Experiences: React.FC = () => {
         {/* Acciones */}
         <div className="flex items-center gap-6">
           {activeExperience.links?.instagram && (
-            <a
+          <a
               href={activeExperience.links.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-white/60 hover:bg-white/10 transition"
+              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition"
             >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="1.8"
-              >
-                <rect x="2" y="2" width="20" height="20" rx="6" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="1" />
-              </svg>
+              <img
+                src="/src/assets/images/experiences/instagram_button.png"
+                alt="Instagram"
+                className="w-full h-full object-contain"
+              />
             </a>
           )}
 
@@ -387,9 +382,11 @@ export const Experiences: React.FC = () => {
         onClick={() => api?.scrollPrev()}
         aria-label="Anterior"
       >
-        <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
+        {/* <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
           <path d="M29 35L13 22.5 29 10" stroke="white" strokeWidth="2" />
-        </svg>
+        </svg> */}
+        <img src="/src/assets/images/experiences/prev_button.png" alt="" />
+
       </button>
 
       {/* Navegación Next Desktop */}
@@ -398,9 +395,10 @@ export const Experiences: React.FC = () => {
         onClick={() => api?.scrollNext()}
         aria-label="Siguiente"
       >
-        <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
+        {/* <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
           <path d="M16 10L32 22.5 16 35" stroke="white" strokeWidth="2" />
-        </svg>
+        </svg> */}
+        <img src="/src/assets/images/experiences/next_button.png" alt="" />
       </button>
 
       {/* Carousel Desktop */}

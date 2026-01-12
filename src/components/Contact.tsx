@@ -32,7 +32,10 @@ export const Contact: React.FC = () => {
       >
         CONTACTO
       </h2>
-      <ContactForm />
+      <div className="relative z-10 flex flex-col items-center justify-center mt-[140px] max-md:mt-[120px] max-sm:mt-[90px]">
+        <ContactForm />
+      </div>
+
       <div className="absolute flex items-center gap-[30px] left-[483px] top-[491px] max-md:left-[350px] max-md:top-[420px] max-sm:flex-col max-sm:gap-[15px] max-sm:items-start max-sm:left-5 max-sm:top-[450px]">
         <a
           href="mailto:contacto@miura.mx"

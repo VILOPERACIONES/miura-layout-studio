@@ -61,7 +61,11 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="absolute w-[956px] left-[242px] top-[180px] max-md:w-[800px] max-md:left-[120px] max-md:top-[140px] max-sm:w-80 max-sm:left-5 max-sm:top-[100px]">
+    <form onSubmit={handleSubmit} className="    w-[956px]
+    mx-auto
+    max-md:w-[800px]
+    max-sm:w-full
+    px-4">
       <div className="flex gap-[30px] mb-[25px] max-sm:flex-col max-sm:gap-[15px]">
         <div className="w-[463px] h-[71px] relative rounded-xl border-2 border-solid border-[rgba(217,217,217,0.74)] max-md:w-[385px] max-md:h-[60px] max-sm:w-80 max-sm:h-[50px]">
           <input
@@ -82,7 +86,7 @@ export const ContactForm: React.FC = () => {
                 font-anek
                 font-normal
                 text-[26px]
-                leading-7
+                leading-7  
                 text-red-400
               "
             >
