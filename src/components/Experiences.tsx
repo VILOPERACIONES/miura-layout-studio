@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 
 import { EXPERIENCES } from "@/constants/experiences";
+import { VectorLine } from "./ui/vectorLine";
 
 export const Experiences: React.FC = () => {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -376,30 +377,52 @@ export const Experiences: React.FC = () => {
         </div>
       </div>
 
-      {/* Navegación Prev Desktop */}
-      <button
-        className="hidden lg:block absolute left-[680px] top-[700px] w-[45px] h-[45px] hover:opacity-80 transition xl:left-[680px]"
-        onClick={() => api?.scrollPrev()}
-        aria-label="Anterior"
-      >
-        {/* <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
-          <path d="M29 35L13 22.5 29 10" stroke="white" strokeWidth="2" />
-        </svg> */}
-        <img src="/src/assets/images/experiences/prev_button.png" alt="" />
+<div
+  className="
+    hidden lg:block
+    absolute
+    left-1/2
+    -translate-x-1/2
+    bottom-[80px]
+    z-20
+  "
+>
+  {/* Contenedor de botones (punto de anclaje) */}
+  <div className="relative flex items-center gap-6">
+    <button
+      onClick={() => api?.scrollPrev()}
+      aria-label="Anterior"
+      className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
+    >
+      <img
+        src="/src/assets/images/experiences/prev_button.png"
+        alt="Anterior"
+        className="w-full h-full object-contain"
+      />
+    </button>
 
-      </button>
+    <button
+      onClick={() => api?.scrollNext()}
+      aria-label="Siguiente"
+      className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
+    >
+      <img
+        src="/src/assets/images/experiences/next_button.png"
+        alt="Siguiente"
+        className="w-full h-full object-contain"
+      />
+    </button>
 
-      {/* Navegación Next Desktop */}
-      <button
-        className="hidden lg:block absolute left-[745px] top-[700px] w-[45px] h-[45px] hover:opacity-80 transition xl:left-[745px]"
-        onClick={() => api?.scrollNext()}
-        aria-label="Siguiente"
-      >
-        {/* <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
-          <path d="M16 10L32 22.5 16 35" stroke="white" strokeWidth="2" />
-        </svg> */}
-        <img src="/src/assets/images/experiences/next_button.png" alt="" />
-      </button>
+    
+    <VectorLine
+      width={900}
+      color="#FFFFFF"
+      className="absolute left-full top-1/2 -translate-y-1/2 ml-6"
+    />
+  </div>
+</div>
+
+
 
       {/* Carousel Desktop */}
       <div

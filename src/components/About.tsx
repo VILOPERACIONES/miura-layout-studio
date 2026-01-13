@@ -24,10 +24,12 @@ export const About: React.FC = () => {
 
       <VectorLine
         width={209}
-        left="1132px"
-        top="189px"
+        className="
+          absolute
+          left-[1132px]
+          top-[189px]
+        "
       />
-
 
       <div className="flex w-[469px] flex-col items-start gap-[26px] absolute h-[212px] left-[872px] top-[164px] max-md:w-[350px] max-md:left-[600px] max-md:top-[100px] max-sm:w-80 max-sm:left-5 max-sm:top-[280px]">
         {/* <h2 className="h-[66px] self-stretch text-[#12181D] text-[32px] font-bold max-md:text-[28px] max-sm:text-2xl max-sm:text-center"> syncopate Bold size-32 */}
