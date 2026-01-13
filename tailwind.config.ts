@@ -13,10 +13,14 @@ export default {
       },
     },
     extend: {
+      screens: {
+        desktop: "1300px",
+      },
       fontFamily: {
         syncopate: ['"Syncopate"', 'sans-serif'],
         anek: ['"Anek Telugu"', 'sans-serif'],
         source: ['"Source Sans Pro"', 'sans-serif'],
+        syne: ['"Syne"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

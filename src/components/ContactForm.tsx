@@ -86,7 +86,7 @@ export const ContactForm: React.FC = () => {
                 font-anek
                 font-normal
                 text-[26px]
-                leading-7  
+                leading-7
                 text-red-400
               "
             >
@@ -151,24 +151,44 @@ export const ContactForm: React.FC = () => {
         )}
       </div>
 
-      <button
-        type="submit"
-        className="
-          bg-white
-          text-[#12181D]
-          px-8
-          py-3
-          rounded-lg
-          font-anek
-          font-normal
-          text-[26px]
-          leading-7
-          hover:bg-gray-100
-          transition-colors
-        "
-      >
-        Enviar Mensaje
-      </button>
+      <div className="flex items-center gap-8 max-sm:flex-col max-sm:items-start">
+        <button
+          type="submit"
+          className="
+            bg-white
+            text-[#12181D]
+            px-8
+            py-3
+            rounded-lg
+            font-anek
+            font-normal
+            text-[26px]
+            leading-7
+            hover:bg-gray-100
+            transition-colors
+          "
+        >
+          Enviar Mensaje
+        </button>
+
+        <a
+          href="mailto:contacto@miura.mx"
+          className="
+            font-anek
+            font-normal
+            text-white
+            text-[26px]
+            leading-7
+            hover:underline
+            whitespace-nowrap
+            max-md:text-[22px]
+            max-sm:text-base
+          "
+        >
+          contacto@miura.mx
+        </a>
+      </div>
+
 
     </form>
   );

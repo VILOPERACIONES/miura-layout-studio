@@ -180,8 +180,8 @@ export const Experiences: React.FC = () => {
         </div>
       </div>
 
-      {/* ===== TABLET LAYOUT (640px - 1023px): Flujo vertical ===== */}
-      <div className="hidden sm:flex lg:hidden relative z-10 flex-col items-center px-8 pt-16 pb-10 gap-8">
+      {/* ===== TABLET LAYOUT (640px - 1300px -> Solo se oculata hasta llegar a desktop) ===== */}
+      <div className="hidden sm:flex desktop:hidden relative z-10 flex-col items-center px-8 pt-16 pb-10 gap-8">
         {/* Título Tablet */}
         <h2 className="text-white text-3xl font-normal text-center">
           EXPERIENCIAS<span className="font-bold"> MIURA</span>
@@ -302,16 +302,16 @@ export const Experiences: React.FC = () => {
         </div>
       </div>
 
-      {/* ===== DESKTOP LAYOUT (≥1024px): Layout absoluto original ===== */}
+      {/* ===== DESKTOP LAYOUT (≥1300px): Layout absoluto original =====  PERO QUIERO QUE SE VEA SOLO MAYOR A 1300px como se realiarìa esto?*/}
 
       {/* Título Desktop */}
-      <h2 className="hidden lg:block absolute top-[80px] left-1/2 -translate-x-1/2 text-white text-[36px] font-syncopate font-normal text-center">
+      <h2 className="hidden desktop:block absolute top-[80px] left-1/2 -translate-x-1/2 text-white text-[36px] font-syncopate font-normal text-center">
         EXPERIENCIAS
         <span className="font-bold"> MIURA</span>
       </h2>
 
       {/*  Panel izquierdo Desktop */}
-      <div className="hidden lg:flex absolute left-[125px] top-[200px] w-[385px] flex-col gap-5 xl:left-[125px] xl:top-[200px] xl:w-[385px]">
+      <div className="hidden desktop:flex absolute left-[125px] top-[200px] w-[385px] flex-col gap-5 xl:left-[125px] xl:top-[200px] xl:w-[385px]">
         {/* Logo */}
         <div className="w-[264px] h-[130px] flex items-end justify-start">
           <img
@@ -377,56 +377,56 @@ export const Experiences: React.FC = () => {
         </div>
       </div>
 
-<div
-  className="
-    hidden lg:block
-    absolute
-    left-1/2
-    -translate-x-1/2
-    bottom-[80px]
-    z-20
-  "
->
-  {/* Contenedor de botones (punto de anclaje) */}
-  <div className="relative flex items-center gap-6">
-    <button
-      onClick={() => api?.scrollPrev()}
-      aria-label="Anterior"
-      className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
-    >
-      <img
-        src="/src/assets/images/experiences/prev_button.png"
-        alt="Anterior"
-        className="w-full h-full object-contain"
-      />
-    </button>
+      <div
+        className="
+          hidden desktop:block
+          absolute
+          left-1/2
+          -translate-x-1/2
+          bottom-[80px]
+          z-20
+        "
+      >
+        {/* Contenedor de botones (punto de anclaje) */}
+        <div className="relative flex items-center gap-6">
+          <button
+            onClick={() => api?.scrollPrev()}
+            aria-label="Anterior"
+            className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
+          >
+            <img
+              src="/src/assets/images/experiences/prev_button.png"
+              alt="Anterior"
+              className="w-full h-full object-contain"
+            />
+          </button>
 
-    <button
-      onClick={() => api?.scrollNext()}
-      aria-label="Siguiente"
-      className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
-    >
-      <img
-        src="/src/assets/images/experiences/next_button.png"
-        alt="Siguiente"
-        className="w-full h-full object-contain"
-      />
-    </button>
+          <button
+            onClick={() => api?.scrollNext()}
+            aria-label="Siguiente"
+            className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
+          >
+            <img
+              src="/src/assets/images/experiences/next_button.png"
+              alt="Siguiente"
+              className="w-full h-full object-contain"
+            />
+          </button>
 
-    
-    <VectorLine
-      width={900}
-      color="#FFFFFF"
-      className="absolute left-full top-1/2 -translate-y-1/2 ml-6"
-    />
-  </div>
-</div>
+
+          <VectorLine
+            width={900}
+            color="#FFFFFF"
+            className="absolute left-full top-1/2 -translate-y-1/2 ml-6"
+          />
+        </div>
+      </div>
 
 
 
       {/* Carousel Desktop */}
       <div
-        className="hidden lg:block absolute top-[297px] right-[80px] xl:right-[80px] xl:top-[297px]"
+        className="hidden desktop:block absolute top-[297px] right-[80px] xl:right-[80px] xl:top-[297px]"
         style={{
           width: "clamp(350px, 55vw, 1200px)",
         }}
