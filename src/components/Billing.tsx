@@ -12,7 +12,7 @@ export const Billing: React.FC = () => {
       <div className="flex w-[715px] flex-col items-center gap-[38px] absolute -translate-x-2/4 h-[328px] left-2/4 top-[91px] max-md:w-[600px] max-md:top-[70px] max-sm:w-80 max-sm:top-[50px]">
           <h2
           className="
-            h-[26px]
+            h-[32px]
             self-stretch
             font-syncopate
             font-bold
@@ -30,7 +30,7 @@ export const Billing: React.FC = () => {
           <span
             className="
               font-anek
-              font-normal
+              font-extralight
               text-white
               text-center
               text-[26px]

@@ -34,36 +34,6 @@ export const Contact: React.FC = () => {
       </h2>
       <div className="relative z-10 flex flex-col items-center justify-center mt-[140px] max-md:mt-[120px] max-sm:mt-[90px]">
         <ContactForm />
-
-        {/* Footer del formulario */}
-        {/* <div className="mt-6 flex items-center gap-8 max-sm:flex-col max-sm:items-start">
-          <a
-            href="mailto:contacto@miura.mx"
-            className="
-              font-anek
-              font-normal
-              text-white
-              text-[26px]
-              leading-7
-              hover:underline
-              whitespace-nowrap
-              max-md:text-[22px]
-              max-sm:text-base
-            "
-          >
-            contacto@miura.mx
-          </a>
-
-          <svg
-            width="93"
-            height="47"
-            viewBox="0 0 93 47"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-[93px] h-[47px]"
-          >
-          </svg>
-        </div> */}
       </div>
 
     </section>

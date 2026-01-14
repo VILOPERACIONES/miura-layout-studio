@@ -9,6 +9,7 @@ import {
 
 import { EXPERIENCES } from "@/constants/experiences";
 import { VectorLine } from "./ui/vectorLine";
+import { InstagramButton } from "./ui/isntagram-button";
 
 export const Experiences: React.FC = () => {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -338,7 +339,6 @@ export const Experiences: React.FC = () => {
         </a>
 
 
-        {/* Descripción TIPOGRAFIA Anek Telugu - ExtraLight - FontSize-26*/}
         <div className="h-[225px] overflow-hidden">
           <p className="font-anek font-extralight text-white text-[26px] leading-7">
             {activeExperience.description}
@@ -349,19 +349,10 @@ export const Experiences: React.FC = () => {
         {/* Acciones */}
         <div className="flex items-center gap-6">
           {activeExperience.links?.instagram && (
-          <a
+            <InstagramButton
               href={activeExperience.links.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition"
-            >
-              <img
-                src="/src/assets/images/experiences/instagram_button.png"
-                alt="Instagram"
-                className="w-full h-full object-contain"
-              />
-            </a>
+              className="hover:bg-white/20"
+            />
           )}
 
           {activeExperience.links?.reserve && (

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { InstagramButton } from './ui/isntagram-button';
 
 interface FormData {
   name: string;
@@ -187,6 +188,13 @@ export const ContactForm: React.FC = () => {
         >
           contacto@miura.mx
         </a>
+
+        <img src="/src/assets/images/contact/8888.png" alt="" />
+
+          <div className="ml-auto">
+            <InstagramButton href="https://www.instagram.com/miurahospitality/" />
+          </div>
+
       </div>
 
 
