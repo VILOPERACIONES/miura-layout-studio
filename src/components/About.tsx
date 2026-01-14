@@ -4,7 +4,7 @@ import { VectorLine } from './ui/vectorLine';
 export const About: React.FC = () => { //TODO: AGREGAR RESPONSIVIDAD CORRECTAMENTE.
   return (
     <section className="relative w-full overflow-hidden bg-white">
-      {/* Background */}
+      {/* Background TODO: SUBIR IMAGENE EN LA NUBE AGREGARLA EN LOS ASSETS/IMAGES */}
       <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/3a964e8def1a71e80507c4e8c11e7130e8ff1b04?width=2880"
         alt="Restaurant background"
@@ -14,7 +14,7 @@ export const About: React.FC = () => { //TODO: AGREGAR RESPONSIVIDAD CORRECTAMEN
       {/* CONTENEDOR CENTRADO */}
       <div className="relative mx-auto w-full mr-80 max-w-[1200px] h-[539px] max-md:h-[400px] max-sm:h-[600px]">
 
-        {/* Imagen 1 */}
+        {/* Imagen 1 TODO: SUBIR IMAGENE EN LA NUBE AGREGARLA EN LOS ASSETS/IMAGES*/}
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/5918cf9f920709637b28ffa93f45a0ee93e0eeff?width=680"
           alt="Restaurant photo 1"
@@ -23,7 +23,7 @@ export const About: React.FC = () => { //TODO: AGREGAR RESPONSIVIDAD CORRECTAMEN
             max-sm:left-5 max-sm:top-5 max-sm:w-[150px] max-sm:h-[200px]"
         />
 
-        {/* Imagen 2 */}
+        {/* Imagen 2 TODO: SUBIR IMAGENE EN LA NUBE AGREGARLA EN LOS ASSETS/IMAGES*/}
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/8d3e26dcc2dfef028b89c5638feb936e3de29fef?width=680"
           alt="Restaurant photo 2"

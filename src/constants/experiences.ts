@@ -5,7 +5,7 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "47-th-street",
     logo: "/src/assets/images/experiences/Logo-47-th-street.png",
-    alt: "47th Street Logo",
+    alt: "https://console.cloudinary.com/app/c-e5f1597fa9bf395aa4f6796c3751ab/assets/media_library/folders/cddeb81bcd096b8048e9a66c1935b5fc5f/asset/ca6aa1f6a8031af0192077bfd4304f3c/manage/summary?view_mode=mosaic&context=manage",
     background: "/src/assets/images/experiences/bg-47-th-street.png",
     title: "47th Street",
     zone: "CENTRO",
@@ -22,7 +22,7 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "casa-blanca",
     logo: "/src/assets/images/experiences/Logo-Casa-Blanca.png",
-    alt: "Casa Blanca Logo",
+    alt: "https://console.cloudinary.com/app/c-e5f1597fa9bf395aa4f6796c3751ab/assets/media_library/folders/cddeb81bcd096b8048e9a66c1935b5fc5f/asset/f3b70d4a21fd160354ea8ac93b4d1389/manage/summary?view_mode=mosaic&context=manage",
     background: "/src/assets/images/experiences/bg-casablanca.png",
     title: "Casa Blanca",
     zone: "CENTRO",

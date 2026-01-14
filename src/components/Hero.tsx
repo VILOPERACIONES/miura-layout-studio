@@ -16,14 +16,14 @@ export const Hero: React.FC = () => {
       {/* Background */}
       <img
         src="/src/assets/images/hero/hero-background.jpg"
-        alt="Restaurant interior background"
+        alt="https://console.cloudinary.com/app/c-e5f1597fa9bf395aa4f6796c3751ab/assets/media_library/folders/cddeb82a0d891f40543f443a94d5f499f4/asset/b062203e27ea7028f60c5e309422f8d4/manage/summary?view_mode=mosaic&context=manage"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
       {/* Overlay (si lo necesitas) */}
       <div className="absolute inset-0 bg-black/20" />
 
-      {/* Logo */}
+      {/* Logo TODO: SUBIR IMAGENE EN LA NUBE AGREGARLA EN LOS ASSETS/IMAGES*/}
       <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/e501eb6dc45f1b6e29fa83a5498f0ec8a27f67f7?width=340"
         alt="Miura Logo"
