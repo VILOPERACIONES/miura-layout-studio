@@ -456,11 +456,11 @@ export const Experiences: React.FC = () => {
         }}
       >
         <Carousel setApi={setApi} opts={{ align: "start", loop: true }}>
-          <CarouselContent className="gap-x-8 px-8">
+          <CarouselContent className="gap-x-8 px-8 py-10">
             {EXPERIENCES.map((experience) => (
               <CarouselItem
                 key={experience.id}
-                className="basis-[260px] 2xl:basis-[220px] last:pr-8"
+                className="basis-[220px] last:pr-8"
               >
                 <ExperienceCard
                   logo={experience.logo}

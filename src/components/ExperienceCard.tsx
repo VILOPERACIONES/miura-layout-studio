@@ -59,7 +59,7 @@ export const ExperienceCard: React.FC<Props> = ({
       className={[
         "relative isolate",
         sizeClasses[size],
-        "flex flex-col items-center justify-center gap-4 overflow-hidden",
+        "flex flex-col items-center justify-center gap-4",
         "bg-white/70 backdrop-blur-sm border border-white/40",
         "transition-transform transition-colors duration-200",
         "hover:bg-white/80 hover:-translate-y-1",
