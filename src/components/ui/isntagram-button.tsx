@@ -28,6 +28,9 @@ export const InstagramButton: React.FC<InstagramButtonProps> = ({
         src="/src/assets/images/shared/instagram_button.png"
         alt="Instagram"
         className="w-full h-full object-contain"
+        onError={(e) => {
+          e.currentTarget.src = "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409813/instagram_button_djdulp.png";
+        }}
       />
     </a>
   );

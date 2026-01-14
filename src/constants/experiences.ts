@@ -5,13 +5,16 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "47-th-street",
     logo: "/src/assets/images/experiences/Logo-47-th-street.png",
-    alt: "https://console.cloudinary.com/app/c-e5f1597fa9bf395aa4f6796c3751ab/assets/media_library/folders/cddeb81bcd096b8048e9a66c1935b5fc5f/asset/ca6aa1f6a8031af0192077bfd4304f3c/manage/summary?view_mode=mosaic&context=manage",
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Logo-47-th-street_jbqh0r.png",
+    alt: "47th Street Logo",
     background: "/src/assets/images/experiences/bg-47-th-street.png",
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409806/bg-47-th-street_dysjpr.png",
     title: "47th Street",
     zone: "CENTRO",
     description:
       "Un espacio donde cada noche se vive una experiencia única, acompañada de excelente música en vivo, cócteles cuidadosamente preparados y un ambiente cálido y sofisticado que invita a quedarse y disfrutar.",
     heroLogo: "/src/assets/images/experiences/Large-47-Logo3.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409809/Large-47-Logo3_o576se.png",
     heroLogoAlt: "47th Street Logo",
     ubicacion: "https://maps.app.goo.gl/hNpCTG2jQG1pLHyr9",
     links: {
@@ -22,13 +25,16 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "casa-blanca",
     logo: "/src/assets/images/experiences/Logo-Casa-Blanca.png",
-    alt: "https://console.cloudinary.com/app/c-e5f1597fa9bf395aa4f6796c3751ab/assets/media_library/folders/cddeb81bcd096b8048e9a66c1935b5fc5f/asset/f3b70d4a21fd160354ea8ac93b4d1389/manage/summary?view_mode=mosaic&context=manage",
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Logo-Casa-Blanca_vbfqc3.png",
+    alt: "Casa Blanca Logo",
     background: "/src/assets/images/experiences/bg-casablanca.png",
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409807/bg-casablanca_uvlflp.png",
     title: "Casa Blanca",
     zone: "CENTRO",
     description:
       "El lugar ideal para disfrutar hamburguesas jugosas, preparadas al momento con ingredientes de calidad y combinaciones que conquistan desde el primer bocado En un ambiente relajado y auténtico.",
     heroLogo: "/src/assets/images/experiences/Large-Casa-Blanca-Logo.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409809/Large-Casa-Blanca-Logo_nkzusr.png",
     heroLogoAlt: "Casa Blanca Logo",
     ubicacion: "https://maps.app.goo.gl/ugN49kFnX5L6h8qk7",
     links: {
@@ -39,13 +45,16 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "miura",
     logo: "/src/assets/images/experiences/MIURA-LOGO-NEGRO.png",
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/MIURA-LOGO-NEGRO_zeiddz.png",
     alt: "Miura Logo",
     background: "/src/assets/images/experiences/bg-miura.png",
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409808/bg-miura_gnfpft.png",
     title: "Miura",
     zone: "NORTE",
     description:
       "En nuestro Contemporary Japanese Fine Dining encontrará una propuesta distinta en presentación, ingredientes y técnicas, con un enfoque más creativo y platillos más elaborados.",
     heroLogo: "/src/assets/images/experiences/Large-Miura-Logo.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-Miura-Logo_soivoz.png",
     heroLogoAlt: "Miura Logo",
     ubicacion: "https://maps.app.goo.gl/7wY7WocYLsmiozqd8",
     links: {
@@ -56,13 +65,16 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "valhalla",
     logo: "/src/assets/images/experiences/Branding-Valhalla-02.png",
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409807/Branding-Valhalla-02_snbbsi.png",
     alt: "Valhalla Logo",
     background: "/src/assets/images/experiences/bg-valhalla.png",
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409807/bg-valhalla_k0if5w.png",
     title: "Valhalla",
     zone: "NORTE",
     description:
       "Valhalla es el lugar donde la tradición mexicana se encuentra con un espíritu indomable. buen ambiente, sabor y una experiencia fuera de lo común. Un lugar con carácter, energía y una vibra única.",
     heroLogo: "/src/assets/images/experiences/Large-Valhalla-Logo.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-Valhalla-Logo_dcnew7.png",
     heroLogoAlt: "Valhalla Logo",
     ubicacion: "https://maps.app.goo.gl/SS8fyKNt1noxnfsr8",
     links: {
@@ -73,13 +85,16 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "kona",
     logo: "/src/assets/images/experiences/KonaLogo.png",
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409808/KonaLogo_u7e14t.png",
     alt: "Kōnā Logo",
     background: "/src/assets/images/experiences/bg-yakuza.png",
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409808/bg-kona_kzfqul.png",
     title: "Kōnā",
     zone: "NORTE",
     description:
       "Kona es una dark kitchen de comida japonesa, creada para disfrutarse únicamente en delivery o pickup. Preparada al momento, con sabores auténticos y atención al detalle, llevamos la experiencia japonesa directo hasta ti.",
     heroLogo: "/src/assets/images/experiences/Large-kona-Logo.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-kona-logo_gzy7vg.png",
     heroLogoAlt: "Kōnā Logo",
     ubicacion: "",
     links: {
@@ -90,13 +105,16 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "yakuza",
     logo: "/src/assets/images/experiences/YakuzaLogo.png",
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/YakuzaLogo_nxlu0g.png",
     alt: "Yakuza Logo",
     background: "/src/assets/images/experiences/bg-yakuza.png",
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409808/bg-yakuza_ujoflv.png",
     title: "Yakuza",
     zone: "NORTE",
     description:
       "Inspirado en los restaurantes japoneses de la zona de Ginza. Yakuza nace como un espacio donde los ingredientes de la auténtica cocina japonesa se fusionan con componentes gourmet.",
     heroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Large-Yakuza-Logo_i2m4do.png",
     heroLogoAlt: "Yakuza Logo",
     ubicacion: "https://share.google/knvR99UBeRWMPAq7B",
     links: {
@@ -107,13 +125,16 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "faena",
     logo: "/src/assets/images/experiences/FAENA-logo.png",
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409807/FAENA-logo_paztis.png",
     alt: "Faena Taberna Logo",
     background: "/src/assets/images/experiences/bg-faena.png",
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409806/bg-faena_gfql8p.png",
     title: "Faena Taberna",
     zone: "NORTE",
     description:
     "Restaurante español de cocina tradicional auténtica, donde cada visita se convierte en una experiencia para disfrutar. Un ambiente cálido, sabores que evocan España y el lugar perfecto para compartir grandes momentos.",
     heroLogo: "/src/assets/images/experiences/Large-Faena-Logo.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-Faena-Logo_m4xslb.png",
     ubicacion: "https://maps.app.goo.gl/DsC552kSJcEsGrCP6",
     heroLogoAlt: "Faena Taberna Logo",
     links: {
@@ -124,13 +145,16 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "tercer-acto",
     logo: "/src/assets/images/experiences/LOGO-TERCER-ACTO-NEGRO.png",
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/LOGO-TERCER-ACTO-NEGRO_m2e9dq.png",
     alt: "Tercer Acto Logo",
     background: "/src/assets/images/experiences/bg-tercer-acto.png",
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409806/bg-tercer-acto_aviko0.png",
     title: "Tercer Acto",
     zone: "NORTE",
     description:
     "Redescubre el sabor de la comida Japonesa a través de una experiencia única; EL OMAKASE, donde te pondrás en nuestras manos y disfrutarás una extraordinaria comida de 15 tiempos.",
     heroLogo: "/src/assets/images/experiences/Large-Tercer-Acto-Logo.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-Tercer-Acto-Logo_kyzowm.png",
     heroLogoAlt: "Tercer Acto Logo",
     ubicacion: "https://maps.app.goo.gl/MKu21j1QgoxgtCe18",
     links: {

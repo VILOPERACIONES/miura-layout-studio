@@ -28,6 +28,10 @@ export const Experiences: React.FC = () => {
         src={activeExperience.background}
         alt={`Background ${activeExperience.title ?? activeExperience.alt}`}
         className="absolute inset-0 w-full h-full object-cover"
+        onError={(e) => {
+          e.currentTarget.src =
+            activeExperience.onErrorBackground;
+        }}
       />
 
       {/* Overlay base */}
@@ -431,6 +435,7 @@ export const Experiences: React.FC = () => {
               >
                 <ExperienceCard
                   logo={experience.logo}
+                  fallbackLogo={experience.onErrorLogo}
                   logoAlt={experience.alt}
                   isActive={experience.id === activeId}
                   onClick={() => setActiveId(experience.id)}

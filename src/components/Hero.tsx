@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
       {/* Background */}
       <img
         src="/assets/hero-background.jpg"
-        alt=""
+        alt="Background Hero Miura"
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover"
         onError={(e) => {

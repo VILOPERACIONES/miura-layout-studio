@@ -189,7 +189,14 @@ export const ContactForm: React.FC = () => {
           contacto@miura.mx
         </a>
 
-        <img src="/src/assets/images/contact/8888.png" alt="" />
+        <img
+        src="/src/assets/images/contact/8888.png"
+        alt="Logo Empresa"
+        onError={(e) => {
+          e.currentTarget.src =
+            "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409805/8888_slluqb.png";
+        }}
+        />
 
           <div className="ml-auto">
             <InstagramButton href="https://www.instagram.com/miurahospitality/" />

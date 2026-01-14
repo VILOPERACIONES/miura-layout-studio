@@ -2,10 +2,12 @@
 export type Experience = {
   id: string;
   logo: string;
+  onErrorLogo?: string;
   alt: string;
 
   // fondo dinámico por restaurante
   background: string;
+  onErrorBackground?: string;
 
   // opcional: si quieres que también cambie el contenido
   title?: string;
@@ -14,6 +16,7 @@ export type Experience = {
 
   // opcional: para el “logo grande” del panel izquierdo (si lo quieres dinámico)
   heroLogo?: string;
+  onErrorHeroLogo?: string;
   heroLogoAlt?: string;
   ubicacion?: string;
   links?: {

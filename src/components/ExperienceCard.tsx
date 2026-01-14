@@ -2,6 +2,7 @@ import React from "react";
 
 type Props = {
   logo?: string;
+  fallbackLogo?: string;
   logoAlt?: string;
   text?: string;
   onClick?: () => void;
@@ -11,6 +12,7 @@ type Props = {
 
 export const ExperienceCard: React.FC<Props> = ({
   logo,
+  fallbackLogo,
   logoAlt,
   text,
   onClick,
@@ -37,6 +39,19 @@ export const ExperienceCard: React.FC<Props> = ({
     small: "after:rounded-[28px] after:border-[1.5px]",
   };
 
+  const handleImageError = (
+    e: React.SyntheticEvent<HTMLImageElement>
+  ) => {
+    if (!fallbackLogo) return;
+
+    const img = e.currentTarget;
+
+    // Evita loop infinito
+    if (img.src === fallbackLogo) return;
+
+    img.src = fallbackLogo;
+  };
+
   return (
     <button
       type="button"
@@ -57,20 +72,22 @@ export const ExperienceCard: React.FC<Props> = ({
           : "",
       ].join(" ")}
     >
-      {logo ? (
+      {logo && (
         <img
           src={logo}
           alt={logoAlt ?? ""}
           className={`${logoSizeClasses[size]} object-contain`}
-          onError={() => console.log("Logo no carga:", logo)}
+          onError={handleImageError}
         />
-      ) : null}
+      )}
 
-      {text ? (
-        <div className={`text-slate-900 font-semibold tracking-wide text-center ${textSizeClasses[size]}`}>
+      {text && (
+        <div
+          className={`text-slate-900 font-semibold tracking-wide text-center ${textSizeClasses[size]}`}
+        >
           {text}
         </div>
-      ) : null}
+      )}
     </button>
   );
 };
