@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
       {/* Background */}
       <img
         src="/src/assets/images/hero/hero-background.jpg"
-        alt="https://console.cloudinary.com/app/c-e5f1597fa9bf395aa4f6796c3751ab/assets/media_library/folders/cddeb82a0d891f40543f443a94d5f499f4/asset/b062203e27ea7028f60c5e309422f8d4/manage/summary?view_mode=mosaic&context=manage"
+        alt="https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409813/hero-background_sgp0id.jpg"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
