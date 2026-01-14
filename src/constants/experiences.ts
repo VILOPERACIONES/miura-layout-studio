@@ -99,17 +99,17 @@ export const EXPERIENCES: Experience[] = [
     ubicacion: "",
     links: {
       instagram: "https://www.instagram.com/kona.mexico/",
-      reserve: "",
+      reserve: "https://www.rappi.com.mx/restaurantes/1930050449-kona",
     }
   },
   {
-    id: "yakuza",
+    id: "yakuza-centro",
     logo: "/src/assets/images/experiences/YakuzaLogo.png",
     onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/YakuzaLogo_nxlu0g.png",
     alt: "Yakuza Logo",
     background: "/src/assets/images/experiences/bg-yakuza.png",
     onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409808/bg-yakuza_ujoflv.png",
-    title: "Yakuza",
+    title: "Yakuza Centro",
     zone: "NORTE",
     description:
       "Inspirado en los restaurantes japoneses de la zona de Ginza. Yakuza nace como un espacio donde los ingredientes de la auténtica cocina japonesa se fusionan con componentes gourmet.",
@@ -120,6 +120,25 @@ export const EXPERIENCES: Experience[] = [
     links: {
       instagram: "https://www.instagram.com/yakuzamx/",
       reserve: "https://wa.me/529994425397",
+    }
+  },
+  {
+    id: "yakuza-patio-central",
+    logo: "/src/assets/images/experiences/yakuza-patio-central.png",
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768422581/yakuza-patio-central_gd3vb1.png",
+    alt: "Yakuza Patio Central Logo",
+    background: "/src/assets/images/experiences/bg-yakuza-patiocentral.png",
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768422396/bg-yakuza-patiocentral_fgepve.png",
+    title: "Yakuza Patio Central",
+    zone: "Patio Central",
+    description:
+      "Próximamente nacera nuevo un espacio donde los ingredientes de la auténtica cocina japonesa se fusionan con componentes gourmet.",
+    heroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768422396/bg-yakuza-patiocentral_fgepve.png",
+    heroLogoAlt: "Yakuza Logo",
+    ubicacion: "https://share.google/knvR99UBeRWMPAq7B",
+    links: {
+      instagram: "https://www.instagram.com/yakuzamx/",
     }
   },
   {

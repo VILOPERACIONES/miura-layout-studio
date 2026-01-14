@@ -12,7 +12,20 @@ export const About: React.FC = () => { //TODO: AGREGAR RESPONSIVIDAD CORRECTAMEN
       />
 
       {/* CONTENEDOR CENTRADO */}
-      <div className="relative mx-auto w-full mr-80 max-w-[1200px] h-[539px] max-md:h-[400px] max-sm:h-[600px]">
+      <div
+        className="
+          relative
+          w-full
+          max-w-[1200px]
+          h-[539px]
+          mx-auto
+          ml-40
+          2xl:translate-x-[-120px]
+          max-md:h-[400px]
+          max-sm:h-[600px]
+        "
+      >
+
 
         {/* Imagen 1 TODO: SUBIR IMAGENE EN LA NUBE AGREGARLA EN LOS ASSETS/IMAGES*/}
         <img
@@ -33,7 +46,7 @@ export const About: React.FC = () => { //TODO: AGREGAR RESPONSIVIDAD CORRECTAMEN
         />
 
         {/* TEXTO */}
-        <div className="absolute left-[872px] top-[164px] w-[469px]
+        <div className="absolute left-[872px] top-[134px] w-[469px]
           max-md:left-[600px] max-md:top-[100px] max-md:w-[350px]
           max-sm:left-5 max-sm:top-[280px] max-sm:w-80
           flex flex-col gap-6">
@@ -45,7 +58,7 @@ export const About: React.FC = () => { //TODO: AGREGAR RESPONSIVIDAD CORRECTAMEN
             SOMOS?
           </h2>
 
-          <p className="font-anek text-black font-extralight text-[26px] leading-[23px] text-justify
+          <p className="font-anek text-black font-extralight text-[26px] leading-[28px] text-justify
             max-md:text-[14px] max-md:leading-4
             max-sm:text-[12px] max-sm:leading-[14px] max-sm:text-center">
             Somos un grupo restaurantero con sede en Yucatán, México, enfocado
@@ -59,7 +72,7 @@ export const About: React.FC = () => { //TODO: AGREGAR RESPONSIVIDAD CORRECTAMEN
 
         <VectorLine
           width={209}
-          className="absolute left-[1132px] top-[189px]"
+          className="absolute left-[1132px] top-[159px]"
         />
 
       </div>

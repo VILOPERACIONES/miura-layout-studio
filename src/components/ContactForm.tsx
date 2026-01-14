@@ -62,12 +62,14 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="    w-[956px]
-    mx-auto
-    max-md:w-[800px]
-    max-sm:w-full
-    px-4">
-      <div className="flex gap-[30px] mb-[25px] max-sm:flex-col max-sm:gap-[15px]">
+    <form onSubmit={handleSubmit} className="
+      w-[956px]
+      max-md:w-[800px]
+      max-sm:w-full
+      max-sm:px-4
+      mx-auto"
+    >
+      <div className="grid grid-cols-2 gap-[30px] mb-[25px] max-sm:grid-cols-1 max-sm:gap-[15px]">
         <div className="w-[463px] h-[71px] relative rounded-xl border-2 border-solid border-[rgba(217,217,217,0.74)] max-md:w-[385px] max-md:h-[60px] max-sm:w-80 max-sm:h-[50px]">
           <input
             type="text"
@@ -158,13 +160,14 @@ export const ContactForm: React.FC = () => {
           className="
             bg-white
             text-[#12181D]
+            h-[56px]
             px-8
-            py-3
             rounded-lg
             font-anek
-            font-normal
             text-[26px]
-            leading-7
+            flex
+            items-center
+            justify-center
             hover:bg-gray-100
             transition-colors
           "

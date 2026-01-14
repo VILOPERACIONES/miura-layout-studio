@@ -220,6 +220,7 @@ export const Experiences: React.FC = () => {
           </p>
 
           {/* Acciones */}
+
           <div className="flex items-center justify-center gap-5">
             {activeExperience.links?.instagram && (
               <a
@@ -244,17 +245,36 @@ export const Experiences: React.FC = () => {
               </a>
             )}
 
-            {activeExperience.links?.reserve && (
+            {activeExperience.links?.reserve ? (
               <a
                 href={activeExperience.links.reserve}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 h-10 flex items-center justify-center rounded-full border border-white/70 text-white text-[11px] tracking-[3.5px] hover:bg-white hover:text-black transition"
+                className="
+                  px-6 h-10 flex items-center justify-center
+                  rounded-full border border-white/70
+                  text-white text-[11px] tracking-[3.5px]
+                  hover:bg-white hover:text-black
+                  transition
+                "
               >
                 RESERVAR
               </a>
+            ) : (
+              <div
+                className="
+                  px-6 h-10 flex items-center justify-center
+                  rounded-full border border-white/40
+                  text-white/70 text-[11px] tracking-[3.5px]
+                  cursor-default select-none
+                "
+              >
+                PRÓXIMAMENTE
+              </div>
             )}
           </div>
+
+
         </div>
 
         {/* Carousel Tablet */}
