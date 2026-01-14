@@ -15,9 +15,14 @@ export const Hero: React.FC = () => {
     >
       {/* Background */}
       <img
-        src="/src/assets/images/hero/hero-background.jpg"
-        alt="https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409813/hero-background_sgp0id.jpg"
+        src="/assets/hero-background.jpg"
+        alt=""
+        aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover"
+        onError={(e) => {
+          e.currentTarget.src =
+            "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409813/hero-background_sgp0id.jpg";
+        }}
       />
 
       {/* Overlay (si lo necesitas) */}
