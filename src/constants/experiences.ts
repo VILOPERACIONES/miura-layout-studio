@@ -48,7 +48,7 @@ export const EXPERIENCES: Experience[] = [
     onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/MIURA-LOGO-NEGRO_zeiddz.png",
     alt: "Miura Logo",
     background: "/src/assets/images/experiences/bg-miura.png",
-    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409808/bg-miura_gnfpft.png",
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768432267/bg-miura_icff4y.png",
     title: "Miura",
     zone: "NORTE",
     description:
