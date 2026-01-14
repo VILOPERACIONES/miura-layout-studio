@@ -322,6 +322,9 @@ export const Experiences: React.FC = () => {
           <img
             src={activeExperience.heroLogo ?? activeExperience.logo}
             alt={activeExperience.heroLogoAlt ?? activeExperience.alt}
+            onError={(e) => {
+              e.currentTarget.src = activeExperience.onErrorHeroLogo;
+            }}
             className="max-h-full w-auto object-contain"
           />
         </div>
@@ -392,6 +395,9 @@ export const Experiences: React.FC = () => {
             <img
               src="/src/assets/images/experiences/prev_button.png"
               alt="Anterior"
+              onError={(e) => {
+                e.currentTarget.src = "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/prev_button_bovkx5.png";
+              }}
               className="w-full h-full object-contain"
             />
           </button>
@@ -405,6 +411,9 @@ export const Experiences: React.FC = () => {
               src="/src/assets/images/experiences/next_button.png"
               alt="Siguiente"
               className="w-full h-full object-contain"
+              onError={(e) => {
+              e.currentTarget.src = "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/next_button_rsydr0.png"
+              }}
             />
           </button>
 
