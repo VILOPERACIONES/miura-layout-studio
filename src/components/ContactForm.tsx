@@ -163,17 +163,16 @@ export const ContactForm: React.FC = () => {
             h-[56px]
             px-8
             rounded-lg
-            font-anek
-            text-[26px]
-            flex
-            items-center
-            justify-center
+            text-[24px]
+            leading-[56px]
+            text-center
             hover:bg-gray-100
             transition-colors
           "
         >
           Enviar Mensaje
         </button>
+
 
         <a
           href="mailto:contacto@miura.mx"

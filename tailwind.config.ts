@@ -21,6 +21,7 @@ export default {
         anek: ['"Anek Telugu"', 'sans-serif'],
         source: ['"Source Sans Pro"', 'sans-serif'],
         syne: ['"Syne"', 'sans-serif'],
+        inter: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

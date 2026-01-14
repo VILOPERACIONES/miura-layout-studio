@@ -142,7 +142,7 @@ export const Experiences: React.FC = () => {
             opts={{ align: "center", loop: true, dragFree: true }}
             className="cursor-grab active:cursor-grabbing"
           >
-            <CarouselContent className="-ml-2 touch-pan-x">
+            <CarouselContent className="-ml-2 touch-pan-x py-6">
               {EXPERIENCES.map((experience) => (
                 <CarouselItem
                   key={experience.id}
@@ -284,7 +284,7 @@ export const Experiences: React.FC = () => {
             opts={{ align: "center", loop: true, dragFree: true }}
             className="cursor-grab active:cursor-grabbing"
           >
-            <CarouselContent className="-ml-3 touch-pan-x">
+            <CarouselContent className="-ml-3 touch-pan-x py-6">
               {EXPERIENCES.map((experience) => (
                 <CarouselItem
                   key={experience.id}

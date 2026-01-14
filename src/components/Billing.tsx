@@ -29,7 +29,6 @@ export const Billing: React.FC = () => {
         <button className="w-[456px] h-[92px] flex items-center justify-center bg-[#12181D] rounded-[41px] hover:bg-[#2a3035] transition-colors max-md:w-[380px] max-md:h-20 max-sm:w-[280px] max-sm:h-[60px]">
           <span
             className="
-              font-anek
               font-extralight
               text-white
               text-center
