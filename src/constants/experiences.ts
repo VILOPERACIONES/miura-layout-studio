@@ -104,12 +104,32 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     id: "yakuza-centro",
-    logo: "/src/assets/images/experiences/YakuzaLogo.png",
-    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/YakuzaLogo_nxlu0g.png",
+    logo: "/src/assets/images/experiences/yakuza-centro.png", //TODO: cambiar logo a centro
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768434763/yakuza-centro_zmb9i6.png",
     alt: "Yakuza Logo",
-    background: "/src/assets/images/experiences/bg-yakuza.png",
-    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409808/bg-yakuza_ujoflv.png",
+    background: "/src/assets/images/experiences/bg-yakuza-centro.png",
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768435213/bg-yakuza-centro_erbi54.png",
     title: "Yakuza Centro",
+    zone: "CENTRO",
+    description:
+      "Inspirado en los restaurantes japoneses de la zona de Ginza. Yakuza nace como un espacio donde los ingredientes de la auténtica cocina japonesa se fusionan con componentes gourmet.",
+    heroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Large-Yakuza-Logo_i2m4do.png",
+    heroLogoAlt: "Yakuza Logo",
+    ubicacion: "https://maps.app.goo.gl/ALo3rxpSgZxSSt7JA",
+    links: {
+      instagram: "https://www.instagram.com/yakuzamx/",
+      reserve: "https://wa.me/529997001097",
+    }
+  },
+  {
+    id: "yakuza-norte",
+    logo: "/src/assets/images/experiences/yakuza-norte.png",
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768435777/yakuza-norte_azaf2h.png",
+    alt: "Yakuza Norte Logo",
+    background: "/src/assets/images/experiences/bg-yakuza.png", //bg-yakuza-norte
+    onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409808/bg-yakuza_ujoflv.png", //bg-yakuza-norte
+    title: "Yakuza Norte",
     zone: "NORTE",
     description:
       "Inspirado en los restaurantes japoneses de la zona de Ginza. Yakuza nace como un espacio donde los ingredientes de la auténtica cocina japonesa se fusionan con componentes gourmet.",
@@ -119,10 +139,9 @@ export const EXPERIENCES: Experience[] = [
     ubicacion: "https://share.google/knvR99UBeRWMPAq7B",
     links: {
       instagram: "https://www.instagram.com/yakuzamx/",
-      reserve: "https://wa.me/529994425397",
     }
   },
-  {
+  { 
     id: "yakuza-patio-central",
     logo: "/src/assets/images/experiences/yakuza-patio-central.png",
     onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768422581/yakuza-patio-central_gd3vb1.png",
@@ -130,11 +149,11 @@ export const EXPERIENCES: Experience[] = [
     background: "/src/assets/images/experiences/bg-yakuza-patiocentral.png",
     onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768422396/bg-yakuza-patiocentral_fgepve.png",
     title: "Yakuza Patio Central",
-    zone: "Patio Central",
+    zone: "PATIO CENTRAL",
     description:
       "Próximamente nacera nuevo un espacio donde los ingredientes de la auténtica cocina japonesa se fusionan con componentes gourmet.",
     heroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
-    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768422396/bg-yakuza-patiocentral_fgepve.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Large-Yakuza-Logo_i2m4do.png",
     heroLogoAlt: "Yakuza Logo",
     ubicacion: "https://share.google/knvR99UBeRWMPAq7B",
     links: {

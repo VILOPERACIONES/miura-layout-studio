@@ -382,16 +382,62 @@ export const Experiences: React.FC = () => {
             />
           )}
 
-          {activeExperience.links?.reserve && (
-            <a
-              href={activeExperience.links?.reserve}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 h-10 flex items-center justify-center rounded-full border border-white/70 text-white font-syncopate font-normal text-[12px] tracking-[3.5px] hover:bg-white hover:text-black transition"
+          {activeExperience.links?.reserve ? (
+            activeExperience.links.reserve ===
+            "https://www.rappi.com.mx/restaurantes/1930050449-kona" ? (
+               <a
+                  href={activeExperience.links.reserve}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ordenar en Rappi"
+                  className="
+                    h-10
+                    px-7
+                    flex items-center justify-center
+                    bg-transparent
+                    hover:bg-white/10
+                    transition
+                  "
+                >
+                  <img
+                    src="/src/assets/images/shared/rappi.png"
+                    alt="Rappi"
+                    className="h-[41px] object-contain"
+                    onError={(e) => {
+                      e.currentTarget.src =
+                        "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768434000/rappi_droqcf.png";
+                    }}
+                  />
+                </a>
+            ) : (
+              <a
+                href={activeExperience.links.reserve}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  px-6 h-10 flex items-center justify-center
+                  rounded-full border border-white/70
+                  text-white text-[11px] tracking-[3.5px]
+                  hover:bg-white hover:text-black
+                  transition
+                "
+              >
+                RESERVAR
+              </a>
+            )
+          ) : (
+            <div
+              className="
+                px-6 h-10 flex items-center justify-center
+                rounded-full border border-white/70
+                text-white text-[11px] tracking-[3.5px]
+                cursor-default select-none
+              "
             >
-              RESERVAR
-            </a>
+              PRÓXIMAMENTE
+            </div>
           )}
+
         </div>
       </div>
 
