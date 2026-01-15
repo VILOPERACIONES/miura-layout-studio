@@ -32,7 +32,11 @@ export const Hero: React.FC = () => {
           object-cover
           hidden lg:block
         "
-      />
+          onError={(e) => {
+        e.currentTarget.src =
+          "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409813/hero-background_sgp0id.jpg";
+      }}
+    />
 
       {/* Tablet & Mobile background */}
       <img
