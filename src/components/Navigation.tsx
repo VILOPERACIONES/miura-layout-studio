@@ -1,6 +1,3 @@
-import React from 'react';  //TODO: CAMBIAR A LA TIPOGRAFIA PROPORCIONADA EN EL FIGMA
-//Sarouce Sans Pro  Bold size-16px
-
 interface NavigationProps {
   className?: string;
 }
@@ -14,7 +11,13 @@ export const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
   ];
 
   return (
-    <nav className={`flex items-center gap-[120px] max-md:gap-[60px] max-sm:hidden ${className}`}>
+    <nav
+      className={`
+        items-center
+        gap-[120px]
+        ${className}
+      `}
+    >
       {navItems.map((item) => (
         <a
           key={item.label}
@@ -30,8 +33,6 @@ export const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
             cursor-pointer
             hover:opacity-80
             transition-opacity
-            max-md:text-[14px]
-            max-md:tracking-[1.2px]
           "
         >
           {item.label}
@@ -40,4 +41,3 @@ export const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
     </nav>
   );
 };
-
