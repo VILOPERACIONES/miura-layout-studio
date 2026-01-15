@@ -11,23 +11,27 @@ export const About: React.FC = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* CONTENEDOR */}
+      {/* CONTENEDOR GENERAL */}
       <div
         className="
           relative
           w-full
           max-w-[1200px]
-          h-[539px]
           mx-auto
+
+          h-auto
+          lg:h-[539px]
+
           lg:translate-x-[-80px]
           xl:translate-x-[-120px]
-          max-md:h-[400px]
-          max-sm:h-[600px]
+
+          py-20
+          lg:py-0
         "
       >
-        {/* Imagen 1 */}
+        {/* Imagen 1 — SOLO DESKTOP */}
         <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/5918cf9f920709637b28ffa93f45a0ee93e0eeff?width=680"
+          src="https://api.builder.io/api/v1/image/assets/TEMP/5918cf9f920709637b28ffa93f45a0ee93e0eeff?width=680" //TODO: AGREGAR A CLOUDINARY Y AGREGAR IMAGENES EN LOS ASSETS
           alt="Restaurant photo 1"
           className="
             absolute
@@ -36,19 +40,14 @@ export const About: React.FC = () => {
             w-[340px]
             h-[480px]
             object-cover
-            max-md:left-10
-            max-md:w-[250px]
-            max-md:h-[350px]
-            max-sm:left-5
-            max-sm:top-5
-            max-sm:w-[150px]
-            max-sm:h-[200px]
+            hidden
+            lg:block
           "
         />
 
-        {/* Imagen 2 */}
+        {/* Imagen 2 — SOLO DESKTOP */}
         <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/8d3e26dcc2dfef028b89c5638feb936e3de29fef?width=680"
+          src="https://api.builder.io/api/v1/image/assets/TEMP/8d3e26dcc2dfef028b89c5638feb936e3de29fef?width=680" //TODO: AAGREGAR A CLOUDINARY Y AGREGAR IMAGENES EN LOS ASSETS
           alt="Restaurant photo 2"
           className="
             absolute
@@ -57,42 +56,34 @@ export const About: React.FC = () => {
             w-[340px]
             h-[480px]
             object-cover
-            max-md:left-80
-            max-md:top-[30px]
-            max-md:w-[250px]
-            max-md:h-[350px]
-            max-sm:left-[190px]
-            max-sm:top-[50px]
-            max-sm:w-[150px]
-            max-sm:h-[200px]
+            hidden
+            lg:block
           "
         />
 
         {/* TEXTO */}
         <div
           className="
-            absolute
-            left-[872px]
-            top-[134px]
-            w-[469px]
-            max-md:left-[600px]
-            max-md:top-[100px]
-            max-md:w-[350px]
-            max-sm:left-5
-            max-sm:top-[280px]
-            max-sm:w-80
-            flex
-            flex-col
-            gap-6
+            flex flex-col gap-6 items-center text-center px-6
+            max-w-[650px]
+            mx-auto
+
+            lg:absolute
+            lg:items-start
+            lg:text-left
+            lg:px-0
+            lg:left-[872px]
+            lg:top-[134px]
+            lg:w-[469px]
           "
         >
-          <h2 className="font-syncopate font-bold text-[#12181D] text-[32px] leading-tight max-sm:text-2xl max-sm:text-center">
+          <h2 className="font-syncopate font-bold text-[#12181D] text-[32px] leading-tight"> {/* TODO: CUANDO SEA LA VERSIÓN MOBILE Y TABLETA NO SE DIVIDA */}
             ¿QUIENES
             <br />
             SOMOS?
           </h2>
 
-          <p className="font-anek text-black font-extralight text-[26px] leading-[28px] text-justify max-sm:text-[12px] max-sm:leading-[14px] max-sm:text-center">
+          <p className="font-anek text-black font-extralight text-[26px] leading-[28px] text-justify lg:text-justify text-center">
             Somos un grupo restaurantero con sede en Yucatán, México, enfocado en
             crear experiencias gastronómicas que transcienden lo cotidiano.
             <br />
@@ -103,9 +94,10 @@ export const About: React.FC = () => {
           </p>
         </div>
 
+        {/* Vector — SOLO DESKTOP */}
         <VectorLine
           width={209}
-          className="absolute left-[1132px] top-[159px]"
+          className="absolute left-[1132px] top-[159px] hidden lg:block"
         />
       </div>
     </section>
