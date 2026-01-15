@@ -49,6 +49,10 @@ export const Hero: React.FC = () => {
           object-cover
           block lg:hidden
         "
+        onError={(e) => {
+          e.currentTarget.src =
+            "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768501496/bg-movil-hero_jctsb3.png";
+        }}
       />
 
       {/* Overlay */}
