@@ -77,13 +77,13 @@ export const About: React.FC = () => {
             lg:w-[469px]
           "
         >
-          <h2 className="font-syncopate font-bold text-[#12181D] text-[32px] leading-tight"> {/* TODO: CUANDO SEA LA VERSIÓN MOBILE Y TABLETA NO SE DIVIDA */}
+          <h2 className="font-syncopate font-bold text-[#12181D] text-[32px] max-sm:text-[24px] leading-tight"> {/* TODO: CUANDO SEA LA VERSIÓN MOBILE Y TABLETA NO SE DIVIDA */}
             ¿QUIENES
             <br />
             SOMOS?
           </h2>
 
-          <p className="font-anek text-black font-extralight text-[26px] leading-[28px] text-justify lg:text-justify text-center">
+          <p className="font-anek text-black font-extralight text-[26px] max-sm:text-base leading-[28px] text-justify lg:text-justify text-center">
             Somos un grupo restaurantero con sede en Yucatán, México, enfocado en
             crear experiencias gastronómicas que transcienden lo cotidiano.
             <br />

@@ -19,9 +19,9 @@ export const HamburgerButton: React.FC<HamburgerButtonProps> = ({
         ${className}
       `}
     >
-      <span className="w-11 h-[5px] bg-white block" />
-      <span className="w-11 h-[5px] bg-white block" />
-      <span className="w-11 h-[5px] bg-white block" />
+      <span className="w-8 h-[3px] md:w-10 md:h-[4px] bg-white block" />
+      <span className="w-8 h-[3px] md:w-10 md:h-[4px] bg-white block" />
+      <span className="w-8 h-[3px] md:w-10 md:h-[4px] bg-white block" />
     </button>
   );
 };

@@ -385,7 +385,7 @@ export const Experiences: React.FC = () => {
           {activeExperience.links?.reserve ? (
             activeExperience.links.reserve ===
             "https://www.rappi.com.mx/restaurantes/1930050449-kona" ? (
-               <a
+              <a
                   href={activeExperience.links.reserve}
                   target="_blank"
                   rel="noopener noreferrer"

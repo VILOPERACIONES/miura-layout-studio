@@ -67,8 +67,10 @@ export const Hero: React.FC = () => {
           top-0
           left-0
           w-full
-          px-16
-          pt-16
+          px-8
+          pt-8
+          md:px-12
+          md:pt-12
           flex
           items-center
           justify-between
@@ -81,7 +83,8 @@ export const Hero: React.FC = () => {
           src="https://api.builder.io/api/v1/image/assets/TEMP/e501eb6dc45f1b6e29fa83a5498f0ec8a27f67f7?width=340"
           alt="Miura Logo"
           className="
-            w-[140px]
+            w-[110px]
+            md:w-[140px]
             h-auto
           "
         />

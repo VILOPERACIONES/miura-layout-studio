@@ -63,14 +63,24 @@ export const ContactForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className="
-      w-[956px]
-      max-md:w-[800px]
-      max-sm:w-full
-      max-sm:px-4
-      mx-auto"
+      w-full
+      max-w-[956px]
+      mx-auto
+      px-4
+      "
     >
       <div className="grid grid-cols-2 gap-[30px] mb-[25px] max-sm:grid-cols-1 max-sm:gap-[15px]">
-        <div className="w-[463px] h-[71px] relative rounded-xl border-2 border-solid border-[rgba(217,217,217,0.74)] max-md:w-[385px] max-md:h-[60px] max-sm:w-80 max-sm:h-[50px]">
+        <div className="
+          w-full
+          h-[71px]
+          relative
+          rounded-xl
+          border-2
+          border-solid
+          border-[rgba(217,217,217,0.74)]
+          md:h-[60px]
+          sm:h-[50px]
+        ">
           <input
             type="text"
             name="name"
@@ -98,7 +108,17 @@ export const ContactForm: React.FC = () => {
           )}
         </div>
 
-        <div className="w-[463px] h-[71px] relative rounded-xl border-2 border-solid border-[rgba(217,217,217,0.74)] max-md:w-[385px] max-md:h-[60px] max-sm:w-80 max-sm:h-[50px]">
+        <div className="
+          w-full
+          h-[71px]
+          relative
+          rounded-xl
+          border-2
+          border-solid
+          border-[rgba(217,217,217,0.74)]
+          md:h-[60px]
+          sm:h-[50px]
+        ">
           <input
             type="email"
             name="email"
@@ -127,7 +147,18 @@ export const ContactForm: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-[956px] h-[173px] relative rounded-xl border-2 border-solid border-[rgba(217,217,217,0.74)] max-md:w-[800px] max-md:h-[140px] max-sm:w-80 max-sm:h-[100px] mb-8">
+      <div className="
+        w-full
+        h-[173px]
+        relative
+        rounded-xl
+        border-2
+        border-solid
+        border-[rgba(217,217,217,0.74)]
+        md:h-[140px]
+        sm:h-[100px]
+        mb-8
+      ">
         <textarea
           name="message"
           value={formData.message}
@@ -154,16 +185,26 @@ export const ContactForm: React.FC = () => {
         )}
       </div>
 
-      <div className="flex items-center gap-8 max-sm:flex-col max-sm:items-start">
+      <div className="
+        flex
+        flex-row
+        sm:flex-row
+        sm:items-center
+        gap-6
+        sm:gap-8
+      ">
         <button
           type="submit"
           className="
             bg-white
             text-[#12181D]
             h-[56px]
+            max-sm:h-[48px]
             px-8
+            max-sm:px-4
             rounded-lg
             text-[24px]
+            max-sm:text-base
             leading-[56px]
             text-center
             hover:bg-gray-100
@@ -186,6 +227,7 @@ export const ContactForm: React.FC = () => {
             whitespace-nowrap
             max-md:text-[22px]
             max-sm:text-base
+            self-end
           "
         >
           contacto@miura.mx
