@@ -217,20 +217,20 @@ export const Experiences: React.FC = () => {
         <div className="w-full mt-4 overflow-visible">
           <Carousel
             setApi={setMobileApi}
-            opts={{ 
-              align: "center", 
-              loop: true, 
+            opts={{
+              align: "center",
+              loop: true,
               skipSnaps: false,
               dragFree: false,
               containScroll: false
             }}
             className="cursor-grab active:cursor-grabbing"
           >
-            <CarouselContent className="-ml-3 py-6">
+            <CarouselContent className="gap-x-6 px-8 py-10">
               {EXPERIENCES.map((experience, index) => (
                 <CarouselItem
                   key={experience.id}
-                  className="basis-[140px] max-sm:basis-[120px] pl-3"
+                  className="basis-[140px] max-sm:basis-[120px] "
                 >
                   <ExperienceCard
                     logo={experience.logo}
