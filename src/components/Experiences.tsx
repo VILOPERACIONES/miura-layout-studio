@@ -12,7 +12,9 @@ import { VectorLine } from "./ui/vectorLine";
 import { InstagramButton } from "./ui/isntagram-button";
 
 export const Experiences: React.FC = () => {
-  const [api, setApi] = React.useState<CarouselApi>();
+  // APIs separadas para cada carousel
+  const [mobileApi, setMobileApi] = React.useState<CarouselApi>();
+  const [desktopApi, setDesktopApi] = React.useState<CarouselApi>();
 
   const [activeId, setActiveId] = React.useState<string>(
     EXPERIENCES[0]?.id ?? ""
@@ -20,6 +22,48 @@ export const Experiences: React.FC = () => {
 
   const activeExperience =
     EXPERIENCES.find((x) => x.id === activeId) ?? EXPERIENCES[0];
+
+  // Efecto para selección automática basada en el slide central (mobile/tablet)
+  React.useEffect(() => {
+    if (!mobileApi) return;
+
+    const onSelect = () => {
+      const selectedIndex = mobileApi.selectedScrollSnap();
+      const experience = EXPERIENCES[selectedIndex];
+      if (experience) {
+        setActiveId(experience.id);
+      }
+    };
+
+    // Escuchar evento de selección
+    mobileApi.on("select", onSelect);
+    // Llamar una vez para sincronizar estado inicial
+    onSelect();
+
+    return () => {
+      mobileApi.off("select", onSelect);
+    };
+  }, [mobileApi]);
+
+  // Efecto para selección automática en desktop (primer elemento visible)
+  React.useEffect(() => {
+    if (!desktopApi) return;
+
+    const onSelect = () => {
+      const selectedIndex = desktopApi.selectedScrollSnap();
+      const experience = EXPERIENCES[selectedIndex];
+      if (experience) {
+        setActiveId(experience.id);
+      }
+    };
+
+    desktopApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      desktopApi.off("select", onSelect);
+    };
+  }, [desktopApi]);
 
   return (
     <section className="
@@ -75,7 +119,7 @@ export const Experiences: React.FC = () => {
         }}
       />
 
-      {/* ===== MOBILE - TABLET LAYOUT (<640px): Flujo vertical ===== */}
+      {/* ===== MOBILE - TABLET LAYOUT (<1300px): Flujo vertical ===== */}
       <div className="
         desktop:hidden
         relative
@@ -169,24 +213,27 @@ export const Experiences: React.FC = () => {
           </div>
         </div>
 
-        {/* Carousel Mobile */}
+        {/* Carousel Mobile/Tablet con selección automática */}
         <div className="w-full mt-4">
           <Carousel
-            setApi={setApi}
-            opts={{ align: "center", loop: true, dragFree: true }}
+            setApi={setMobileApi}
+            opts={{ align: "center", loop: true, skipSnaps: false }}
             className="cursor-grab active:cursor-grabbing"
           >
             <CarouselContent className="-ml-2 touch-pan-x py-6">
               {EXPERIENCES.map((experience) => (
                 <CarouselItem
                   key={experience.id}
-                  className="basis-auto pl-2"
+                  className="basis-[140px] max-sm:basis-[120px] pl-2 flex-shrink-0"
                 >
                   <ExperienceCard
                     logo={experience.logo}
                     logoAlt={experience.alt}
                     isActive={experience.id === activeId}
-                    onClick={() => setActiveId(experience.id)}
+                    onClick={() => {
+                      const index = EXPERIENCES.findIndex(e => e.id === experience.id);
+                      mobileApi?.scrollTo(index);
+                    }}
                     size="small"
                   />
                 </CarouselItem>
@@ -195,10 +242,10 @@ export const Experiences: React.FC = () => {
           </Carousel>
         </div>
 
-        {/* Navegación Mobile */}
+        {/* Navegación Mobile/Tablet */}
         <div className="flex items-center justify-center gap-2 mt-2">
           <button
-            onClick={() => api?.scrollPrev()}
+            onClick={() => mobileApi?.scrollPrev()}
             aria-label="Anterior"
             className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
           >
@@ -213,7 +260,7 @@ export const Experiences: React.FC = () => {
           </button>
 
           <button
-            onClick={() => api?.scrollNext()}
+            onClick={() => mobileApi?.scrollNext()}
             aria-label="Siguiente"
             className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
           >
@@ -355,7 +402,7 @@ export const Experiences: React.FC = () => {
         {/* Contenedor de botones (punto de anclaje) */}
         <div className="relative flex items-center gap-6">
           <button
-            onClick={() => api?.scrollPrev()}
+            onClick={() => desktopApi?.scrollPrev()}
             aria-label="Anterior"
             className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
           >
@@ -370,7 +417,7 @@ export const Experiences: React.FC = () => {
           </button>
 
           <button
-            onClick={() => api?.scrollNext()}
+            onClick={() => desktopApi?.scrollNext()}
             aria-label="Siguiente"
             className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
           >
@@ -395,14 +442,14 @@ export const Experiences: React.FC = () => {
 
 
 
-      {/* Carousel Desktop */}
+      {/* Carousel Desktop con selección automática del primer elemento visible */}
       <div
         className="hidden desktop:block absolute top-[297px] right-[0px] xl:right-[0px] xl:top-[297px]"
         style={{
           width: "clamp(350px, 55vw, 1200px)",
         }}
       >
-        <Carousel setApi={setApi} opts={{ align: "start", loop: true }}>
+        <Carousel setApi={setDesktopApi} opts={{ align: "start", loop: true, skipSnaps: false }}>
           <CarouselContent className="gap-x-8 px-8 py-10">
             {EXPERIENCES.map((experience) => (
               <CarouselItem
@@ -414,7 +461,10 @@ export const Experiences: React.FC = () => {
                   fallbackLogo={experience.onErrorLogo}
                   logoAlt={experience.alt}
                   isActive={experience.id === activeId}
-                  onClick={() => setActiveId(experience.id)}
+                  onClick={() => {
+                    const index = EXPERIENCES.findIndex(e => e.id === experience.id);
+                    desktopApi?.scrollTo(index);
+                  }}
                 />
               </CarouselItem>
             ))}
