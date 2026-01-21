@@ -4,8 +4,8 @@ import type { Experience } from "@/types/experience";
 export const EXPERIENCES: Experience[] = [
   {
     id: "47-th-street",
-    logo: "/src/assets/images/experiences/Logo-47-th-street.png",
-    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Logo-47-th-street_jbqh0r.png",
+    logo: "/src/assets/images/experiences/Logo-47-th-street.png", //?PUEDO ARREGLAR ESTO CAMBIANDO APROPOSITO LA DIRRECCIÓN PARA QUE CAIGA EN EL ONERROR
+    onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Logo-47-th-street_jbqh0r.png",//TODO: ARREGLAR POR QUE NO SE MUESTRA EL ON-ERROR DEL HERO-LOGO
     alt: "47th Street Logo",
     background: "/src/assets/images/experiences/bg-47-th-street.png",
     onErrorBackground: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409806/bg-47-th-street_dysjpr.png",
@@ -14,7 +14,7 @@ export const EXPERIENCES: Experience[] = [
     description:
       "Un espacio donde cada noche se vive una experiencia única, acompañada de excelente música en vivo, cócteles cuidadosamente preparados y un ambiente cálido y sofisticado que invita a quedarse y disfrutar.",
     heroLogo: "/src/assets/images/experiences/Large-47-Logo3.png",
-    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409809/Large-47-Logo3_o576se.png",
+    onErrorHeroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409809/Large-47-Logo3_o576se.png",//TODO: ARREGLAR POR QUE NO SE MUESTRA EL ON-ERROR DEL HERO-LOGO
     heroLogoAlt: "47th Street Logo",
     ubicacion: "https://maps.app.goo.gl/hNpCTG2jQG1pLHyr9",
     links: {
@@ -141,7 +141,7 @@ export const EXPERIENCES: Experience[] = [
       instagram: "https://www.instagram.com/yakuzamx/",
     }
   },
-  { 
+  {
     id: "yakuza-patio-central",
     logo: "/src/assets/images/experiences/yakuza-patio-central.png",
     onErrorLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768422581/yakuza-patio-central_gd3vb1.png",
