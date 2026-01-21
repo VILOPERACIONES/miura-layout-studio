@@ -214,24 +214,30 @@ export const Experiences: React.FC = () => {
         </div>
 
         {/* Carousel Mobile/Tablet con selección automática */}
-        <div className="w-full mt-4">
+        <div className="w-full mt-4 overflow-visible">
           <Carousel
             setApi={setMobileApi}
-            opts={{ align: "center", loop: true, skipSnaps: false }}
+            opts={{ 
+              align: "center", 
+              loop: true, 
+              skipSnaps: false,
+              dragFree: false,
+              containScroll: false
+            }}
             className="cursor-grab active:cursor-grabbing"
           >
-            <CarouselContent className="-ml-2 touch-pan-x py-6">
-              {EXPERIENCES.map((experience) => (
+            <CarouselContent className="-ml-3 py-6">
+              {EXPERIENCES.map((experience, index) => (
                 <CarouselItem
                   key={experience.id}
-                  className="basis-[140px] max-sm:basis-[120px] pl-2 flex-shrink-0"
+                  className="basis-[140px] max-sm:basis-[120px] pl-3"
                 >
                   <ExperienceCard
                     logo={experience.logo}
+                    fallbackLogo={experience.onErrorLogo}
                     logoAlt={experience.alt}
                     isActive={experience.id === activeId}
                     onClick={() => {
-                      const index = EXPERIENCES.findIndex(e => e.id === experience.id);
                       mobileApi?.scrollTo(index);
                     }}
                     size="small"
