@@ -17,7 +17,7 @@ export const Experiences: React.FC = () => {
   const [desktopApi, setDesktopApi] = React.useState<CarouselApi>();
 
   const [activeId, setActiveId] = React.useState<string>(
-    EXPERIENCES[0]?.id ?? ""
+    EXPERIENCES[2]?.id ?? EXPERIENCES[0]?.id ?? ""
   );
 
   const activeExperience =
@@ -37,7 +37,6 @@ export const Experiences: React.FC = () => {
 
     // Escuchar evento de selección
     mobileApi.on("select", onSelect);
-    // Llamar una vez para sincronizar estado inicial
     onSelect();
 
     return () => {
@@ -214,7 +213,7 @@ export const Experiences: React.FC = () => {
         </div>
 
         {/* Carousel Mobile/Tablet con selección automática */}
-        <div className="w-full mt-4 overflow-visible">
+        <div className="w-screen mt-4">
           <Carousel
             setApi={setMobileApi}
             opts={{
@@ -222,15 +221,15 @@ export const Experiences: React.FC = () => {
               loop: true,
               skipSnaps: false,
               dragFree: false,
-              containScroll: false
+              startIndex: 2, // Iniciar en índice 2 para mostrar items a la izquierda
             }}
             className="cursor-grab active:cursor-grabbing"
           >
-            <CarouselContent className="gap-x-6 px-8 py-10">
+            <CarouselContent className="-ml-3 py-6">
               {EXPERIENCES.map((experience, index) => (
                 <CarouselItem
                   key={experience.id}
-                  className="basis-[140px] max-sm:basis-[120px] "
+                  className="basis-[140px] max-sm:basis-[120px] pl-3"
                 >
                   <ExperienceCard
                     logo={experience.logo}
