@@ -223,13 +223,13 @@ export const Experiences: React.FC = () => {
               dragFree: false,
               startIndex: 2, // Iniciar en índice 2 para mostrar items a la izquierda
             }}
-            className="cursor-grab active:cursor-grabbing"
+            // className="cursor-grab active:cursor-grabbing"
           >
-            <CarouselContent className="-ml-3 py-6">
+            <CarouselContent className="gap-x-4 py-6 px-4">
               {EXPERIENCES.map((experience, index) => (
                 <CarouselItem
                   key={experience.id}
-                  className="basis-[140px] max-sm:basis-[120px] pl-3"
+                  className="basis-[140px] last:pr-6"
                 >
                   <ExperienceCard
                     logo={experience.logo}
