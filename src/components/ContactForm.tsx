@@ -87,19 +87,28 @@ export const ContactForm: React.FC = () => {
             value={formData.name}
             onChange={handleInputChange}
             placeholder="Nombre"
-            className="w-full h-full bg-transparent text-white text-left text-[26px] font-normal leading-7 px-7 py-6 rounded-xl border-none outline-none placeholder-white max-md:text-[22px] max-md:py-[18px] max-sm:text-base max-sm:py-[15px]"
+            className="
+              w-full h-full
+              bg-transparent
+              text-white
+              text-left
+              font-arial
+              text-base
+              font-normal
+              px-7 py-6
+              rounded-xl border-none outline-none
+              placeholder-white
+            "
             aria-label="Nombre"
           />
           {errors.name && (
             <span
               className="
-                absolute
-                -bottom-6
+                absolute-bottom-6
                 left-0
-                font-anek
+                font-arial
                 font-normal
-                text-[26px]
-                leading-7
+                text-base
                 text-red-400
               "
             >
@@ -125,7 +134,18 @@ export const ContactForm: React.FC = () => {
             value={formData.email}
             onChange={handleInputChange}
             placeholder="Correo"
-            className="w-full h-full bg-transparent text-white text-left text-[26px] font-normal leading-7 px-7 py-6 rounded-xl border-none outline-none placeholder-white max-md:text-[22px] max-md:py-[18px] max-sm:text-base max-sm:py-[15px]"
+            className="
+              w-full h-full
+              bg-transparent
+              text-white
+              text-left
+              text-base
+              font-arial
+              font-normal
+              px-7 py-6
+              rounded-xl border-none outline-none
+              placeholder-white
+            "
             aria-label="Correo electrónico"
           />
           {errors.email && (
@@ -134,10 +154,9 @@ export const ContactForm: React.FC = () => {
                 absolute
                 -bottom-6
                 left-0
-                font-anek
+                font-arial
                 font-normal
-                text-[26px]
-                leading-7
+                text-base
                 text-red-400
               "
             >
@@ -164,7 +183,19 @@ export const ContactForm: React.FC = () => {
           value={formData.message}
           onChange={handleInputChange}
           placeholder="Mensaje"
-          className="w-full h-full bg-transparent text-white text-left text-[26px] font-normal leading-7 px-7 py-6 rounded-xl border-none outline-none placeholder-white resize-none max-md:text-[22px] max-md:py-[18px] max-sm:text-base max-sm:py-[15px]"
+          className="
+            w-full h-full
+            bg-transparent
+            text-white
+            text-left
+            text-base
+            font-normal
+            leading-7
+            px-7 py-6
+            rounded-xl
+            border-none
+            outline-none
+            placeholder-white"
           aria-label="Mensaje"
         />
         {errors.message && (
@@ -173,9 +204,9 @@ export const ContactForm: React.FC = () => {
               absolute
               -bottom-6
               left-0
-              font-anek
+              font-arial
               font-normal
-              text-[26px]
+              text-base
               leading-7
               text-red-400
             "
@@ -188,24 +219,20 @@ export const ContactForm: React.FC = () => {
       <div className="
         flex
         flex-row
-        sm:flex-row
-        sm:items-center
-        gap-6
-        sm:gap-8
+        flex-wrap
+        items-end
+        gap-5
       ">
         <button
           type="submit"
           className="
             bg-white
-            text-[#12181D]
-            h-[56px]
-            max-sm:h-[48px]
-            px-8
-            max-sm:px-4
+            h-[48px]
+            px-4
             rounded-lg
-            text-[24px]
+            text-[#12181D]
+            text-[18px]
             max-sm:text-base
-            leading-[56px]
             text-center
             hover:bg-gray-100
             transition-colors
@@ -216,24 +243,25 @@ export const ContactForm: React.FC = () => {
 
 
         <a
-          href="mailto:contacto@miura.mx"
+          href="mailto:info@miurahospitality.mx"
           className="
             font-anek
             font-normal
             text-white
             text-[26px]
-            leading-7
+            leading-5
             hover:underline
-            whitespace-nowrap
-            max-md:text-[22px]
-            max-sm:text-base
-            self-end
           "
         >
-          contacto@miura.mx
+          info@miurahospitality.mx
         </a>
 
+        <InstagramButton
+          href="https://www.instagram.com/miurahospitality/"
+        />
+
         <img
+        className='ml-auto'
         src="/src/assets/images/contact/8888.png"
         alt="Logo Empresa"
         onError={(e) => {
@@ -241,10 +269,6 @@ export const ContactForm: React.FC = () => {
             "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409805/8888_slluqb.png";
         }}
         />
-
-          <div className="ml-auto">
-            <InstagramButton href="https://www.instagram.com/miurahospitality/" />
-          </div>
 
       </div>
 

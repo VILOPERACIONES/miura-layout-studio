@@ -8,7 +8,7 @@ interface InstagramButtonProps {
 
 export const InstagramButton: React.FC<InstagramButtonProps> = ({
   href,
-  size = 40,
+  size = 32,
   className = "",
 }) => {
   return (
