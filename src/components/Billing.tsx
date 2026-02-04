@@ -6,8 +6,8 @@ export const Billing: React.FC = () => {
       relative
       w-full
       h-[500px]
-      max-md:h-[400px]
-      max-sm:h-[350px]
+      max-md:h-[450px]
+      max-sm:h-[450px]
       overflow-hidden
       bg-white
       flex
@@ -26,18 +26,16 @@ export const Billing: React.FC = () => {
         "
       />
 
+      {/* para la versión mobile son 20px de gap*/}
       <div className="
         relative
         z-10
         flex
         flex-col
         items-center
-        gap-[20px]
-        md:gap-[35px]
-        lg:gap-[35px]
+        gap-[20px] md:gap-[35px]
         w-full
         max-w-[715px]
-        px-6
         md:max-w-[600px]
       ">
           <h2
@@ -56,13 +54,15 @@ export const Billing: React.FC = () => {
           FACTURACIÓN
         </h2>
 
+        {/*TODO: Adapbar el botton a la versión mobile */}
         <button className="
           w-full
-          max-w-[456px]
-          h-[92px]
-          max-md:h-20
-          max-sm:h-[55px]
-          max-sm:w-[280px]
+          max-w-[252px]
+          h-[63px]
+          max-md:h-[63px]
+          max-md:w-[252px]
+          max-sm:h-[63px]
+          max-sm:w-[252px]
           flex
           items-center
           justify-center
@@ -73,16 +73,17 @@ export const Billing: React.FC = () => {
         ">
           <span
             className="
-              font-extralight
+              font-arial
+              font-bold
               text-white
               text-center
-              text-[26px]
+              text-[24px]
               leading-7
               max-md:text-[22px]
               max-sm:text-base
             "
           >
-            Ir al portal de facturación
+            Ir al portal
           </span>
         </button>
 
@@ -90,22 +91,24 @@ export const Billing: React.FC = () => {
           className="
             h-[134px]
             self-stretch
-            font-anek
-            font-extralight
+            font-arial
+            font-regular
             text-[#12181D]
             text-center
-            text-[26px]
+            text-[18px]
             leading-7
-            max-md:text-[26px]
+            max-md:text-base
             max-sm:text-base
-            max-sm:leading-5
+
           "
         >
-          Accede a nuestro portal de facturación electrónica para generar tu
-          comprobante fiscal de manera rápida y segura.
+          Accede a nuestro portal de facturación electrónica para
+          <br />
+          generar tu comprobante fiscal de manera rápida y segura.
           <br />
           <br />
           Ten a la mano tu ticket de consumo y tus datos fiscales para
+          <br />
           completar el proceso
         </p>
       </div>

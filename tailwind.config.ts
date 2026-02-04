@@ -17,6 +17,7 @@ export default {
         desktop: "1300px",
       },
       fontFamily: {
+        arial: ['Arial', 'Helvetica', 'sans-serif'],
         syncopate: ['"Syncopate"', 'sans-serif'],
         anek: ['"Anek Telugu"', 'sans-serif'],
         source: ['"Source Sans Pro"', 'sans-serif'],
