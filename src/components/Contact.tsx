@@ -58,6 +58,7 @@ export const Contact: React.FC = () => {
           className="
             mt-auto
             pb-4
+            pt-2
             text-center
             font-anek
             text-[10px]
