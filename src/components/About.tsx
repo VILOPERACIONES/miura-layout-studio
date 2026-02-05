@@ -3,7 +3,7 @@ import { VectorLine } from "./ui/vectorLine";
 
 export const About: React.FC = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-white">
+    <section className="relative w-full bg-white overflow-hidden">
       {/* Background */}
       <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/3a964e8def1a71e80507c4e8c11e7130e8ff1b04?width=2880"
@@ -11,94 +11,95 @@ export const About: React.FC = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* CONTENEDOR GENERAL */}
+      {/* Contenedor principal */}
       <div
         className="
           relative
-          w-full
-          max-w-[1200px]
+          z-10
           mx-auto
-
-          h-auto
-          lg:h-[539px]
-
-          lg:translate-x-[-80px]
-          xl:translate-x-[-120px]
-
+          max-w-[1200px]
+          px-6
           py-20
           lg:py-0
+          grid
+          gap-8
+          lg:grid-cols-[320px_320px_1fr]
+          lg:items-start
         "
       >
-        {/* Imagen 1 — SOLO DESKTOP */}
-        <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/5918cf9f920709637b28ffa93f45a0ee93e0eeff?width=680" //TODO: AGREGAR A CLOUDINARY Y AGREGAR IMAGENES EN LOS ASSETS
-          alt="Restaurant photo 1"
-          className="
-            absolute
-            left-20
-            top-0
-            w-[340px]
-            h-[480px]
-            object-cover
-            hidden
-            lg:block
-          "
-        />
+        {/* Imagen 1 */}
+        <div className="hidden lg:block">
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/5918cf9f920709637b28ffa93f45a0ee93e0eeff?width=680"
+            alt="Restaurant photo 1"
+            className="w-full h-[480px] object-cover"
+          />
+        </div>
 
-        {/* Imagen 2 — SOLO DESKTOP */}
-        <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/8d3e26dcc2dfef028b89c5638feb936e3de29fef?width=680" //TODO: AAGREGAR A CLOUDINARY Y AGREGAR IMAGENES EN LOS ASSETS
-          alt="Restaurant photo 2"
-          className="
-            absolute
-            left-[476px]
-            top-[59px]
-            w-[340px]
-            h-[480px]
-            object-cover
-            hidden
-            lg:block
-          "
-        />
+        {/* Imagen 2 */}
+        <div className="hidden lg:block pt-[59px]">
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/8d3e26dcc2dfef028b89c5638feb936e3de29fef?width=680"
+            alt="Restaurant photo 2"
+            className="w-full h-[480px] object-cover"
+          />
+        </div>
 
-        {/* TEXTO */}
-        <div
-          className="
-            flex flex-col gap-6 items-center text-center px-6
-            max-w-[650px]
-            mx-auto
+        {/* Texto */}
+        <div className="flex flex-col gap-6 text-center lg:text-left lg:self-center">
+          <div className="
+            flex
+            items-center
+            justify-center
+            gap-4
+            flex-wrap
+            lg:justify-start
+          ">
+            <h2 className="
+              font-syncopate
+              font-bold
+              text-[#12181D]
+              text-[32px]
+              max-sm:text-[24px]
+              leading-tight
+              whitespace-nowrap
+            ">
+              NOSOTROS
+            </h2>
 
-            lg:absolute
-            lg:items-start
-            lg:text-left
-            lg:px-0
-            lg:left-[872px]
-            lg:top-[134px]
-            lg:w-[469px]
-          "
-        >
-          <h2 className="font-syncopate font-bold text-[#12181D] text-[32px] max-sm:text-[24px] leading-tight"> {/* TODO: CUANDO SEA LA VERSIÓN MOBILE Y TABLETA NO SE DIVIDA */}
-            ¿QUIENES
-            <br />
-            SOMOS?
-          </h2>
+            <VectorLine
+              width={180}
+              className="
+                hidden
+                lg:block
+                flex-shrink-0
+              "
+            />
+          </div>
 
-          <p className="font-anek text-black font-extralight text-[26px] max-sm:text-base leading-[28px] text-justify lg:text-justify text-center">
+
+          <p
+            className="
+              font-arial
+              text-black
+              text-[18px]
+              leading-7
+            "
+          >
             Somos un grupo restaurantero con sede en Yucatán, México, enfocado en
             crear experiencias gastronómicas que transcienden lo cotidiano.
             <br />
             <br />
-            Con un sin fin de propuestas culinarias, logramos combinar
-            creatividad y hospitalidad para ofrecer una experiencia inigualable
-            en cada visita.
+            Con un sin fin de propuestas culinarias, logramos combinar creatividad
+            y hospitalidad para ofrecer una experiencia inigualable en cada visita.
           </p>
         </div>
 
-        {/* Vector — SOLO DESKTOP */}
+        {/* Vector decorativo
         <VectorLine
           width={209}
-          className="absolute left-[1132px] top-[159px] hidden lg:block"
-        />
+          className="hidden lg:block absolute right-0 top-[160px]"
+        /> */}
       </div>
     </section>
   );
