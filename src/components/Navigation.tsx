@@ -25,7 +25,7 @@ export const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
           className="
             font-source
             font-bold
-            text-[16px]
+            text-[20px]
             leading-7
             tracking-[1.76px]
             text-white

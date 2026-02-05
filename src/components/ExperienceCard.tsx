@@ -54,24 +54,50 @@ export const ExperienceCard: React.FC<Props> = ({
 
   return (
     <button
-      type="button"
-      onClick={onClick}
-      className={[
-        "relative isolate",
-        sizeClasses[size],
-        "flex flex-col items-center justify-center gap-4",
-        "bg-white/70 backdrop-blur-sm border border-white/40",
-        "transition-transform transition-colors duration-200",
-        "hover:bg-white/80 hover:-translate-y-1",
-        "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
-        isActive
-          ? "shadow-[0_20px_60px_rgba(0,0,0,0.25)]"
-          : "shadow-[0_12px_40px_rgba(0,0,0,0.18)]",
-        isActive
-          ? `after:content-[''] after:absolute after:inset-0 ${activeRingClasses[size]} after:border-white after:pointer-events-none`
-          : "",
-      ].join(" ")}
-    >
+  type="button"
+  onClick={onClick}
+  className={[
+    "relative isolate overflow-hidden",
+    sizeClasses[size],
+
+    // 🔹 BORDE DIAGONAL SUPERIOR
+    "after:content-['']",
+    "after:absolute after:inset-0",
+    "after:rounded-[inherit]",
+    "after:border after:border-white/20",
+    "after:pointer-events-none",
+    "after:[mask-image:linear-gradient(135deg,black_0%,black_65%,transparent_65%)]",
+
+     // 🔹 BORDE COMPLETO SOLO CUANDO ESTÁ ACTIVO
+    isActive && [
+      "before:content-['']",
+      "before:absolute before:inset-0",
+      "before:rounded-[inherit]",
+      "before:border before:border-white/40",
+      "before:pointer-events-none",
+    ].join(" "),
+
+    // Layout
+    "flex flex-col items-center justify-center gap-4",
+
+    // Glassmorphism
+    "bg-gradient-to-b from-white/60 to-white/10",
+    "backdrop-blur-sm",
+
+    // Interacción
+    "transition-all duration-200 ease-out",
+    "hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.25)]",
+
+    // Focus accesible
+    "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80",
+
+    // Active (si quieres mantenerlo)
+    isActive
+      ? `after:border-white/90`
+      : "",
+  ].join(" ")}
+>
+
       {logo && (
         <img
           src={logo}

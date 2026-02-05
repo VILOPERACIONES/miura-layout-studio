@@ -150,7 +150,6 @@ export const Experiences: React.FC = () => {
             max-sm:text-base
             text-justify
             lg:text-justify
-            text-center
           ">
             {activeExperience.description}
           </p>
@@ -304,7 +303,7 @@ export const Experiences: React.FC = () => {
 
         {/* Zona */}
         <a href={activeExperience.ubicacion}>
-          <div className="flex items-center gap-4 font-anek font-medium text-[20px]">
+          <div className="flex items-center gap-4 font-arial font-normal text-base">
             <svg width="16" height="25" viewBox="0 0 16 25" fill="none">
               <path
                 d="M15.8707 7.86135C15.8707 3.63132 12.3467 0.202026 8 0.202026C3.65325 0.202026 0.129333 3.63132 0.129333 7.86135C0.129333 11.6167 2.90679 14.7409 6.57193 15.3944V24.7976H9.42845V15.3944C13.0932 14.7405 15.871 11.6167 15.871 7.86135Z"
@@ -320,7 +319,7 @@ export const Experiences: React.FC = () => {
 
 
         <div className="h-[225px] overflow-hidden">
-          <p className="font-anek font-extralight text-white text-[26px] leading-7">
+          <p className="font-arial font-normal text-white text-[18px] leading-7">
             {activeExperience.description}
           </p>
         </div>
@@ -335,9 +334,9 @@ export const Experiences: React.FC = () => {
             />
           )}
 
-          {activeExperience.links?.reserve ? (
+          {activeExperience.links?.reserve ? ( //* Si tiene link de reservar
             activeExperience.links.reserve ===
-            "https://www.rappi.com.mx/restaurantes/1930050449-kona" ? (
+            "https://www.rappi.com.mx/restaurantes/1930050449-kona" ? ( //? Boton de reservar (rappi)
               <a
                   href={activeExperience.links.reserve}
                   target="_blank"
@@ -348,12 +347,10 @@ export const Experiences: React.FC = () => {
                     px-7
                     flex items-center justify-center
                     bg-transparent
-                    hover:bg-white/10
-                    transition
                   "
                 >
                   <img
-                    src="/src/assets/images/shared/rappi.png"
+                    src="/src/assets/images/shared/rappi-orange.png" //TODO: AGREGAR EN CLOUDINARY
                     alt="Rappi"
                     className="h-[41px] object-contain"
                     onError={(e) => {
@@ -362,29 +359,35 @@ export const Experiences: React.FC = () => {
                     }}
                   />
                 </a>
-            ) : (
+            ) : ( //? Boton de reservar normal
               <a
                 href={activeExperience.links.reserve}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  px-6 h-10 flex items-center justify-center
-                  rounded-full border border-white/70
-                  text-white text-[11px] tracking-[3.5px]
-                  hover:bg-white hover:text-black
-                  transition
+                  px-6 h-10
+                  flex items-center justify-center
+                  rounded-full
+                  bg-white
+                  text-black text-[12px] font-syncopate font-bold tracking-[1.5px]
+                  hover:bg-gray-100
+                  transition-colors
                 "
               >
                 RESERVAR
               </a>
+
             )
-          ) : (
+          ) : ( //* NO tiene link de reservar
             <div
               className="
-                px-6 h-10 flex items-center justify-center
-                rounded-full border border-white/70
-                text-white text-[11px] tracking-[3.5px]
-                cursor-default select-none
+                px-6 h-10
+                flex items-center justify-center
+                rounded-full
+                bg-white
+                text-black text-[12px] font-syncopate font-bold
+                hover:bg-gray-100
+                transition-colors
               "
             >
               PRÓXIMAMENTE
