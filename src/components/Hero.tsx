@@ -5,6 +5,8 @@ import { Sidebar } from "./ui/side-bar";
 
 export const Hero: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+
   return (
     <header
       className="
@@ -18,30 +20,34 @@ export const Hero: React.FC = () => {
       "
     >
       {/* ===================== */}
-      {/* Backgrounds */}
+      {/* VIDEO BACKGROUND — DESKTOP */}
       {/* ===================== */}
-
-      {/* Desktop background */}
-      <img
-        src="/src/assets/images/hero/hero-background-desktop.jpg"
-        alt="Background Hero Miura Desktop"
-        aria-hidden="true"
+      <video
         className="
           absolute inset-0
           w-full h-full
           object-cover
           hidden lg:block
         "
-          onError={(e) => {
-        e.currentTarget.src =
-          "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409813/hero-background_sgp0id.jpg";
-      }}
-    />
+        autoPlay
+        loop
+        muted={isMuted}
+        playsInline
+        preload="auto"
+        poster="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770334986/bg-hero_shvbgi.png"
+      >
+        <source
+          src="https://res.cloudinary.com/dfsrjktyj/video/upload/v1770335344/MIURA_HOSPITALITY_FINAL_n1vnih.mp4"
+          type="video/mp4"
+        />
+      </video>
 
-      {/* Tablet & Mobile background */}
+      {/* ===================== */}
+      {/* IMAGE BACKGROUND — TABLET & MOBILE */}
+      {/* ===================== */}
       <img
         src="/src/assets/images/hero/hero-background-tablet.png"
-        alt="Background Hero Miura Tablet"
+        alt="Background Hero Miura"
         aria-hidden="true"
         className="
           absolute inset-0
@@ -55,8 +61,36 @@ export const Hero: React.FC = () => {
         }}
       />
 
+      {/* ===================== */}
       {/* Overlay */}
+      {/* ===================== */}
       <div className="absolute inset-0 bg-black/20" />
+
+      {/* ===================== */}
+      {/* AUDIO TOGGLE (DESKTOP ONLY) */}
+      {/* ===================== */}
+      <button
+        onClick={() => setIsMuted((prev) => !prev)}
+        aria-label={isMuted ? "Activar sonido" : "Silenciar"}
+        className="
+          absolute
+          bottom-6
+          right-6
+          z-30
+          hidden lg:flex
+          items-center
+          justify-center
+          w-11 h-11
+          rounded-full
+          bg-black/50
+          backdrop-blur
+          text-white
+          hover:bg-black/70
+          transition
+        "
+      >
+        {isMuted ? "🔇" : "🔊"}
+      </button>
 
       {/* ===================== */}
       {/* TOP BAR — Mobile & Tablet */}
@@ -78,21 +112,20 @@ export const Hero: React.FC = () => {
           z-20
         "
       >
-        {/* Logo (mobile & tablet) */}
+        {/* Logo */}
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/e501eb6dc45f1b6e29fa83a5498f0ec8a27f67f7?width=340"
           alt="Miura Logo"
-          className="
-            w-[110px]
-            md:w-[140px]
-            h-auto
-          "
+          className="w-[110px] md:w-[140px] h-auto"
         />
 
         {/* Hamburger */}
         <HamburgerButton onClick={() => setIsSidebarOpen(true)} />
       </div>
 
+      {/* ===================== */}
+      {/* Sidebar */}
+      {/* ===================== */}
       <Sidebar
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
@@ -111,8 +144,8 @@ export const Hero: React.FC = () => {
           top-14
           w-[170px]
           h-auto
-          hidden
-          lg:block
+          hidden lg:block
+          z-20
         "
       />
 
@@ -128,6 +161,7 @@ export const Hero: React.FC = () => {
           w-[823px]
           hidden
           lg:flex
+          z-20
         "
       />
     </header>
