@@ -1,5 +1,6 @@
 import React from 'react';
 import { ContactForm } from './ContactForm';
+import { User } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   return (
@@ -54,21 +55,53 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Footer pegado abajo */}
-        <p
+        <div
           className="
             mt-auto
             pb-4
             pt-2
-            text-center
+            flex
+            items-center
+            justify-center
+            gap-2
             font-anek
             text-[10px]
             text-white
             opacity-80
           "
         >
-          Diseñado por PROTAGONISTA Estudio Creativo, Desarrollado por <a href="https://www.buho-solutions.com/">Búho Solutions</a> –
-          Todos los derechos reservados.
-        </p>
+          <p className="text-center">
+            Diseñado por PROTAGONISTA Estudio Creativo, Desarrollado por{" "}
+            <a
+              href="https://www.buho-solutions.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-100"
+            >
+              Búho Solutions
+            </a>{" "}
+            – Todos los derechos reservados.
+          </p>
+
+          {/* Ícono Admin */}
+          <a
+            href="/admin" // o /login /dashboard
+            aria-label="Acceso administrador"
+            className="
+              ml-1
+              flex
+              items-center
+              justify-center
+              w-5
+              h-5
+              rounded-full
+              hover:opacity-100
+              transition
+            "
+          >
+            <User className="w-3.5 h-3.5" />
+          </a>
+        </div>
       </div>
     </section>
   );
