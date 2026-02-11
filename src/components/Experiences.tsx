@@ -490,7 +490,7 @@ export const Experiences: React.FC = () => {
 
 
           {/* Barra de progreso animada */}
-          <div className="absolute left-full top-1/2 -translate-y-1/2 ml-6 w-[900px]">
+          <div className="absolute left-full top-1/2 -translate-y-1/2 ml-6  w-[clamp(300px,45vw,1200px)]">
             <div className="h-[2px] w-full bg-white/20 rounded-full overflow-hidden">
               <div
                 className="h-full bg-white rounded-full transition-all duration-500 ease-in-out"
