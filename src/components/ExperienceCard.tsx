@@ -91,10 +91,10 @@ export const ExperienceCard: React.FC<Props> = ({
     // Focus accesible
     "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80",
 
-    // Active (si quieres mantenerlo)
-    isActive
-      ? `after:border-white/90`
-      : "",
+    // // Active (si quieres mantenerlo)
+    // isActive
+    //   ? `after:border-white/90`
+    //   : "",
   ].join(" ")}
 >
 

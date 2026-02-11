@@ -69,11 +69,9 @@ export const Experiences: React.FC = () => {
       relative
       w-full
       min-h-[900px]
-      sm:h-[800px]
-      md:h-[800px]
+      lg:min-h-[800px]
       overflow-hidden
       bg-black
-
       flex
       items-center
       justify-center
@@ -118,22 +116,33 @@ export const Experiences: React.FC = () => {
         }}
       />
 
-      {/* ===== MOBILE - TABLET LAYOUT (<1300px): Flujo vertical ===== */}
+      {/* ===== MOBILE - TABLET LAYOUT < lg Flujo vertical ===== */}
       <div className="
-        desktop:hidden
+        lg:hidden
         relative
         z-10
         flex
         flex-col
         items-center
       ">
-        <h2 className="text-white text-2xl font-syncopate font-normal text-center">
+        <h2 className="text-white text-2xl font-syncopate font-normal text-center my-6">
           EXPERIENCIAS <br />
           <span className="font-bold"> MIURA</span>
         </h2>
 
         {/* Panel de información Mobile */}
-        <div className="flex flex-col items-center gap-2 text-center w-[460px] max-sm:w-[320px]">
+        <div className=" flex
+          flex-col
+          items-center
+          gap-3
+          text-center
+
+          w-full
+          max-w-[580px]
+
+          px-5
+          sm:px-6
+        ">
           {/* Logo */}
           <img
             src={activeExperience.heroLogo ?? activeExperience.logo}
@@ -142,14 +151,15 @@ export const Experiences: React.FC = () => {
           />
 
           {/* Descripción */}
-          <p className="
+          <p className=" //TODO: AJUSTAR EL TEXTO A UNO ALTERNATIVO
             font-anek
             text-white
             font-extralight
             text-[26px]
-            max-sm:text-base
             text-justify
-            lg:text-justify
+
+            min-h-[180px]
+            sm:min-h-[390px]
           ">
             {activeExperience.description}
           </p>
@@ -247,17 +257,17 @@ export const Experiences: React.FC = () => {
         </div>
 
         {/* Navegación Mobile/Tablet */}
-        <div className="flex items-center justify-center gap-2 mt-2">
+        <div className="flex items-center justify-end gap-2 mt-2 mb-6">
           <button
             onClick={() => mobileApi?.scrollPrev()}
             aria-label="Anterior"
             className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
           >
             <img
-              src="/src/assets/images/experiences/prev_button.png"
+              src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/prev_button_bovkx5.png"
               alt="Anterior"
               onError={(e) => {
-                e.currentTarget.src = "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/prev_button_bovkx5.png";
+                e.currentTarget.src = "/src/assets/images/experiences/prev_button.png";
               }}
               className="w-full h-full object-contain"
             />
@@ -269,26 +279,26 @@ export const Experiences: React.FC = () => {
             className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
           >
             <img
-              src="/src/assets/images/experiences/next_button.png"
+              src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/next_button_rsydr0.png"
               alt="Siguiente"
               className="w-full h-full object-contain"
               onError={(e) => {
-              e.currentTarget.src = "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/next_button_rsydr0.png"
+              e.currentTarget.src = "/src/assets/images/experiences/next_button.png"
               }}
             />
           </button>
         </div>
       </div>
 
-      {/* ===== DESKTOP LAYOUT (≥1300px): Layout absoluto original =====  PERO QUIERO QUE SE VEA SOLO MAYOR A 1300px como se realiarìa esto?*/}
+      {/* ===== DESKTOP LAYOUT (≥lg): Layout absoluto original =====  PERO QUIERO QUE SE VEA SOLO MAYOR A 1300px como se realiarìa esto?*/}
       {/* Título Desktop */}
-      <h2 className="hidden desktop:block absolute top-[80px] left-1/2 -translate-x-1/2 text-white text-[36px] font-syncopate font-normal text-center">
+      <h2 className="hidden lg:block absolute top-[80px] left-1/2 -translate-x-1/2 text-white text-[36px] font-syncopate font-normal text-center">
         EXPERIENCIAS
         <span className="font-bold"> MIURA</span>
       </h2>
 
       {/*  Panel izquierdo Desktop */}
-      <div className="hidden desktop:flex absolute left-[125px] top-[200px] w-[385px] flex-col gap-5 xl:left-[125px] xl:top-[200px] xl:w-[385px]">
+      <div className="hidden lg:flex absolute left-[8%] top-[20%] w-[clamp(300px,28vw,420px)] flex-col gap-5 xl:left-[125px] xl:top-[200px] xl:w-[385px]">
         {/* Logo */}
         <div className="w-[264px] h-[130px] flex items-end justify-start">
           <img
@@ -452,7 +462,7 @@ export const Experiences: React.FC = () => {
 
       {/* Carousel Desktop con selección automática del primer elemento visible */}
       <div
-        className="hidden desktop:block absolute top-[297px] right-[0px] xl:right-[0px] xl:top-[297px]"
+        className="hidden lg:block absolute top-[297px] right-[0px] xl:right-[0px] xl:top-[297px]"
         style={{
           width: "clamp(350px, 55vw, 1200px)",
         }}
