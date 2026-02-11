@@ -170,7 +170,9 @@ export const Experiences: React.FC = () => {
   }, [desktopApi]);
 
   return (
-    <section className="
+    <section
+    id="experiences"
+    className="
       relative
       w-full
       min-h-[900px]

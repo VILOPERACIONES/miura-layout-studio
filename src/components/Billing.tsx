@@ -32,6 +32,7 @@ export const Billing: React.FC = () => {
 
   return (
     <section
+    id='billing'
       className="
         relative
         w-full

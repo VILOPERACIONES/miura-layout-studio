@@ -90,7 +90,10 @@ export const About: React.FC = () => {
 
 
   return (
-    <section className="relative w-full bg-white overflow-hidden">
+    <section
+    id="about"
+    className="relative w-full bg-white overflow-hidden"
+    >
       {/* Background */}
       <img
         src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770766234/bg-about_y5pqyk.png"

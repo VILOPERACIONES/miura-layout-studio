@@ -199,7 +199,7 @@ export const EXPERIENCES: Experience[] = [
   heroLogoAlt: "Miura Logo",
   ubicacion: "https://maps.app.goo.gl/7wY7WocYLsmiozqd8",
   links: {
-    instagram: "https://www.instagram.com/miurarestaurants/",
+    instagram: "https://www.instagram.com/miuraexperience?igsh=cnIzYXJsNWNzY2N3",
     reserve: "https://wa.me/529991148994",
   }
 },

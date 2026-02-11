@@ -14,7 +14,6 @@ const Index = () => {
       <Experiences />
       <Billing />
       <Contact />
-      {/* <Footer /> */}
     </main>
   );
 };
