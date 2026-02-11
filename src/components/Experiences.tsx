@@ -409,11 +409,11 @@ export const Experiences: React.FC = () => {
 
       <div
         className="
-          hidden desktop:block
+          hidden lg:block
           absolute
           left-1/2
           -translate-x-1/2
-          bottom-[80px]
+          bottom-[50px]
           z-20
         "
       >
