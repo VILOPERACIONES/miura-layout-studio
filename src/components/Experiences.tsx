@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/carousel";
 
 import { EXPERIENCES } from "@/constants/experiences";
-import { VectorLine } from "./ui/vectorLine";
 import { InstagramButton } from "./ui/isntagram-button";
 
 export const Experiences: React.FC = () => {
@@ -22,6 +21,39 @@ export const Experiences: React.FC = () => {
 
   const activeExperience =
     EXPERIENCES.find((x) => x.id === activeId) ?? EXPERIENCES[0];
+
+  // Background crossfade state
+  const [displayedBg, setDisplayedBg] = React.useState(activeExperience.background);
+  const [nextBg, setNextBg] = React.useState<string | null>(null);
+  const [isFading, setIsFading] = React.useState(false);
+
+  React.useEffect(() => {
+    const newBg = activeExperience.background;
+    if (newBg === displayedBg) return;
+    setNextBg(newBg);
+    // Trigger fade after image preload
+    const img = new Image();
+    img.src = newBg;
+    const startFade = () => {
+      setIsFading(true);
+      const timer = setTimeout(() => {
+        setDisplayedBg(newBg);
+        setNextBg(null);
+        setIsFading(false);
+      }, 600);
+      return () => clearTimeout(timer);
+    };
+    if (img.complete) {
+      const cleanup = startFade();
+      return cleanup;
+    }
+    img.onload = startFade;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeExperience.background]);
+
+  // Progress calculation
+  const activeIndex = EXPERIENCES.findIndex((x) => x.id === activeId);
+  const progress = EXPERIENCES.length > 1 ? ((activeIndex + 1) / EXPERIENCES.length) * 100 : 0;
 
   // Efecto para selección automática basada en el slide central (mobile/tablet)
   React.useEffect(() => {
@@ -76,16 +108,23 @@ export const Experiences: React.FC = () => {
       items-center
       justify-center
     ">
-      {/* Fondo */}
+      {/* Fondo con crossfade */}
       <img
-        src={activeExperience.background}
+        src={displayedBg}
         alt={`Background ${activeExperience.title ?? activeExperience.alt}`}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover transition-none"
         onError={(e) => {
-          e.currentTarget.src =
-            activeExperience.onErrorBackground;
+          e.currentTarget.src = activeExperience.onErrorBackground;
         }}
       />
+      {nextBg && (
+        <img
+          src={nextBg}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[600ms] ease-in-out"
+          style={{ opacity: isFading ? 1 : 0 }}
+        />
+      )}
 
       {/* Overlay base */}
       <div className="absolute inset-0 bg-black/30" />
@@ -450,11 +489,15 @@ export const Experiences: React.FC = () => {
           </button>
 
 
-          <VectorLine
-            width={900}
-            color="#FFFFFF"
-            className="absolute left-full top-1/2 -translate-y-1/2 ml-6"
-          />
+          {/* Barra de progreso animada */}
+          <div className="absolute left-full top-1/2 -translate-y-1/2 ml-6 w-[900px]">
+            <div className="h-[2px] w-full bg-white/20 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-white rounded-full transition-all duration-500 ease-in-out"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
