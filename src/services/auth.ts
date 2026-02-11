@@ -12,13 +12,13 @@
 
 import { api } from "./api";
 
-export interface AuthUser {
+export interface AuthUser { //? Interfaz del usuario autenticado
   id: string;
   email: string;
   name: string;
 }
 
-interface LoginResponse {
+interface LoginResponse { //? Interfaz de la respuesta del login
   token: string;
   user: AuthUser;
 }
@@ -38,7 +38,7 @@ export const authService = {
   },
 
   logout: () => {
-    localStorage.removeItem("admin_token");
+    localStorage.removeItem("admin_token"); //TODO: PASAR ESTO EN UN ENV
     localStorage.removeItem("admin_user");
   },
 

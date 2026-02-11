@@ -7,15 +7,13 @@ export const About: React.FC = () => {
 
   // Imágenes para los carousels
   const carousel1Images = [
-    "https://api.builder.io/api/v1/image/assets/TEMP/5918cf9f920709637b28ffa93f45a0ee93e0eeff?width=680",
-    "https://api.builder.io/api/v1/image/assets/TEMP/8d3e26dcc2dfef028b89c5638feb936e3de29fef?width=680",
-    "https://api.builder.io/api/v1/image/assets/TEMP/3a964e8def1a71e80507c4e8c11e7130e8ff1b04?width=680",
+    "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770666127/Foto_3_znvayu.png",
+    "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770665998/Foto_1_b3y5iv.png",
   ];
 
   const carousel2Images = [
-    "https://api.builder.io/api/v1/image/assets/TEMP/8d3e26dcc2dfef028b89c5638feb936e3de29fef?width=680",
-    "https://api.builder.io/api/v1/image/assets/TEMP/5918cf9f920709637b28ffa93f45a0ee93e0eeff?width=680",
-    "https://api.builder.io/api/v1/image/assets/TEMP/3a964e8def1a71e80507c4e8c11e7130e8ff1b04?width=680",
+    "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770665909/Foto_2_n5ucyv.png",
+    "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770666063/Foto_4_vp7ii6.png",
   ];
 
   useEffect(() => {
@@ -60,7 +58,7 @@ export const About: React.FC = () => {
     <section className="relative w-full bg-white overflow-hidden">
       {/* Background */}
       <img
-        src="https://api.builder.io/api/v1/image/assets/TEMP/3a964e8def1a71e80507c4e8c11e7130e8ff1b04?width=2880"
+        src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770766234/bg-about_y5pqyk.png"
         alt="Restaurant background"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -88,7 +86,7 @@ export const About: React.FC = () => {
             className="h-full overflow-hidden"
             style={{ scrollBehavior: 'auto' }}
           >
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-y-8">
               {[...carousel1Images, ...carousel1Images].map((src, index) => (
                 <img
                   key={index}
@@ -108,7 +106,7 @@ export const About: React.FC = () => {
             className="h-full overflow-hidden"
             style={{ scrollBehavior: 'auto' }}
           >
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-y-8">
               {[...carousel2Images, ...carousel2Images].map((src, index) => (
                 <img
                   key={index}

@@ -7,7 +7,7 @@
  * TODO (backend): Set the correct BASE_URL when deploying the API.
  */
 
-const BASE_URL = "/api";
+const BASE_URL = "http://miura.test/api"; //TODO: AGERGAR ESTO EN ENV
 
 function getToken(): string | null {
   return localStorage.getItem("admin_token");
@@ -20,6 +20,7 @@ async function request<T>(
   const token = getToken();
 
   const headers: HeadersInit = {
+    Accept: "application/json",
     ...(options.headers as Record<string, string>),
   };
 
@@ -37,7 +38,7 @@ async function request<T>(
     headers,
   });
 
-  if (res.status === 401) {
+  if (res.status === 401) { //? Si el token no es válido o ha expirado, se elimina y se redirige al login
     localStorage.removeItem("admin_token");
     localStorage.removeItem("admin_user");
     window.location.href = "/admin/login";

@@ -15,16 +15,16 @@ import { Loader2, Upload, X } from "lucide-react";
 /*  Validation schema                                                  */
 /* ------------------------------------------------------------------ */
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2 MB
 const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
 const fileSchema = z
   .instanceof(File)
-  .refine((f) => f.size <= MAX_FILE_SIZE, "Máximo 5 MB")
+  .refine((f) => f.size <= MAX_FILE_SIZE, "Máximo 2 MB")
   .refine((f) => ACCEPTED_TYPES.includes(f.type), "Formato: JPG, PNG o WEBP");
 
-// For create both images are required; for edit they're optional (keep existing).
-const createSchema = z.object({
+// Esquema base compartido
+const baseFields = {
   type: z.enum(["promo", "evento"]),
   title: z
     .string()
@@ -34,20 +34,30 @@ const createSchema = z.object({
   link: z
     .string()
     .trim()
-    .url("URL inválida")
     .optional()
-    .or(z.literal("")),
+    .transform((val) => (val === "" ? undefined : val))
+    .refine(
+      (val) => !val || z.string().url().safeParse(val).success,
+      "URL inválida"
+    ),
+  is_active: z.boolean(),
+};
+
+// Schema para crear (imágenes requeridas)
+const createSchema = z.object({
+  ...baseFields,
   image_desktop: fileSchema,
   image_mobile: fileSchema,
-  is_active: z.boolean().default(true),
 });
 
-const editSchema = createSchema.extend({
+// Schema para editar (imágenes opcionales)
+const editSchema = z.object({
+  ...baseFields,
   image_desktop: fileSchema.optional(),
   image_mobile: fileSchema.optional(),
 });
 
-type FormValues = z.infer<typeof createSchema>;
+type FormValues = z.infer<typeof editSchema>;
 
 /* ------------------------------------------------------------------ */
 /*  Component                                                          */
@@ -75,7 +85,7 @@ export default function PromotionForm() {
     watch,
     formState: { errors },
   } = useForm<FormValues>({
-    resolver: zodResolver(isEdit ? editSchema : createSchema) as never,
+    resolver: zodResolver(isEdit ? editSchema : createSchema),
     defaultValues: {
       type: "promo",
       title: "",
@@ -92,13 +102,16 @@ export default function PromotionForm() {
     (async () => {
       try {
         const promo = await promotionsService.getById(id);
+        console.log(" Loaded promotion:", promo); // Debug
+
         setValue("type", promo.type);
         setValue("title", promo.title);
-        setValue("link", promo.link ?? "");
+        setValue("link", promo.link || "");
         setValue("is_active", promo.is_active);
-        setDesktopPreview(promo.image_desktop);
-        setMobilePreview(promo.image_mobile);
-      } catch {
+        setDesktopPreview(promo.image_desktop_url);
+        setMobilePreview(promo.image_mobile_url);
+      } catch (error) {
+        console.error(" Error loading promotion:", error); // Debug
         toast({
           variant: "destructive",
           title: "Error",
@@ -118,7 +131,7 @@ export default function PromotionForm() {
     return (e: React.ChangeEvent<HTMLInputElement>) => {
       const file = e.target.files?.[0];
       if (!file) return;
-      setValue(field, file as never, { shouldValidate: true });
+      setValue(field, file, { shouldValidate: true });
       setPreview(URL.createObjectURL(file));
     };
   };
@@ -128,31 +141,53 @@ export default function PromotionForm() {
     setPreview: (url: string | null) => void,
     ref: React.RefObject<HTMLInputElement | null>
   ) => {
-    setValue(field, undefined as never, { shouldValidate: true });
+    setValue(field, undefined, { shouldValidate: true });
     setPreview(null);
     if (ref.current) ref.current.value = "";
   };
 
   const onSubmit = async (values: FormValues) => {
+    console.log(" Submitting form...");
+    console.log(" Form values:", values);
+    console.log(" Form errors:", errors);
+    console.log(" Is edit:", isEdit);
+    console.log("ID:", id);
+
     setSubmitting(true);
     try {
       const fd = new FormData();
       fd.append("type", values.type);
       fd.append("title", values.title);
-      fd.append("link", values.link ?? "");
+      fd.append("link", values.link || "");
       fd.append("is_active", String(values.is_active));
-      if (values.image_desktop) fd.append("image_desktop", values.image_desktop);
-      if (values.image_mobile) fd.append("image_mobile", values.image_mobile);
+
+      if (values.image_desktop) {
+        fd.append("image_desktop", values.image_desktop);
+      }
+      if (values.image_mobile) {
+        fd.append("image_mobile", values.image_mobile);
+      }
+
+      console.log(" FormData entries:");
+      for (const [key, value] of fd.entries()) {
+        console.log(`  ${key}:`, value);
+      }
 
       if (isEdit && id) {
-        await promotionsService.update(id, fd);
+        console.log(" Updating promotion...");
+        const result = await promotionsService.update(id, fd);
+        console.log(" Update result:", result);
         toast({ title: "Promoción actualizada" });
       } else {
-        await promotionsService.create(fd);
+        console.log(" Creating promotion...");
+        const result = await promotionsService.create(fd);
+        console.log(" Create result:", result);
         toast({ title: "Promoción creada" });
       }
+
       navigate("/admin/promotions");
     } catch (err: unknown) {
+      console.error(" Submit error:", err);
       toast({
         variant: "destructive",
         title: "Error",
@@ -227,7 +262,7 @@ export default function PromotionForm() {
           <Label htmlFor="link">Enlace (opcional)</Label>
           <Input
             id="link"
-            type="url"
+            type="text"
             placeholder="https://…"
             {...register("link")}
             disabled={submitting}
@@ -267,7 +302,7 @@ export default function PromotionForm() {
               >
                 <Upload className="h-6 w-6" />
                 <span className="text-sm">Subir imagen desktop</span>
-                <span className="text-xs">JPG, PNG o WEBP · Máx 5 MB</span>
+                <span className="text-xs">JPG, PNG o WEBP · Máx 2 MB</span>
               </button>
             )}
             <input
@@ -312,7 +347,7 @@ export default function PromotionForm() {
               >
                 <Upload className="h-6 w-6" />
                 <span className="text-sm">Subir imagen mobile</span>
-                <span className="text-xs">JPG, PNG o WEBP · Máx 5 MB</span>
+                <span className="text-xs">JPG, PNG o WEBP · Máx 2 MB</span>
               </button>
             )}
             <input

@@ -94,7 +94,7 @@ export default function PromotionDetail() {
             Imagen Desktop / Monitor
           </p>
           <img
-            src={promo.image_desktop}
+            src={promo.image_desktop_url}
             alt={`${promo.title} - desktop`}
             className="w-full rounded-lg border border-border object-cover aspect-video bg-muted"
           />
@@ -104,7 +104,7 @@ export default function PromotionDetail() {
             Imagen Mobile
           </p>
           <img
-            src={promo.image_mobile}
+            src={promo.image_mobile_url}
             alt={`${promo.title} - mobile`}
             className="w-full rounded-lg border border-border object-cover aspect-[9/16] max-h-[300px] bg-muted"
           />

@@ -210,7 +210,7 @@ export default function PromotionsList() {
                 >
                   <td className="px-4 py-3">
                     <img
-                      src={promo.image_desktop}
+                      src={promo.image_desktop_url}
                       alt={promo.title}
                       className="h-10 w-16 rounded object-cover bg-muted"
                     />

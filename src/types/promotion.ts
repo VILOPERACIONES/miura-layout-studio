@@ -14,8 +14,8 @@ export interface Promotion {
   type: "promo" | "evento";
   title: string;
   link?: string;
-  image_desktop: string; // URL de la imagen para desktop/monitor
-  image_mobile: string; // URL de la imagen para mobile
+  image_desktop_url: string; // URL de la imagen para desktop/monitor
+  image_mobile_url: string; // URL de la imagen para mobile
   is_active: boolean;
   created_at: string;
   updated_at: string;

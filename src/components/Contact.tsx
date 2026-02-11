@@ -17,7 +17,7 @@ export const Contact: React.FC = () => {
     >
       {/* Background */}
       <img
-        src="https://api.builder.io/api/v1/image/assets/TEMP/084c54347d44d5c53f3fd1d10e2f680bbfea9a6b?width=2880"
+        src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770765785/bg-contact_zrnoys.png" //TODO: AGREGAR EL ON-ERROR AQUÍ
         alt="Contact background"
         className="absolute inset-0 w-full h-full object-cover blur-[3.75px]"
       />

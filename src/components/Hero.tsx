@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
         muted={isMuted}
         playsInline
         preload="auto"
-        poster="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770334986/bg-hero_shvbgi.png"
+        poster="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770334986/bg-hero_shvbgi.png" //? AQUI NO SE RECOMIENDA AGREGAR EL VIDEO LOCALMENTE
       >
         <source
           src="https://res.cloudinary.com/dfsrjktyj/video/upload/v1770335344/MIURA_HOSPITALITY_FINAL_n1vnih.mp4"
@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
       {/* IMAGE BACKGROUND — TABLET & MOBILE */}
       {/* ===================== */}
       <img
-        src="/src/assets/images/hero/hero-background-tablet.png"
+        src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1768501496/bg-movil-hero_jctsb3.png" //FIXME: lOGO DE REFERENCIA -> POR ESO ESTA COMO REFERENCIA, NO HAY NINGUN ERROR O BUG
         alt="Background Hero Miura"
         aria-hidden="true"
         className="
@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
         "
         onError={(e) => {
           e.currentTarget.src =
-            "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768501496/bg-movil-hero_jctsb3.png";
+            "/src/assets/images/hero/hero-background-tablet.png";
         }}
       />
 
@@ -114,7 +114,7 @@ export const Hero: React.FC = () => {
       >
         {/* Logo */}
         <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/e501eb6dc45f1b6e29fa83a5498f0ec8a27f67f7?width=340"
+          src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770766588/miura-hospitality-logo_kqsbs8.png" //TODO: AGREAGAR ON ERROR
           alt="Miura Logo"
           className="w-[110px] md:w-[140px] h-auto"
         />
@@ -135,7 +135,7 @@ export const Hero: React.FC = () => {
       {/* Logo — Desktop ONLY */}
       {/* ===================== */}
       <img
-        src="https://api.builder.io/api/v1/image/assets/TEMP/e501eb6dc45f1b6e29fa83a5498f0ec8a27f67f7?width=340"
+        src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770766588/miura-hospitality-logo_kqsbs8.png" //TODO: AGREAGAR ON ERROR
         alt="Miura Logo"
         className="
           absolute

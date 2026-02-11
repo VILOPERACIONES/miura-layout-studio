@@ -12,7 +12,7 @@ const navItems = [
 export function AdminLayout() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const handleLogout = () => {
     logout();
