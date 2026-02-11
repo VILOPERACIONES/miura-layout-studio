@@ -1,8 +1,35 @@
-import React from 'react';
-import { ContactForm } from './ContactForm';
-import { User } from 'lucide-react';
+import React, { useEffect, useRef } from "react";
+import { ContactForm } from "./ContactForm";
+import { User } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export const Contact: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      gsap.from(".contact-animate", {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
       id="contact"
@@ -17,28 +44,32 @@ export const Contact: React.FC = () => {
     >
       {/* Background */}
       <img
-        src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770765785/bg-contact_zrnoys.png" //TODO: AGREGAR EL ON-ERROR AQUÍ
+        src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770765785/bg-contact_zrnoys.png"
         alt="Contact background"
         className="absolute inset-0 w-full h-full object-cover blur-[3.75px]"
       />
       <div className="absolute inset-0 bg-[rgba(18,24,29,0.55)]" />
 
-      {/* Wrapper que ocupa TODA la altura */}
-      <div className="
-        relative
-        z-10
-        flex
-        flex-col
-        w-full
-        max-w-[960px]
-        mx-auto
-        px-4
-        min-h-[608px]
-      ">
+      {/* Wrapper */}
+      <div
+        ref={sectionRef}
+        className="
+          relative
+          z-10
+          flex
+          flex-col
+          w-full
+          max-w-[960px]
+          mx-auto
+          px-4
+          min-h-[608px]
+        "
+      >
         {/* Contenido centrado */}
         <div className="flex flex-col items-center gap-10 pt-16">
           <h2
             className="
+              contact-animate
               font-syncopate
               font-bold
               text-white
@@ -51,12 +82,15 @@ export const Contact: React.FC = () => {
             contáctanos
           </h2>
 
-          <ContactForm />
+          <div className="contact-animate w-full">
+            <ContactForm />
+          </div>
         </div>
 
-        {/* Footer pegado abajo */}
+        {/* Footer */}
         <div
           className="
+            contact-animate
             mt-auto
             pb-4
             pt-2
@@ -83,9 +117,8 @@ export const Contact: React.FC = () => {
             – Todos los derechos reservados.
           </p>
 
-          {/* Ícono Admin */}
           <a
-            href="/admin" // o /login /dashboard
+            href="/admin"
             aria-label="Acceso administrador"
             className="
               ml-1

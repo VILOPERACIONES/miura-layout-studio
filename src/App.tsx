@@ -5,6 +5,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Lenis from "@studio-freight/lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -20,9 +24,47 @@ import PromotionDetail from "@/pages/admin/PromotionDetail";
 
 import { Preloader } from "@/components/Preloader";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const queryClient = new QueryClient();
 
 const App = () => {
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.08,
+      // smooth: true,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    ScrollTrigger.scrollerProxy(document.body, {
+      scrollTop(value) {
+        return arguments.length
+          ? lenis.scrollTo(value)
+          : window.scrollY;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+    });
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

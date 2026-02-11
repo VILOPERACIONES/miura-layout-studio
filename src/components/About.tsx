@@ -1,9 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { VectorLine } from "./ui/vectorLine";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export const About: React.FC = () => {
   const carousel1Ref = useRef<HTMLDivElement>(null);
   const carousel2Ref = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+
 
   // Imágenes para los carousels
   const carousel1Images = [
@@ -53,6 +57,37 @@ export const About: React.FC = () => {
       clearInterval(interval2);
     };
   }, []);
+
+  useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (!textRef.current) return;
+
+  const ctx = gsap.context(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: textRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none", // solo una vez
+      },
+    });
+
+    tl.from("h2", {
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    }).from("p", {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    }, "-=0.6"); // se superpone ligeramente
+  }, textRef);
+
+  return () => ctx.revert();
+}, []);
+
 
   return (
     <section className="relative w-full bg-white overflow-hidden">
@@ -120,7 +155,9 @@ export const About: React.FC = () => {
         </div>
 
         {/* Texto */}
-        <div className="flex flex-col gap-6 text-center lg:text-left lg:self-center">
+        <div
+          ref={textRef}
+        className="flex flex-col gap-6 text-center lg:text-left lg:self-center">
           <div className="
             flex
             items-center

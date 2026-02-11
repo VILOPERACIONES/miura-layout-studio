@@ -1,6 +1,35 @@
 import React from 'react';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 export const Billing: React.FC = () => {
+  const billingRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (!billingRef.current) return;
+
+  const ctx = gsap.context(() => {
+    gsap.from(billingRef.current!.children, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.18,
+      scrollTrigger: {
+        trigger: billingRef.current,
+        start: "top 85%",
+        once: true,
+      },
+    });
+  }, billingRef);
+
+  return () => ctx.revert();
+}, []);
+
+
   return (
     <section
       className="
@@ -24,6 +53,7 @@ export const Billing: React.FC = () => {
 
       {/* Content */}
       <div
+        ref={billingRef}
         className="
           relative
           z-10

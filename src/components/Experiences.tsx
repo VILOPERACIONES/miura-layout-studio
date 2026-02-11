@@ -10,7 +10,14 @@ import {
 import { EXPERIENCES } from "@/constants/experiences";
 import { InstagramButton } from "./ui/isntagram-button";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export const Experiences: React.FC = () => {
+  const titleRef = React.useRef<HTMLHeadingElement>(null);
+  const panelRef = React.useRef<HTMLDivElement>(null);
+  const mobileInfoRef = React.useRef<HTMLDivElement>(null);
+
   // APIs separadas para cada carousel
   const [mobileApi, setMobileApi] = React.useState<CarouselApi>();
   const [desktopApi, setDesktopApi] = React.useState<CarouselApi>();
@@ -54,6 +61,72 @@ export const Experiences: React.FC = () => {
   // Progress calculation
   const activeIndex = EXPERIENCES.findIndex((x) => x.id === activeId);
   const progress = EXPERIENCES.length > 1 ? ((activeIndex + 1) / EXPERIENCES.length) * 100 : 0;
+
+  React.useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const ctx = gsap.context(() => {
+
+      // Título
+      if (titleRef.current) {
+        gsap.from(titleRef.current, {
+          y: 40,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 85%",
+          },
+        });
+      }
+
+      // Panel izquierdo ≥ lg
+      if (panelRef.current) {
+        gsap.from(panelRef.current.children, {
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: panelRef.current,
+            start: "top 80%",
+          },
+        });
+      }
+
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+  React.useEffect(() => {
+  const mm = gsap.matchMedia();
+
+  mm.add("(max-width: 1023px)", () => {
+    if (!mobileInfoRef.current) return;
+
+    const ctx = gsap.context(() => {
+      gsap.from(mobileInfoRef.current!.children, {
+        y: 40,
+        opacity: 0,
+        duration: 0.9,
+        ease: "expo.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: mobileInfoRef.current,
+          start: "top 85%",
+          once: true,
+        },
+      });
+    }, mobileInfoRef);
+
+    return () => ctx.revert();
+  });
+
+  return () => mm.revert();
+}, []);
 
   // Efecto para selección automática basada en el slide central (mobile/tablet)
   React.useEffect(() => {
@@ -164,13 +237,17 @@ export const Experiences: React.FC = () => {
         flex-col
         items-center
       ">
-        <h2 className="text-white text-2xl font-syncopate font-normal text-center my-6">
+        <h2
+        ref={titleRef}
+        className="text-white text-2xl font-syncopate font-normal text-center my-6">
           EXPERIENCIAS <br />
           <span className="font-bold"> MIURA</span>
         </h2>
 
         {/* Panel de información Mobile */}
-        <div className=" flex
+        <div
+        ref={mobileInfoRef}
+        className=" flex
           flex-col
           items-center
           gap-3
@@ -191,14 +268,14 @@ export const Experiences: React.FC = () => {
 
           {/* Descripción */}
           <p className=" //TODO: AJUSTAR EL TEXTO A UNO ALTERNATIVO
-            font-anek
+            font-arial
             text-white
-            font-extralight
-            text-[26px]
+            font-normal
+            text-[18px]
             text-justify
 
-            min-h-[180px]
-            sm:min-h-[390px]
+            min-h-[300px]
+            sm:min-h-[300px]
           ">
             {activeExperience.description}
           </p>
@@ -331,13 +408,17 @@ export const Experiences: React.FC = () => {
 
       {/* ===== DESKTOP LAYOUT (≥lg): Layout absoluto original =====  PERO QUIERO QUE SE VEA SOLO MAYOR A 1300px como se realiarìa esto?*/}
       {/* Título Desktop */}
-      <h2 className="hidden lg:block absolute top-[80px] left-1/2 -translate-x-1/2 text-white text-[36px] font-syncopate font-normal text-center">
+      <h2
+      ref={titleRef}
+      className="hidden lg:block absolute top-[80px] left-1/2 -translate-x-1/2 text-white text-[36px] font-syncopate font-normal text-center">
         EXPERIENCIAS
         <span className="font-bold"> MIURA</span>
       </h2>
 
-      {/*  Panel izquierdo Desktop */}
-      <div className="hidden lg:flex absolute left-[8%] top-[20%] w-[clamp(300px,28vw,420px)] flex-col gap-5 xl:left-[125px] xl:top-[200px] xl:w-[385px]">
+      {/*  Panel izquierdo >=lg */}
+      <div
+      ref={panelRef}
+      className="hidden lg:flex absolute left-[8%] top-[20%] w-[clamp(300px,28vw,420px)] flex-col gap-5 xl:left-[125px] xl:top-[200px] xl:w-[400px]">
         {/* Logo */}
         <div className="w-[264px] h-[130px] flex items-end justify-start">
           <img
@@ -367,8 +448,8 @@ export const Experiences: React.FC = () => {
         </a>
 
 
-        <div className="h-[225px] overflow-hidden">
-          <p className="font-arial font-normal text-white text-[18px] leading-7">
+        <div className="min-h-[285px] overflow-hidden">
+          <p className="font-arial font-normal text-white text-[18px] text-justify leading-7">
             {activeExperience.description}
           </p>
         </div>
@@ -408,7 +489,7 @@ export const Experiences: React.FC = () => {
                     }}
                   />
                 </a>
-            ) : ( //? Boton de reservar normal
+            ) : (
               <a
                 href={activeExperience.links.reserve}
                 target="_blank"

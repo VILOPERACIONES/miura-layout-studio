@@ -18,7 +18,7 @@ export const Preloader: React.FC<{ visible: boolean }> = ({ visible }) => {
       `}
     >
       <img
-        src="/src/assets/images/Pre-loader.png"
+        src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770850684/Pre-loader_q74tor.png"
         alt="MIURA"
         className="
           w-[140px]
