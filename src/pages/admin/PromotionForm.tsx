@@ -10,17 +10,26 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Loader2, Upload, X } from "lucide-react";
-
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 /* ------------------------------------------------------------------ */
 /*  Validation schema                                                  */
 /* ------------------------------------------------------------------ */
 
-const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2 MB
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
 const fileSchema = z
   .instanceof(File)
-  .refine((f) => f.size <= MAX_FILE_SIZE, "Máximo 2 MB")
+  .refine((f) => f.size <= MAX_FILE_SIZE, "Máximo 5 MB")
   .refine((f) => ACCEPTED_TYPES.includes(f.type), "Formato: JPG, PNG o WEBP");
 
 // Esquema base compartido
@@ -76,6 +85,10 @@ export default function PromotionForm() {
   const [mobilePreview, setMobilePreview] = useState<string | null>(null);
   const desktopRef = useRef<HTMLInputElement>(null);
   const mobileRef = useRef<HTMLInputElement>(null);
+
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [pendingValues, setPendingValues] = useState<FormValues | null>(null);
+
 
   const {
     register,
@@ -146,48 +159,34 @@ export default function PromotionForm() {
     if (ref.current) ref.current.value = "";
   };
 
-  const onSubmit = async (values: FormValues) => {
-    console.log(" Submitting form...");
-    console.log(" Form values:", values);
-    console.log(" Form errors:", errors);
-    console.log(" Is edit:", isEdit);
-    console.log("ID:", id);
+  const handleConfirmSubmit = async () => {
+  if (!pendingValues) return;
 
-    setSubmitting(true);
+  setSubmitting(true);
     try {
       const fd = new FormData();
-      fd.append("type", values.type);
-      fd.append("title", values.title);
-      fd.append("link", values.link || "");
-      fd.append("is_active", String(values.is_active));
+      fd.append("type", pendingValues.type);
+      fd.append("title", pendingValues.title);
+      fd.append("link", pendingValues.link || "");
+      fd.append("is_active", String(pendingValues.is_active));
 
-      if (values.image_desktop) {
-        fd.append("image_desktop", values.image_desktop);
+      if (pendingValues.image_desktop) {
+        fd.append("image_desktop", pendingValues.image_desktop);
       }
-      if (values.image_mobile) {
-        fd.append("image_mobile", values.image_mobile);
-      }
-
-      console.log(" FormData entries:");
-      for (const [key, value] of fd.entries()) {
-        console.log(`  ${key}:`, value);
+      if (pendingValues.image_mobile) {
+        fd.append("image_mobile", pendingValues.image_mobile);
       }
 
       if (isEdit && id) {
-        console.log(" Updating promotion...");
-        const result = await promotionsService.update(id, fd);
-        console.log(" Update result:", result);
+        await promotionsService.update(id, fd);
         toast({ title: "Promoción actualizada" });
       } else {
-        console.log(" Creating promotion...");
-        const result = await promotionsService.create(fd);
-        console.log(" Create result:", result);
+        await promotionsService.create(fd);
         toast({ title: "Promoción creada" });
       }
 
       navigate("/admin/promotions");
     } catch (err: unknown) {
-      console.error(" Submit error:", err);
       toast({
         variant: "destructive",
         title: "Error",
@@ -196,8 +195,11 @@ export default function PromotionForm() {
       });
     } finally {
       setSubmitting(false);
+      setConfirmOpen(false);
+      setPendingValues(null);
     }
   };
+
 
   if (loadingPromo) {
     return (
@@ -213,7 +215,14 @@ export default function PromotionForm() {
         {isEdit ? "Editar Promoción" : "Nueva Promoción"}
       </h1>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <form
+          onSubmit={handleSubmit((values) => {
+            setPendingValues(values);
+            setConfirmOpen(true);
+          })}
+          className="space-y-6"
+        >
+
         {/* Type */}
         <fieldset className="space-y-2">
           <Label>Tipo de contenido</Label>
@@ -302,7 +311,7 @@ export default function PromotionForm() {
               >
                 <Upload className="h-6 w-6" />
                 <span className="text-sm">Subir imagen desktop</span>
-                <span className="text-xs">JPG, PNG o WEBP · Máx 2 MB</span>
+                <span className="text-xs">JPG, PNG o WEBP · Máx 5 MB</span>
               </button>
             )}
             <input
@@ -397,6 +406,33 @@ export default function PromotionForm() {
           </Button>
         </div>
       </form>
+
+      <AlertDialog open={confirmOpen} onOpenChange={setConfirmOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>
+              {isEdit ? "¿Actualizar promoción?" : "¿Crear promoción?"}
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              {isEdit
+                ? "Los cambios se guardarán y reemplazarán la información actual."
+                : "La promoción se creará y quedará disponible según su estado."}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={submitting}>
+              Cancelar
+            </AlertDialogCancel>
+            <AlertDialogAction onClick={handleConfirmSubmit} disabled={submitting}>
+              {submitting && (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              )}
+              {isEdit ? "Actualizar" : "Crear"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
     </div>
   );
 }

@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { InstagramButton } from './ui/isntagram-button';
+import { toast } from 'sonner';
+
 
 interface FormData {
   name: string;
   email: string;
   message: string;
 }
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -15,6 +19,7 @@ export const ContactForm: React.FC = () => {
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -33,6 +38,7 @@ export const ContactForm: React.FC = () => {
 
   const validateForm = (): boolean => {
     const newErrors: Partial<FormData> = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
     if (!formData.name.trim()) {
       newErrors.name = 'El nombre es requerido';
@@ -40,7 +46,7 @@ export const ContactForm: React.FC = () => {
 
     if (!formData.email.trim()) {
       newErrors.email = 'El correo es requerido';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (!emailRegex.test(formData.email)) {
       newErrors.email = 'El correo no es válido';
     }
 
@@ -52,14 +58,33 @@ export const ContactForm: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (validateForm()) {
-      console.log('Form submitted:', formData);
+    if (isSubmitting) return;
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('http://miura.test/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error('Error al enviar');
+      toast.success("Mensaje enviado correctamente");
       setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      toast.error("Error al enviar el mensaje");
+    } finally {
+      setIsSubmitting(false);
     }
   };
+
 
   return (
     <form onSubmit={handleSubmit} className="
@@ -224,22 +249,22 @@ export const ContactForm: React.FC = () => {
         gap-5
       ">
         <button
-          type="submit"
-          className="
-            bg-white
-            h-[48px]
-            px-4
-            rounded-lg
-            text-[#12181D]
-            text-[18px]
-            max-sm:text-base
-            text-center
-            hover:bg-gray-100
-            transition-colors
-          "
-        >
-          Enviar Mensaje
-        </button>
+        type="submit"
+        disabled={isSubmitting}
+        className={`
+          bg-white
+          h-[48px]
+          px-4
+          rounded-lg
+          text-[#12181D]
+          text-[18px]
+          max-sm:text-base
+          transition
+          ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}
+        `}
+      >
+        {isSubmitting ? 'Enviando…' : 'Enviar Mensaje'}
+      </button>
 
 
         <a

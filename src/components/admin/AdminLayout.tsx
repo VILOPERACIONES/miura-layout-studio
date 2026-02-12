@@ -5,7 +5,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { to: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  // { to: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/admin/promotions", label: "Promociones", icon: Megaphone },
 ];
 
