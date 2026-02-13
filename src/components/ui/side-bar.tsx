@@ -55,10 +55,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
         {/* Navigation */}
         <nav className="flex flex-col gap-8 pt-32 px-10">
-          {["NOSOTROS", "EXPERIENCIAS", "FACTURACIÓN", "CONTACTOS"].map((item) => (
+          {[
+            { label: "NOSOTROS", href: "#about" },
+            { label: "EXPERIENCIAS", href: "#experiences" },
+            { label: "FACTURACIÓN", href: "#billing" },
+            { label: "CONTACTOS", href: "#contact" },
+          ].map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               onClick={onClose}
               className="
                 font-source
@@ -70,7 +75,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                 transition-opacity
               "
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </nav>
