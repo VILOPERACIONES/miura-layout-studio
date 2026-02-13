@@ -120,7 +120,7 @@ export default function PromotionForm() {
         setValue("type", promo.type);
         setValue("title", promo.title);
         setValue("link", promo.link || "");
-        setValue("is_active", promo.is_active);
+        setValue("is_active", Boolean(promo.is_active));
         setDesktopPreview(promo.image_desktop_url);
         setMobilePreview(promo.image_mobile_url);
       } catch (error) {
@@ -160,9 +160,9 @@ export default function PromotionForm() {
   };
 
   const handleConfirmSubmit = async () => {
-  if (!pendingValues) return;
+    if (!pendingValues) return;
 
-  setSubmitting(true);
+    setSubmitting(true);
     try {
       const fd = new FormData();
       fd.append("type", pendingValues.type);
@@ -215,13 +215,13 @@ export default function PromotionForm() {
         {isEdit ? "Editar Promoción" : "Nueva Promoción"}
       </h1>
 
-        <form
-          onSubmit={handleSubmit((values) => {
-            setPendingValues(values);
-            setConfirmOpen(true);
-          })}
-          className="space-y-6"
-        >
+      <form
+        onSubmit={handleSubmit((values) => {
+          setPendingValues(values);
+          setConfirmOpen(true);
+        })}
+        className="space-y-6"
+      >
 
         {/* Type */}
         <fieldset className="space-y-2">
@@ -230,11 +230,10 @@ export default function PromotionForm() {
             {(["promo", "evento"] as const).map((t) => (
               <label
                 key={t}
-                className={`flex cursor-pointer items-center gap-2 rounded-md border px-4 py-2.5 text-sm font-medium transition-colors ${
-                  watchType === t
+                className={`flex cursor-pointer items-center gap-2 rounded-md border px-4 py-2.5 text-sm font-medium transition-colors ${watchType === t
                     ? "border-primary bg-primary/5 text-foreground"
                     : "border-border text-muted-foreground hover:bg-muted/50"
-                }`}
+                  }`}
               >
                 <input
                   type="radio"

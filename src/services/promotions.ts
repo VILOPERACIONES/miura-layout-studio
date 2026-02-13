@@ -65,7 +65,10 @@ export const promotionsService = {
    * Body: FormData (same fields as create)
    */
   update: async (id: string, data: FormData): Promise<Promotion> => {
-    return api.put<Promotion>(`/promotions/${id}`, data);
+    // Laravel no soporta multipart/form-data con PUT/PATCH de forma nativa.
+    // Usamos POST con "spoofing" de método enviando _method=PUT.
+    data.append("_method", "PUT");
+    return api.post<Promotion>(`/promotions/${id}`, data);
   },
 
   /**
