@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export const About: React.FC = () => {
   const carousel1Ref = useRef<HTMLDivElement>(null);
   const carousel2Ref = useRef<HTMLDivElement>(null);
+  const mobileCarouselRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
 
@@ -20,9 +21,12 @@ export const About: React.FC = () => {
     "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770666063/Foto_4_vp7ii6.png",
   ];
 
+  const mobileCarouselImages = [...carousel1Images, ...carousel2Images];
+
   useEffect(() => {
     const carousel1 = carousel1Ref.current;
     const carousel2 = carousel2Ref.current;
+    const mobileCarousel = mobileCarouselRef.current;
 
     if (!carousel1 || !carousel2) return;
 
@@ -30,31 +34,42 @@ export const About: React.FC = () => {
     let scrollPosition2 = carousel2.scrollHeight / 2;
 
     const scroll1 = () => {
-      scrollPosition1 += 0.5; // Velocidad hacia abajo
-
+      scrollPosition1 += 0.5;
       if (scrollPosition1 >= carousel1.scrollHeight / 2) {
         scrollPosition1 = 0;
       }
-
       carousel1.scrollTop = scrollPosition1;
     };
 
     const scroll2 = () => {
-      scrollPosition2 -= 0.5; // Velocidad hacia arriba
-
+      scrollPosition2 -= 0.5;
       if (scrollPosition2 <= 0) {
         scrollPosition2 = carousel2.scrollHeight / 2;
       }
-
       carousel2.scrollTop = scrollPosition2;
     };
 
     const interval1 = setInterval(scroll1, 20);
     const interval2 = setInterval(scroll2, 20);
 
+    // Mobile horizontal carousel
+    let mobileScrollPos = 0;
+    let mobileInterval: ReturnType<typeof setInterval> | null = null;
+    if (mobileCarousel) {
+      const scrollMobile = () => {
+        mobileScrollPos += 0.5;
+        if (mobileScrollPos >= mobileCarousel.scrollWidth / 2) {
+          mobileScrollPos = 0;
+        }
+        mobileCarousel.scrollLeft = mobileScrollPos;
+      };
+      mobileInterval = setInterval(scrollMobile, 20);
+    }
+
     return () => {
       clearInterval(interval1);
       clearInterval(interval2);
+      if (mobileInterval) clearInterval(mobileInterval);
     };
   }, []);
 
@@ -109,7 +124,8 @@ export const About: React.FC = () => {
           mx-auto
           max-w-[1200px]
           px-6
-          py-20
+          pt-20
+          pb-4
           lg:py-0
           grid
           gap-8
@@ -206,8 +222,29 @@ export const About: React.FC = () => {
             Con un sin fin de propuestas culinarias, logramos combinar creatividad
             y hospitalidad para ofrecer una experiencia inigualable en cada visita.
           </p>
+
+
         </div>
       </div>
+      {/* Mobile horizontal carousel - visible only below lg */}
+        <div className="relative z-10 block lg:hidden mt-6 mb-5 -mx-6">
+          <div
+            ref={mobileCarouselRef}
+            className="overflow-hidden"
+            style={{ scrollBehavior: 'auto' }}
+          >
+            <div className="flex gap-3 w-max">
+              {[...mobileCarouselImages, ...mobileCarouselImages].map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Restaurant photo ${index + 1}`}
+                  className="w-[200px] h-[240px] max-sm:w-[160px] max-sm:h-[200px] object-cover rounded-lg flex-shrink-0"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
     </section>
   );
 };
