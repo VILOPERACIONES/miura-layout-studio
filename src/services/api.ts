@@ -7,7 +7,7 @@
  * TODO (backend): Set the correct BASE_URL when deploying the API.
  */
 
-const BASE_URL = "http://miura.test/api"; //TODO: AGERGAR ESTO EN ENV
+const BASE_URL = "https://admin.miurahospitality.com/api"; //TODO: AGERGAR ESTO EN ENV
 
 function getToken(): string | null {
   return localStorage.getItem("admin_token");

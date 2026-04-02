@@ -67,7 +67,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://miura.test/api/contact', {
+      const response = await fetch('https://admin.miurahospitality.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
