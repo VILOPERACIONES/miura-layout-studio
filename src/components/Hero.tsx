@@ -45,9 +45,12 @@ export const Hero: React.FC = () => {
           shadow-[6px_4px_3.3px_-50px_rgba(0,0,0,0.25)]
         "
       >
-        {/* VIDEO BACKGROUND — DESKTOP */}
+        {/* ===================== */}
+        {/* VIDEO BACKGROUND — ALL SCREENS */}
+        {/* ===================== */}
+        {/* Eliminamos el 'hidden lg:block'. object-cover recorta los lados en móvil para llenar el alto sin deformar. */}
         <video
-          className="absolute inset-0 w-full h-full object-cover hidden lg:block"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           autoPlay
           loop
           muted={isMuted}
@@ -61,22 +64,21 @@ export const Hero: React.FC = () => {
           />
         </video>
 
-        {/* IMAGE BACKGROUND — TABLET & MOBILE */}
-        <img
-          src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1768501496/bg-movil-hero_jctsb3.png"
-          alt="Background Hero Miura"
-          className="absolute inset-0 w-full h-full object-cover block lg:hidden"
-          onError={(e) => {
-            e.currentTarget.src = "/src/assets/images/hero/hero-background-tablet.png";
-          }}
-        />
-
         <div className="absolute inset-0 bg-black/20" />
 
-        {/* AUDIO TOGGLE (DESKTOP ONLY) */}
+        {/* ===================== */}
+        {/* AUDIO TOGGLE — ALL SCREENS */}
+        {/* ===================== */}
+        {/* Cambiamos 'hidden lg:flex' por 'flex' para que también se vea en móvil */}
         <button
           onClick={() => setIsMuted((prev) => !prev)}
-          className="absolute bottom-6 right-6 z-30 hidden lg:flex items-center justify-center w-11 h-11 rounded-full bg-black/50 backdrop-blur text-white hover:bg-black/70 transition"
+          className="
+            absolute bottom-6 right-6 z-30
+            flex items-center justify-center
+            w-11 h-11 rounded-full
+            bg-black/50 backdrop-blur text-white
+            hover:bg-black/70 transition
+          "
         >
           {isMuted ? "🔇" : "🔊"}
         </button>
@@ -99,18 +101,15 @@ export const Hero: React.FC = () => {
             justify-between
           "
         >
-          {/* Logo - Ahora se ajusta el tamaño según el breakpoint */}
           <img
             src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770766588/miura-hospitality-logo_kqsbs8.png"
             alt="Miura Logo"
             className="w-[110px] md:w-[140px] lg:w-[170px] h-auto"
           />
 
-          {/* Hamburger - Visible en todos los tamaños ahora */}
           <HamburgerButton onClick={() => setIsSidebarOpen(true)} />
         </div>
 
-        {/* Sidebar */}
         <Sidebar
           isOpen={isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}
