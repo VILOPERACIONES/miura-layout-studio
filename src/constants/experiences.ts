@@ -49,7 +49,7 @@ export const EXPERIENCES: Experience[] = [
     logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770768861/Branding-Valhalla-02-white_fbyc5d.png",
     onErrorLogo: "/src/assets/images/experiences/Branding-Valhalla-02-white.png",
     alt: "Valhalla Logo",
-    background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770849477/bg-vallhalla-card_pknxgj.png",
+    background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409807/bg-valhalla_k0if5w.png",
     onErrorBackground: "/src/assets/images/experiences/bg-valhalla.png",
     title: "Valhalla",
     zone: "NORTE",
@@ -94,7 +94,7 @@ export const EXPERIENCES: Experience[] = [
   title: "Yakuza Centro",
   zone: "CENTRO",
   description:
-    "Inspirado en la sofisticación de los restaurantes japoneses de la zona de Ginza, Yakuza es un espacio donde la autenticidad de la cocina japonesa se encuentra con ingredientes y técnicas gourmet. Cada platillo celebra el equilibrio entre tradición y lujo contemporáneo, dando vida a una experiencia gastronómica refinada, pensada para quienes buscan sabores profundos, elegancia y carácter en cada detalle.",
+    "Yakuza es un espacio en donde la autenticidad de la cocina japonesa se encuentra con ingredientes y técnicas de excelencia culinaria. Aquí, cada platillo celebra el equilibrio entre tradición y lujo contemporáneo, dando vida a una experiencia gastronómica refinada, pensada para quienes buscan sabores profundos, elegancia y carácter en cada detalle.",
   heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Large-Yakuza-Logo_i2m4do.png",
   onErrorHeroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
   heroLogoAlt: "Yakuza Logo",
@@ -114,7 +114,7 @@ export const EXPERIENCES: Experience[] = [
   title: "Yakuza Norte",
   zone: "NORTE",
   description:
-    "Inspirado en la sofisticación de los restaurantes japoneses de la zona de Ginza, Yakuza es un espacio donde la autenticidad de la cocina japonesa se encuentra con ingredientes y técnicas gourmet. Cada platillo celebra el equilibrio entre tradición y lujo contemporáneo, dando vida a una experiencia gastronómica refinada, pensada para quienes buscan sabores profundos, elegancia y carácter en cada detalle.",
+    "Yakuza es un espacio en donde la autenticidad de la cocina japonesa se encuentra con ingredientes y técnicas de excelencia culinaria. Aquí, cada platillo celebra el equilibrio entre tradición y lujo contemporáneo, dando vida a una experiencia gastronómica refinada, pensada para quienes buscan sabores profundos, elegancia y carácter en cada detalle.",
   heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Large-Yakuza-Logo_i2m4do.png",
   onErrorHeroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
   heroLogoAlt: "Yakuza Logo",
@@ -134,7 +134,7 @@ export const EXPERIENCES: Experience[] = [
   title: "Yakuza Patio Central",
   zone: "PATIO CENTRAL",
   description:
-    "Inspirado en la sofisticación de los restaurantes japoneses de la zona de Ginza, Yakuza es un espacio donde la autenticidad de la cocina japonesa se encuentra con ingredientes y técnicas gourmet. Cada platillo celebra el equilibrio entre tradición y lujo contemporáneo, dando vida a una experiencia gastronómica refinada, pensada para quienes buscan sabores profundos, elegancia y carácter en cada detalle.",
+    "Yakuza es un espacio en donde la autenticidad de la cocina japonesa se encuentra con ingredientes y técnicas de excelencia culinaria. Aquí, cada platillo celebra el equilibrio entre tradición y lujo contemporáneo, dando vida a una experiencia gastronómica refinada, pensada para quienes buscan sabores profundos, elegancia y carácter en cada detalle.",
   heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Large-Yakuza-Logo_i2m4do.png",
   onErrorHeroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
   heroLogoAlt: "Yakuza Logo",
@@ -153,7 +153,7 @@ export const EXPERIENCES: Experience[] = [
   title: "Faena Taberna",
   zone: "NORTE",
   description:
-  "Faena es un restaurante de cocina española tradicional auténtica, donde cada visita se transforma en una experiencia para disfrutarse. En un ambiente cálido y lleno de carácter, los sabores que evocan a España se convierten en el centro de la mesa, creando el escenario perfecto para compartir grandes momentos y buena comida.",
+  "Faena es una taberna con cocina española tradicional auténtica, donde cada visita se transforma en una experiencia para disfrutarse. En un ambiente cálido y lleno de carácter, los sabores que evocan a España se convierten en el centro de la mesa, creando el escenario perfecto para compartir grandes momentos y buena comida.",
   heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-Faena-Logo_m4xslb.png",
   onErrorHeroLogo: "/src/assets/images/experiences/Large-Faena-Logo.png",
   ubicacion: "https://maps.app.goo.gl/DsC552kSJcEsGrCP6",
@@ -173,7 +173,7 @@ export const EXPERIENCES: Experience[] = [
   title: "Tercer Acto",
   zone: "NORTE",
   description:
-  "Tercer Acto te invita a redescubrir la cocina japonesa a través de una experiencia única: el Omakase. Aquí, cada comensal se entrega a las manos de nuestro chef para disfrutar de un extraordinario viaje gastronómico de 15 tiempos, donde la creatividad, la técnica y los ingredientes más selectos se combinan para despertar todos los sentidos. Más que una comida, Tercer Acto es un espectáculo culinario que transforma cada bocado en un momento memorable.",
+  "Te invita a redescubrir la cocina japonesa a través de una experiencia única: el Omakase. Aquí, cada comensal disfruta de un extraordinario viaje gastronómico a través de una variedad de tiempos, donde la creatividad, la técnica y los ingredientes más selectos se combinan para despertar todos los sentidos. Más que una comida, Tercer Acto es un espectáculo culinario que transforma cada bocado en un momento memorable.",
   heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-Tercer-Acto-Logo_kyzowm.png",
   onErrorHeroLogo: "/src/assets/images/experiences/Large-Tercer-Acto-Logo.png",
   heroLogoAlt: "Tercer Acto Logo",
@@ -193,7 +193,7 @@ export const EXPERIENCES: Experience[] = [
   title: "Miura",
   zone: "NORTE",
   description:
-    "En nuestro Contemporary Japanese Fine Dining encontrará una propuesta distinta en presentación, ingredientes y técnicas, con un enfoque más creativo y platillos más elaborados.",
+    "Miura Experience está dedicada a la organización y ejecución de eventos excepcionales, ofreciendo servicios de catering que destacan por su excelencia y meticulosa atención al detalle, creando experiencias memorables en cada ocasión.",
   heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770771880/large-miura-exp_oihewf.png",
   onErrorHeroLogo: "/src/assets/images/experiences/Large-Miura-Logo.png",
   heroLogoAlt: "Miura Logo",
