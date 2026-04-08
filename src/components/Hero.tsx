@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
           poster="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770334986/bg-hero_shvbgi.png"
         >
           <source
-            src="https://res.cloudinary.com/dfsrjktyj/video/upload/v1775513475/MIURA_VIDEO_MARZO_skogss.mp4"
+            src="https://res.cloudinary.com/dfsrjktyj/video/upload/v1775686212/Video_Marzo_Miura_c_Fotos_2_a0udbr.mp4"
             type="video/mp4"
           />
         </video>

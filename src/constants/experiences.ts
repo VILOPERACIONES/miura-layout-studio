@@ -34,11 +34,11 @@ export const EXPERIENCES: Experience[] = [
     title: "Casa Blanca",
     zone: "NORTE",
     description:
-      "Casa Blanca es un espacio en donde las hamburguesas se disfrutan sin prisas y con mucho sabor. Jugosas, recién hechas y llenas de combinaciones que antojan desde el primer vistazo, Casa Blanca es el lugar ideal para venir a comer rico y pasarla bien.",
+      "Casa Blanca es un espacio en donde las hamburguesas se disfrutan sin prisas y con mucho sabor. Jugosas, recién hechas y llenas de combinaciones que se antojan desde el primer vistazo. Casa Blanca un espacio para venir a comer rico y pasarla bien.",
     heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409809/Large-Casa-Blanca-Logo_nkzusr.png",
     onErrorHeroLogo: "/src/assets/images/experiences/Large-Casa-Blanca-Logo.png",
     heroLogoAlt: "Casa Blanca Logo",
-    ubicacion: "https://maps.app.goo.gl/ugN49kFnX5L6h8qk7",
+    ubicacion: "https://maps.app.goo.gl/o76jtiPPb3hNpZ659",
     links: {
       instagram: "https://www.instagram.com/casablancaburgersmx/",
       reserve: "https://wa.me/529997000986",
@@ -72,13 +72,13 @@ export const EXPERIENCES: Experience[] = [
     background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409808/bg-kona_kzfqul.png",
     onErrorBackground: "/src/assets/images/experiences/bg-kona.png",
     title: "Kōnā",
-    zone: "NORTE",
+    // zone: "NORTE",
     description:
       "Kona es una dark kitchen de comida japonesa diseñada exclusivamente para disfrutarse en delivery. Cada platillo se prepara al momento, cuidando cada detalle y respetando sabores auténticos, para llevar hasta tu puerta una experiencia japonesa práctica, fresca y llena de calidad. Ideal para quienes buscan disfrutar lo mejor de Japón, sin salir de casa.",
     heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-kona-logo_gzy7vg.png",
     onErrorHeroLogo: "/src/assets/images/experiences/Large-kona-Logo.png",
     heroLogoAlt: "Kōnā Logo",
-    ubicacion: "",
+    // ubicacion: "",
     links: {
       instagram: "https://www.instagram.com/kona.mexico/",
       reserve: "https://www.rappi.com.mx/restaurantes/1930050449-kona",
@@ -98,7 +98,7 @@ export const EXPERIENCES: Experience[] = [
   heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Large-Yakuza-Logo_i2m4do.png",
   onErrorHeroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
   heroLogoAlt: "Yakuza Logo",
-  ubicacion: "https://maps.app.goo.gl/ALo3rxpSgZxSSt7JA",
+  ubicacion: "https://maps.app.goo.gl/QEKCP6E6JLWTxxnP9",
   links: {
     instagram: "https://www.instagram.com/yakuzamx/",
     reserve: "https://wa.me/529997001097",
@@ -118,7 +118,7 @@ export const EXPERIENCES: Experience[] = [
   heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Large-Yakuza-Logo_i2m4do.png",
   onErrorHeroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
   heroLogoAlt: "Yakuza Logo",
-  ubicacion: "https://share.google/knvR99UBeRWMPAq7B",
+  ubicacion: "https://maps.app.goo.gl/9Zb1CGaqMqrNgvjL6",
   links: {
     instagram: "https://www.instagram.com/yakuzamx/",
     reserve: "https://wa.me/529994425397",

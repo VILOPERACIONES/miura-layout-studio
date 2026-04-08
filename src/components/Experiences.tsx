@@ -434,20 +434,26 @@ export const Experiences: React.FC = () => {
         </div>
 
         {/* Zona */}
-        <a href={activeExperience.ubicacion}>
-          <div className="flex items-center gap-4 font-arial font-normal text-base">
-            <svg width="16" height="25" viewBox="0 0 16 25" fill="none">
-              <path
-                d="M15.8707 7.86135C15.8707 3.63132 12.3467 0.202026 8 0.202026C3.65325 0.202026 0.129333 3.63132 0.129333 7.86135C0.129333 11.6167 2.90679 14.7409 6.57193 15.3944V24.7976H9.42845V15.3944C13.0932 14.7405 15.871 11.6167 15.871 7.86135Z"
-                fill="white"
-              />
-            </svg>
+        {activeExperience.ubicacion && (
+          <a
+            href={activeExperience.ubicacion}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex items-center gap-4 font-arial font-normal text-base">
+              <svg width="16" height="25" viewBox="0 0 16 25" fill="none">
+                <path
+                  d="M15.8707 7.86135C15.8707 3.63132 12.3467 0.202026 8 0.202026C3.65325 0.202026 0.129333 3.63132 0.129333 7.86135C0.129333 11.6167 2.90679 14.7409 6.57193 15.3944V24.7976H9.42845V15.3944C13.0932 14.7405 15.871 11.6167 15.871 7.86135Z"
+                  fill="white"
+                />
+              </svg>
 
-            <span className="text-white tracking-[6.8px]">
-              {activeExperience.zone ?? "NORTE"}
-            </span>
-          </div>
-        </a>
+              <span className="text-white tracking-[6.8px]">
+                {activeExperience.zone ?? "NORTE"}
+              </span>
+            </div>
+          </a>
+        )}
 
 
         <div className="min-h-[285px] overflow-hidden">
