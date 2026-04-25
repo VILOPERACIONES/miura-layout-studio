@@ -278,7 +278,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             hover:underline
           "
         >
-          info@miurahospitality.mx
+          info@miurahospitality.com
         </a>
 
         <InstagramButton
