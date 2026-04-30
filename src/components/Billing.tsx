@@ -47,7 +47,7 @@ export const Billing: React.FC = () => {
     >
       {/* Background */}
       <img
-        src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770766069/bg-billing_sgce7l.png" //TODO: AGREGAR EL ON-ERROR AQUÍ
+        src="https://admin.miurahospitality.com/images/billing/billing-background.webp"
         alt="Billing background"
         className="absolute inset-0 w-full h-full object-cover"
       />

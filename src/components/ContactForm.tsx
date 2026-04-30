@@ -287,11 +287,11 @@ const handleSubmit = async (e: React.FormEvent) => {
 
         <img
         className='ml-auto'
-        src="/src/assets/images/contact/8888.png"
+        src="https://admin.miurahospitality.com/images/contact/vector.png"
         alt="Logo Empresa"
         onError={(e) => {
           e.currentTarget.src =
-            "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409805/8888_slluqb.png";
+            "https://admin.miurahospitality.com/images/contact/vector.png";
         }}
         />
 

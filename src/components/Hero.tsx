@@ -56,10 +56,10 @@ export const Hero: React.FC = () => {
           muted={isMuted}
           playsInline
           preload="auto"
-          poster="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770334986/bg-hero_shvbgi.png"
+          poster="https://admin.miurahospitality.com/images/hero/hero-backgroud.webp"
         >
           <source
-            src="https://res.cloudinary.com/dfsrjktyj/video/upload/v1775686212/Video_Marzo_Miura_c_Fotos_2_a0udbr.mp4"
+            src="https://res.cloudinary.com/dz6npahqp/video/upload/v1777088583/Video_Marzo_Miura_c_Fotos_2_y3gqcw.mp4"
             type="video/mp4"
           />
         </video>
@@ -102,7 +102,7 @@ export const Hero: React.FC = () => {
           "
         >
           <img
-            src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770766588/miura-hospitality-logo_kqsbs8.png"
+            src="https://admin.miurahospitality.com/images/hero/hero-miura-logo.png"
             alt="Miura Logo"
             className="w-[110px] md:w-[140px] lg:w-[170px] h-auto"
           />

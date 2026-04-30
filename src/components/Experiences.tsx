@@ -382,10 +382,10 @@ export const Experiences: React.FC = () => {
             className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
           >
             <img
-              src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/prev_button_bovkx5.png"
+              src="https://admin.miurahospitality.com/images/shared/prev_button.png"
               alt="Anterior"
               onError={(e) => {
-                e.currentTarget.src = "/src/assets/images/experiences/prev_button.png";
+                e.currentTarget.src = "https://admin.miurahospitality.com/images/shared/prev_button.png";
               }}
               className="w-full h-full object-contain"
             />
@@ -397,11 +397,11 @@ export const Experiences: React.FC = () => {
             className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
           >
             <img
-              src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/next_button_rsydr0.png"
+              src="https://admin.miurahospitality.com/images/shared/next_button.png"
               alt="Siguiente"
               className="w-full h-full object-contain"
               onError={(e) => {
-              e.currentTarget.src = "/src/assets/images/experiences/next_button.png"
+              e.currentTarget.src = "https://admin.miurahospitality.com/images/shared/next_button.png"
               }}
             />
           </button>
@@ -488,12 +488,12 @@ export const Experiences: React.FC = () => {
                   "
                 >
                   <img
-                    src="/src/assets/images/shared/rappi-orange.png" //TODO: AGREGAR EN CLOUDINARY
+                    src="https://admin.miurahospitality.com/images/shared/rappi.png" //TODO: AGREGAR EN CLOUDINARY
                     alt="Rappi"
                     className="h-[41px] object-contain"
                     onError={(e) => {
                       e.currentTarget.src =
-                        "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768434000/rappi_droqcf.png";
+                        "https://admin.miurahospitality.com/images/shared/rappi.png";
                     }}
                   />
                 </a>
@@ -553,10 +553,10 @@ export const Experiences: React.FC = () => {
             className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
           >
             <img
-              src="/src/assets/images/experiences/prev_button.png"
+              src="https://admin.miurahospitality.com/images/shared/prev_button.png"
               alt="Anterior"
               onError={(e) => {
-                e.currentTarget.src = "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/prev_button_bovkx5.png";
+                e.currentTarget.src = "https://admin.miurahospitality.com/images/shared/prev_button.png";
               }}
               className="w-full h-full object-contain"
             />
@@ -568,11 +568,11 @@ export const Experiences: React.FC = () => {
             className="w-[45px] h-[45px] hover:opacity-80 transition z-10"
           >
             <img
-              src="/src/assets/images/experiences/next_button.png"
+              src="https://admin.miurahospitality.com/images/shared/next_button.png"
               alt="Siguiente"
               className="w-full h-full object-contain"
               onError={(e) => {
-              e.currentTarget.src = "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409812/next_button_rsydr0.png"
+              e.currentTarget.src = "https://admin.miurahospitality.com/images/shared/next_button.png"
               }}
             />
           </button>

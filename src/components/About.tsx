@@ -12,13 +12,13 @@ export const About: React.FC = () => {
 
   // Imágenes para los carousels
   const carousel1Images = [
-    "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770666127/Foto_3_znvayu.png",
-    "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770665998/Foto_1_b3y5iv.png",
+    "https://admin.miurahospitality.com/images/about/about-carousel-1.webp",
+    "https://admin.miurahospitality.com/images/about/about-carousel-2.webp",
   ];
 
   const carousel2Images = [
-    "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770665909/Foto_2_n5ucyv.png",
-    "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770666063/Foto_4_vp7ii6.png",
+    "https://admin.miurahospitality.com/images/about/about-carousel-3.webp",
+    "https://admin.miurahospitality.com/images/about/about-carousel-4.webp",
   ];
 
   const mobileCarouselImages = [...carousel1Images, ...carousel2Images];
@@ -111,7 +111,7 @@ export const About: React.FC = () => {
     >
       {/* Background */}
       <img
-        src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770766234/bg-about_y5pqyk.png"
+        src="https://admin.miurahospitality.com/images/about/about-background.webp"
         alt="Restaurant background"
         className="absolute inset-0 w-full h-full object-cover"
       />

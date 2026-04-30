@@ -44,7 +44,7 @@ export const Contact: React.FC = () => {
     >
       {/* Background */}
       <img
-        src="https://res.cloudinary.com/dfsrjktyj/image/upload/v1770765785/bg-contact_zrnoys.png"
+        src="https://admin.miurahospitality.com/images/contact/contact-background.webp"
         alt="Contact background"
         className="absolute inset-0 w-full h-full object-cover blur-[3.75px]"
       />

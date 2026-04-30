@@ -3,19 +3,20 @@ import type { Experience } from "@/types/experience";
 
 export const EXPERIENCES: Experience[] = [
   {
-    id: "47-th-street", //? COMPLETADO
-    // logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Logo-47-th-street_jbqh0r.png",
-    logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770768852/Logo-47-th-street-white_uhu0v7.png",
-    onErrorLogo: "/src/assets/images/experiences/Logo-47-th-street-white.png",
+    //logo: "https://admin.miurahospitality.com/images/experiences/logo/Logo-47-th-street-white.png",
+    //heroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-47-Logo.png",
+    id: "47-th-street",
+    logo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-47-Logo-v2.png",
+    onErrorLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-47-Logo-v2.png",
     alt: "47th Street Logo",
-    background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770849303/bg-47-street-card_ngnkur.png",
-    onErrorBackground: "/src/assets/images/experiences/bg-47-th-street.png",
+    background: "https://admin.miurahospitality.com/images/experiences/background/bg-47-th-street.webp",
+    onErrorBackground: "https://admin.miurahospitality.com/images/experiences/background/bg-47-th-street.webp",
     title: "47th Street",
     zone: "CENTRO",
     description:
       "47th Street Piano Bar es un refugio donde cada noche se transforma en una experiencia inolvidable. Disfruta de la música del piano en vivo que envuelve el ambiente, cócteles elaborados con precisión y un espacio cálido y sofisticado que invita a relajarse, socializar y dejarse llevar. Más que un bar, es un lugar para vivir momentos únicos, donde cada visita se convierte en una celebración de sabor, sonido y estilo.",
-    heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409809/Large-47-Logo3_o576se.png",
-    onErrorHeroLogo: "/src/assets/images/experiences/Large-47-Logo3.png",
+    heroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-47-Logo-v2.png",
+    onErrorHeroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-47-Logo-v2.png",
     heroLogoAlt: "47th Street Logo",
     ubicacion: "https://maps.app.goo.gl/hNpCTG2jQG1pLHyr9",
     links: {
@@ -25,18 +26,17 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     id: "casa-blanca", //? COMPLETADO
-    // logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Logo-Casa-Blanca_vbfqc3.png",
-    logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770768849/Logo-Casa-Blanca-white_i0yxss.png",
-    onErrorLogo: "/src/assets/images/experiences/Logo-Casa-Blanca-white.png",
+    logo: "https://admin.miurahospitality.com/images/experiences/logo/Logo-Casa-Blanca-white.png",
+    onErrorLogo: "https://admin.miurahospitality.com/images/experiences/logo/Logo-Casa-Blanca-white.png",
     alt: "Casa Blanca Logo",
-    background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770849376/bg-casa-blanca-card_kqmfqt.png",
-    onErrorBackground: "/src/assets/images/experiences/bg-casablanca.png",
+    background: "https://admin.miurahospitality.com/images/experiences/background/bg-casablanca.webp",
+    onErrorBackground: "https://admin.miurahospitality.com/images/experiences/background/bg-casablanca.webp",
     title: "Casa Blanca",
     zone: "NORTE",
     description:
       "Casa Blanca es un espacio en donde las hamburguesas se disfrutan sin prisas y con mucho sabor. Jugosas, recién hechas y llenas de combinaciones que se antojan desde el primer vistazo. Casa Blanca un espacio para venir a comer rico y pasarla bien.",
-    heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409809/Large-Casa-Blanca-Logo_nkzusr.png",
-    onErrorHeroLogo: "/src/assets/images/experiences/Large-Casa-Blanca-Logo.png",
+    heroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Casa-Blanca-Logo.png",
+    onErrorHeroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Casa-Blanca-Logo.png",
     heroLogoAlt: "Casa Blanca Logo",
     ubicacion: "https://maps.app.goo.gl/o76jtiPPb3hNpZ659",
     links: {
@@ -46,17 +46,17 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     id: "valhalla", //? ACTUALIZADO //TODO: DAR FORMATO
-    logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770768861/Branding-Valhalla-02-white_fbyc5d.png",
-    onErrorLogo: "/src/assets/images/experiences/Branding-Valhalla-02-white.png",
+    logo: "https://admin.miurahospitality.com/images/experiences/logo/Branding-Valhalla-02-white.png",
+    onErrorLogo: "https://admin.miurahospitality.com/images/experiences/Branding-Valhalla-02-white.png",
     alt: "Valhalla Logo",
-    background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409807/bg-valhalla_k0if5w.png",
-    onErrorBackground: "/src/assets/images/experiences/bg-valhalla.png",
+    background: "https://admin.miurahospitality.com/images/experiences/background/bg-valhalla.webp",
+    onErrorBackground: "https://admin.miurahospitality.com/images/experiences/background/bg-valhalla.webp",
     title: "Valhalla",
     zone: "NORTE",
     description:
       "En Valhalla los tacos al pastor son los verdaderos protagonistas. Carne jugosa, fuego constante y tortillas se combinan para ofrecer un sabor intenso que se disfruta bocado a bocado. Aquí, comer tacos es una experiencia. Valhalla es para quienes buscan tacos auténticos, llenos de carácter y una experiencia que va más allá de lo tradicional.",
-    heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-Valhalla-Logo_dcnew7.png",
-    onErrorHeroLogo: "/src/assets/images/experiences/Large-Valhalla-Logo.png",
+    heroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Valhalla-Logo.png",
+    onErrorHeroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Valhalla-Logo.png",
     heroLogoAlt: "Valhalla Logo",
     ubicacion: "https://maps.app.goo.gl/SS8fyKNt1noxnfsr8",
     links: {
@@ -66,17 +66,17 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     id: "kona", //? ACTUALIZADO
-    logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770768858/KonaLogo-white_fiet95.png",
-    onErrorLogo: "/src/assets/images/experiences/KonaLogo-white.png",
+    logo: "https://admin.miurahospitality.com/images/experiences/logo/KonaLogo-white.png",
+    onErrorLogo: "https://admin.miurahospitality.com/images/experiences/logo/KonaLogo-white.png",
     alt: "Kōnā Logo",
-    background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409808/bg-kona_kzfqul.png",
-    onErrorBackground: "/src/assets/images/experiences/bg-kona.png",
+    background: "https://admin.miurahospitality.com/images/experiences/background/bg-kona.webp",
+    onErrorBackground: "https://admin.miurahospitality.com/images/experiences/background/bg-kona.webp",
     title: "Kōnā",
     // zone: "NORTE",
     description:
       "Kona es una dark kitchen de comida japonesa diseñada exclusivamente para disfrutarse en delivery. Cada platillo se prepara al momento, cuidando cada detalle y respetando sabores auténticos, para llevar hasta tu puerta una experiencia japonesa práctica, fresca y llena de calidad. Ideal para quienes buscan disfrutar lo mejor de Japón, sin salir de casa.",
-    heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-kona-logo_gzy7vg.png",
-    onErrorHeroLogo: "/src/assets/images/experiences/Large-kona-Logo.png",
+    heroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-kona-logo.png",
+    onErrorHeroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-kona-logo.png",
     heroLogoAlt: "Kōnā Logo",
     // ubicacion: "",
     links: {
@@ -86,17 +86,17 @@ export const EXPERIENCES: Experience[] = [
   },
   {
   id: "yakuza-centro", //? COMPLETADO
-  logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770768873/yakuza-centro-white_k22ayd.png",
-  onErrorLogo: "/src/assets/images/experiences/yakuza-centro-white.png",
+  logo: "https://admin.miurahospitality.com/images/experiences/logo/yakuza-centro-white.png",
+  onErrorLogo: "https://admin.miurahospitality.com/images/experiences/logo/yakuza-centro-white.png",
   alt: "Yakuza Logo",
-  background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768435213/bg-yakuza-centro_erbi54.png",
-  onErrorBackground: "/src/assets/images/experiences/bg-yakuza-centro.png",
+  background: "https:///admin.miurahospitality.com/images/experiences/background/bg-yakuza.webp",
+  onErrorBackground: "https:///admin.miurahospitality.com/images/experiences/background/bg-yakuza.webp",
   title: "Yakuza Centro",
   zone: "CENTRO",
   description:
     "Yakuza es un espacio en donde la autenticidad de la cocina japonesa se encuentra con ingredientes y técnicas de excelencia culinaria. Aquí, cada platillo celebra el equilibrio entre tradición y lujo contemporáneo, dando vida a una experiencia gastronómica refinada, pensada para quienes buscan sabores profundos, elegancia y carácter en cada detalle.",
-  heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Large-Yakuza-Logo_i2m4do.png",
-  onErrorHeroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
+  heroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Yakuza-Logo.png",
+  onErrorHeroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Yakuza-Logo.png",
   heroLogoAlt: "Yakuza Logo",
   ubicacion: "https://maps.app.goo.gl/QEKCP6E6JLWTxxnP9",
   links: {
@@ -106,17 +106,17 @@ export const EXPERIENCES: Experience[] = [
 },
 {
   id: "yakuza-norte", //? COMPLETADO
-  logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770834427/yakuza-norte-white_tsxo57.png",
-  onErrorLogo: "/src/assets/images/experiences/yakuza-norte-white.png",
+  logo: "https://admin.miurahospitality.com/images/experiences/logo/Yakuza.png",
+  onErrorLogo: "https://admin.miurahospitality.com/images/experiences/logo/Yakuza.png",
   alt: "Yakuza Norte Logo",
-  background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409808/bg-yakuza_ujoflv.png", //bg-yakuza-norte
-  onErrorBackground: "/src/assets/images/experiences/bg-yakuza.png", //bg-yakuza-norte
+  background: "https://admin.miurahospitality.com/images/experiences/background/bg-yakuza.webp", //bg-yakuza-norte
+  onErrorBackground: "https://admin.miurahospitality.com/images/experiences/background/bg-yakuza.webp", //bg-yakuza-norte
   title: "Yakuza Norte",
   zone: "NORTE",
   description:
     "Yakuza es un espacio en donde la autenticidad de la cocina japonesa se encuentra con ingredientes y técnicas de excelencia culinaria. Aquí, cada platillo celebra el equilibrio entre tradición y lujo contemporáneo, dando vida a una experiencia gastronómica refinada, pensada para quienes buscan sabores profundos, elegancia y carácter en cada detalle.",
-  heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Large-Yakuza-Logo_i2m4do.png",
-  onErrorHeroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
+  heroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Yakuza-Logo.png",
+  onErrorHeroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Yakuza-Logo.png",
   heroLogoAlt: "Yakuza Logo",
   ubicacion: "https://maps.app.goo.gl/9Zb1CGaqMqrNgvjL6",
   links: {
@@ -126,17 +126,17 @@ export const EXPERIENCES: Experience[] = [
 },
 {
   id: "yakuza-patio-central", //? COMPLETADO
-  logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770768867/yakuza-patio-central-white_xr2fqi.png",
-  onErrorLogo: "/src/assets/images/experiences/yakuza-patio-central-white.png",
+  logo: "https://admin.miurahospitality.com/images/experiences/logo/yakuza-patio-central-white.png",
+  onErrorLogo: "https://admin.miurahospitality.com/images/experiences/logo/yakuza-patio-central-white.png",
   alt: "Yakuza Patio Central Logo",
-  background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768422396/bg-yakuza-patiocentral_fgepve.png",
-  onErrorBackground: "/src/assets/images/experiences/bg-yakuza-patiocentral.png",
+  background: "https://admin.miurahospitality.com/images/experiences/background/bg-yakuza.webp",
+  onErrorBackground: "https://admin.miurahospitality.com/images/experiences/background/bg-yakuza.webp",
   title: "Yakuza Patio Central",
   zone: "PATIO CENTRAL",
   description:
     "Yakuza es un espacio en donde la autenticidad de la cocina japonesa se encuentra con ingredientes y técnicas de excelencia culinaria. Aquí, cada platillo celebra el equilibrio entre tradición y lujo contemporáneo, dando vida a una experiencia gastronómica refinada, pensada para quienes buscan sabores profundos, elegancia y carácter en cada detalle.",
-  heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409811/Large-Yakuza-Logo_i2m4do.png",
-  onErrorHeroLogo: "/src/assets/images/experiences/Large-Yakuza-Logo.png",
+  heroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Yakuza-Logo.png",
+  onErrorHeroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Yakuza-Logo.png",
   heroLogoAlt: "Yakuza Logo",
   ubicacion: "https://share.google/knvR99UBeRWMPAq7B",
   links: {
@@ -145,17 +145,17 @@ export const EXPERIENCES: Experience[] = [
 },
 {
   id: "faena", //? Acetualizada //TODO: AGREGAR ICONO DE OPEN-TABLE
-  logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770768864/FAENA-logo-white_nhwwjh.png",
-  onErrorLogo: "/src/assets/images/experiences/FAENA-logo-white.png",
+  logo: "https://admin.miurahospitality.com/images/experiences/logo/FAENA-logo-white.png",
+  onErrorLogo: "https://admin.miurahospitality.com/images/experiences/logo/FAENA-logo-white.png",
   alt: "Faena Taberna Logo",
-  background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409806/bg-faena_gfql8p.png",
-  onErrorBackground: "/src/assets/images/experiences/bg-faena.png",
+  background: "https://admin.miurahospitality.com/images/experiences/background/bg-faena.webp",
+  onErrorBackground: "https://admin.miurahospitality.com/images/experiences/background/bg-faena.webp",
   title: "Faena Taberna",
   zone: "NORTE",
   description:
   "Faena es una taberna con cocina española tradicional auténtica, donde cada visita se transforma en una experiencia para disfrutarse. En un ambiente cálido y lleno de carácter, los sabores que evocan a España se convierten en el centro de la mesa, creando el escenario perfecto para compartir grandes momentos y buena comida.",
-  heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-Faena-Logo_m4xslb.png",
-  onErrorHeroLogo: "/src/assets/images/experiences/Large-Faena-Logo.png",
+  heroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Faena-Logo.png",
+  onErrorHeroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Faena-Logo.png",
   ubicacion: "https://maps.app.goo.gl/DsC552kSJcEsGrCP6",
   heroLogoAlt: "Faena Taberna Logo",
   links: {
@@ -165,17 +165,17 @@ export const EXPERIENCES: Experience[] = [
 },
 {
   id: "tercer-acto", //? Actualizada //TODO: ARREGLAR LA RESPONSIVIDAD DEL TEXTO
-  logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770768855/LOGO-TERCER-ACTO-NEGRO-white_vtru6q.png",
-  onErrorLogo: "/src/assets/images/experiences/LOGO-TERCER-ACTO-NEGRO-white.png",
+  logo: "https://admin.miurahospitality.com/images/experiences/logo/LOGO-TERCER-ACTO-NEGRO-white.png",
+  onErrorLogo: "https://admin.miurahospitality.com/images/experiences/logo/LOGO-TERCER-ACTO-NEGRO-white.png",
   alt: "Tercer Acto Logo",
-  background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409806/bg-tercer-acto_aviko0.png",
-  onErrorBackground: "/src/assets/images/experiences/bg-tercer-acto.png",
+  background: "https://admin.miurahospitality.com/images/experiences/background/bg-tercer-acto.webp",
+  onErrorBackground: "https://admin.miurahospitality.com/images/experiences/background/bg-tercer-acto.webp",
   title: "Tercer Acto",
   zone: "NORTE",
   description:
   "Te invita a redescubrir la cocina japonesa a través de una experiencia única: el Omakase. Aquí, cada comensal disfruta de un extraordinario viaje gastronómico a través de una variedad de tiempos, donde la creatividad, la técnica y los ingredientes más selectos se combinan para despertar todos los sentidos. Más que una comida, Tercer Acto es un espectáculo culinario que transforma cada bocado en un momento memorable.",
-  heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409810/Large-Tercer-Acto-Logo_kyzowm.png",
-  onErrorHeroLogo: "/src/assets/images/experiences/Large-Tercer-Acto-Logo.png",
+  heroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Tercer-Acto-Logo.png",
+  onErrorHeroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Tercer-Acto-Logo.png",
   heroLogoAlt: "Tercer Acto Logo",
   ubicacion: "https://maps.app.goo.gl/MKu21j1QgoxgtCe18",
   links: {
@@ -184,18 +184,18 @@ export const EXPERIENCES: Experience[] = [
   }
 },
 {
-  id: "miura", //TODO: PEDIR LA INFORMACIÓN CORRECTA PARA PODER TRABAJAR EN ESTA CARD
-  logo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770768847/MIURA-LOGO-NEGRO-white_mwx4m1.png",
-  onErrorLogo: "/src/assets/images/experiences/MIURA-LOGO-NEGRO-white.png",
+  id: "miura",
+  logo: "https://admin.miurahospitality.com/images/experiences/logo/MIURA-LOGO-NEGRO-white.png",
+  onErrorLogo: "https://admin.miurahospitality.com/images/experiences/logo/MIURA-LOGO-NEGRO-white.png",
   alt: "Miura Logo",
-  background: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770849987/bg-experience-card_ajcr1r.png",
-  onErrorBackground: "/src/assets/images/experiences/bg-miura.png",
+  background: "https://admin.miurahospitality.com/images/experiences/background/bg-miura.webp",
+  onErrorBackground: "https://admin.miurahospitality.com/images/experiences/background/bg-miura.webp",
   title: "Miura",
   zone: "NORTE",
   description:
     "Miura Experience está dedicada a la organización y ejecución de eventos excepcionales, ofreciendo servicios de catering que destacan por su excelencia y meticulosa atención al detalle, creando experiencias memorables en cada ocasión.",
-  heroLogo: "https://res.cloudinary.com/dfsrjktyj/image/upload/v1770771880/large-miura-exp_oihewf.png",
-  onErrorHeroLogo: "/src/assets/images/experiences/Large-Miura-Logo.png",
+  heroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Miura-Logo.png",
+  onErrorHeroLogo: "https://admin.miurahospitality.com/images/experiences/large-logo/Large-Miura-Logo.png",
   heroLogoAlt: "Miura Logo",
   ubicacion: "https://maps.app.goo.gl/7wY7WocYLsmiozqd8",
   links: {

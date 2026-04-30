@@ -25,11 +25,11 @@ export const InstagramButton: React.FC<InstagramButtonProps> = ({
       style={{ width: size, height: size }}
     >
       <img
-        src="/src/assets/images/shared/instagram_button.png"
+        src="https://admin.miurahospitality.com/images/shared/instagram-button.png"
         alt="Instagram"
         className="w-full h-full object-contain"
         onError={(e) => {
-          e.currentTarget.src = "https://res.cloudinary.com/dfsrjktyj/image/upload/v1768409813/instagram_button_djdulp.png";
+          e.currentTarget.src = "https://admin.miurahospitality.com/images/shared/instagram-button.png";
         }}
       />
     </a>
